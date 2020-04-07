@@ -10,10 +10,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PinActivity"></activity>
+        <activity android:name=".ui.activity.ErrorActivity"></activity>
+        <activity android:name=".ui.activity.VerifyPhoneNumberActivity"/>
+        <activity android:name=".ui.activity.PinActivity"/>
         <activity
             android:name=".MainActivity"
-            android:windowSoftInputMode="adjustResize">
+            android:windowSoftInputMode="stateHidden|adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

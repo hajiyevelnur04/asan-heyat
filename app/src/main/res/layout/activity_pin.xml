@@ -8,20 +8,45 @@
 
     <include
         android:id="@+id/include1"
-        layout="@layout/asan_toolbar_logo" />
+        layout="@layout/asan_into_header" />
 
-    <TextView
-        android:id="@+id/header"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
+    <LinearLayout
         android:layout_marginTop="24dp"
-        android:gravity="center"
-        android:text="@string/header_pin"
-        android:textSize="24dp"
-        android:padding="8dp"
+        android:id="@+id/headerContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/include1" />
+        app:layout_constraintTop_toBottomOf="@+id/include1">
+
+        <TextView
+            android:id="@+id/emptyLeft"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="24dp" />
+
+        <TextView
+            android:id="@+id/header"
+            android:layout_width="0dp"
+            android:layout_weight="6"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/header_pin"
+            android:textSize="24dp" />
+
+        <TextView
+            android:id="@+id/emptyRight"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="24dp" />
+
+
+    </LinearLayout>
 
 
     <com.eebros.asan.view.AsanPinView
@@ -53,7 +78,7 @@
         app:itemWidth="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/header"
+        app:layout_constraintTop_toBottomOf="@+id/headerContainer"
         app:lineColor="@color/white"
         app:lineWidth="0dp"
         tools:text="11" />
@@ -63,10 +88,24 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_gravity="bottom"
-        android:layout_marginTop="128dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="64dp"
+        app:layout_constraintBottom_toTopOf="@+id/fingerPrint"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pin" />
+
+    <TextView
+        android:id="@+id/fingerPrint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="14dp"
+        android:gravity="center"
+        android:text="Use fingerprint for login"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:paddingTop="16dp"
+        android:paddingBottom="32dp"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

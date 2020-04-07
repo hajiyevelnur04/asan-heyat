@@ -8,6 +8,14 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="ActionBarTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimary</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="StcPinViewStyle">@style/PinWidget.PinView</item>
+    </style>
+
     <style name="ItemCountCalculatorButton">
         <item name="android:textSize">30sp</item>
         <item name="android:textColor">@color/hint</item>

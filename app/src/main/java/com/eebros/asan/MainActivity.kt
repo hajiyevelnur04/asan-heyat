@@ -4,13 +4,15 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.view.View
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
+import android.widget.Button
+import android.widget.EditText
+import android.widget.Spinner
 import androidx.lifecycle.ViewModelProvider
+import com.eebros.asan.adapter.CountryCodeAdapter
 import com.eebros.asan.base.BaseActivity
 import com.eebros.asan.di.ViewModelProviderFactory
-import kotlinx.android.synthetic.main.activity_main.*
+import com.eebros.asan.model.CountryCode
+import com.eebros.asan.ui.activity.PinActivity
 import javax.inject.Inject
 
 class MainActivity : BaseActivity() {
@@ -19,6 +21,11 @@ class MainActivity : BaseActivity() {
     lateinit var factory: ViewModelProviderFactory
 
     var countryNum : Long = 0L
+    var selectedCode: String = ""
+
+    lateinit var countryCode: Spinner
+    lateinit var phoneNumber: EditText
+    lateinit var continueB: Button
 
     private lateinit var viewModel: MainActivityViewModel
 
@@ -29,18 +36,24 @@ class MainActivity : BaseActivity() {
         //init view model with factory
         viewModel = ViewModelProvider(this, factory)[MainActivityViewModel::class.java]
 
-        initSpinner()
-        initEditText()
+        initView()
+        setUpSpinner()
+        setUpEditText()
 
-        continueButton.setOnClickListener{
+        continueB.setOnClickListener{
             var intent = Intent(this, PinActivity::class.java)
-            intent.putExtra("phoneNum", "$countryNum$phoneNumber")
+            intent.putExtra("phoneNum", "$selectedCode$phoneNumber")
             startActivity(intent)
-            overridePendingTransition(R.anim.enter, R.anim.exit)
         }
     }
 
-    private fun initEditText() {
+    private fun initView(){
+        countryCode = findViewById(R.id.countryCode)
+        phoneNumber = findViewById(R.id.phoneNumber)
+        continueB = findViewById(R.id.continueButton)
+    }
+
+    private fun setUpEditText() {
         phoneNumber.addTextChangedListener(object : TextWatcher{
             override fun afterTextChanged(s: Editable?) {
 
@@ -52,45 +65,43 @@ class MainActivity : BaseActivity() {
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 if(s.toString().trim().isNotEmpty()){
-                    continueButton.isEnabled = true
-                    continueButton.isFocusable = true
-                    continueButton.setBackgroundResource(R.color.hint)
+                    continueB.isEnabled = true
+                    continueB.isFocusable = true
+                    continueB.setBackgroundResource(R.drawable.rounded_corners_primary)
                 } else {
-                    continueButton.isEnabled = false
-                    continueButton.isFocusable = false
-                    continueButton.setBackgroundResource(R.color.colorPrimary)
+                    continueB.isEnabled = false
+                    continueB.isFocusable = false
+                    continueB.setBackgroundResource(R.drawable.rounded_corners_gray)
                 }
 
             }
         })
     }
 
-    private fun initSpinner() {
-        // Initializing a country code
-        val country = arrayOf(+994, +7, +90, +49)
-        // Initializing an ArrayAdapter
-        val adapter = ArrayAdapter(
-            this, // Context
-            android.R.layout.simple_spinner_item, // Layout
-            country // Array
-        )
-        // Set the drop down view resource
-        adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line)
+    private fun setUpSpinner() {
 
-        // Finally, data bind the spinner object with dapter
+        val country: List<CountryCode> = arrayListOf(
+            CountryCode("+994", R.drawable.aze),
+            CountryCode("+7", R.drawable.rus),
+            CountryCode("+1", R.drawable.usa))
+
+        val adapter = CountryCodeAdapter(
+            this,
+            country
+        )
+
         countryCode.adapter = adapter
 
-        // Set an on item selected listener for spinner object
-        countryCode.onItemSelectedListener = object: AdapterView.OnItemSelectedListener{
+        /*countryCode.onItemSelectedListener = object: AdapterView.OnItemSelectedListener{
             override fun onItemSelected(parent:AdapterView<*>, view: View, position: Int, id: Long){
                 // set the selected item to variable
-                countryNum = parent.getItemIdAtPosition(position)
+                selectedCode = country[position].code
             }
 
             override fun onNothingSelected(parent: AdapterView<*>){
                 // Another interface callback
             }
-        }
+        }*/
     }
 
 

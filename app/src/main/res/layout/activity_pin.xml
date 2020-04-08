@@ -28,14 +28,33 @@
             android:gravity="center"
             android:textSize="24dp" />
 
-        <TextView
-            android:id="@+id/header"
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_weight="6"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="@string/header_pin"
-            android:textSize="24dp" />
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/header1"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:gravity="center"
+                android:text="@string/header_pin1"
+                android:textSize="24dp" />
+
+            <TextView
+                android:id="@+id/header2"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:gravity="center"
+                android:text="@string/header_pin2"
+                android:textSize="24dp" />
+
+        </LinearLayout>
+
+
 
         <TextView
             android:id="@+id/emptyRight"

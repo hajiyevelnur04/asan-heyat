@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "720121170875",
+    "firebase_url": "https://asan-heyat.firebaseio.com",
+    "project_id": "asan-heyat",
+    "storage_bucket": "asan-heyat.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:720121170875:android:db52f0732f76dcd84a929e",
+        "android_client_info": {
+          "package_name": "com.eebros.asan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "720121170875-cvao55b0b803sp9j19l7hepi8ndt4i2e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAvVmt08PxPqPHBaGd8i1eDi7Jh6t_5gEA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "720121170875-cvao55b0b803sp9j19l7hepi8ndt4i2e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,12 +1,23 @@
 <resources>
     <string name="app_name">Asan</string>
     <string name="cancel_camel_case">Cancel</string>
-    <string name="header_pin">Create a passcode for your asan account</string>
+    <string name="header_pin1">Create a passcode</string>
+    <string name="header_pin2">for your asan account</string>
     <string name="repeat_pin">repeat pin num</string>
     <string name="send_code_again">You can send code agin if it doe not reach in</string>
     <string name="enter_otp_code">We have sent it to +994 50 655 79 15</string>
     <string name="code_sent_to">Enter the 6-digit code</string>
     <string name="error_message">Error</string>
+    <string name="enter_pin">Enter pin</string>
+    <string name="enter_current_pin">enter current pin</string>
+    <string name="repeat_pin_is_wrong">repeat pin is wrong</string>
+    <string name="ok">Ok</string>
+    <string name="enter_new_pin">enter new pin</string>
+    <string name="pin_is_wrong">pin is wrong</string>
+    <string name="authentication_failed">authentication failed</string>
+    <string name="biometric_login">biometric login</string>
+    <string name="login_with_biometric_credentials">login with biometric credentials</string>
+    <string name="cancel_all_caps">cancel all caps</string>
 
     <string-array name="countryCode">
         <item>+994</item>
@@ -14,4 +25,9 @@
         <item>+90</item>
         <item>+49</item>
     </string-array>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="default_error_message">Error</string>
 </resources>

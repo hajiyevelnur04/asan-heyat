@@ -1,18 +1,42 @@
 package com.eebros.asan.ui.activity
 
+import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
+import android.os.CountDownTimer
+import android.util.Log
 import android.widget.ImageView
 import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.eebros.asan.R
+import com.google.firebase.FirebaseException
+import com.google.firebase.FirebaseTooManyRequestsException
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
+import com.google.firebase.auth.PhoneAuthCredential
+import com.google.firebase.auth.PhoneAuthProvider
+import kotlinx.android.synthetic.main.activity_verify_phone_number.*
 import kotlinx.android.synthetic.main.asan_into_header.*
+import java.math.RoundingMode
+import java.text.DecimalFormat
+import java.util.concurrent.TimeUnit
 
 class VerifyPhoneNumberActivity : AppCompatActivity() {
 
     lateinit var sliderDotspanel: LinearLayout
 
     private var dotscount = 7
+
+    val firebaseAuth = FirebaseAuth.getInstance()
+
+    val TAG: String = "TAG"
+
+    var code: String = ""
+
+    private var storedVerificationId: String =""
+
+    private val phoneNumber: String by lazy{intent.getStringExtra("phoneNumber")}
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,6 +45,50 @@ class VerifyPhoneNumberActivity : AppCompatActivity() {
         initIndigator()
 
         leftContainer.setOnClickListener{onBackPressed()}
+
+        /*setOutputListeners()
+        setInputListeners()*/
+
+        countDown.start()
+
+        sendVerificationCode(phoneNumber)
+
+    }
+
+    private fun blockUser() {
+        //viewModel.inputs.blockUser(custId, compId)
+    }
+
+    private fun sendVerificationCode(phoneNumber: String) {
+        val phoneAuthProvider = PhoneAuthProvider.getInstance()
+        phoneAuthProvider.verifyPhoneNumber(
+            phoneNumber,
+            60,
+            TimeUnit.SECONDS,
+            this,
+            object : PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
+                override fun onVerificationCompleted(credential: PhoneAuthCredential) {
+                    Log.d(TAG, "onVerificationCompleted:$credential")
+                    code = credential.smsCode.toString()
+                    if(code.isNotEmpty()){
+                        pinCodeView.setText(code)
+                        verifyVerificationCode(code)
+                    }
+                }
+
+                override fun onVerificationFailed(e: FirebaseException) {
+                    Log.w(TAG, "onVerificationFailed", e)
+                }
+
+                override fun onCodeSent(verificationId: String, token: PhoneAuthProvider.ForceResendingToken) {
+                    storedVerificationId = verificationId
+                }
+            })
+    }
+
+    private fun verifyVerificationCode(code: String) {
+        val credential = PhoneAuthProvider.getCredential(storedVerificationId, code)
+        signInWithPhoneAuthCredential(credential)
     }
 
     private fun initIndigator() {
@@ -42,5 +110,42 @@ class VerifyPhoneNumberActivity : AppCompatActivity() {
         dots[1]?.setImageDrawable(ContextCompat.getDrawable(this,
             R.drawable.selected_dot
         ))
+    }
+
+
+    private fun signInWithPhoneAuthCredential(credential: PhoneAuthCredential) {
+        firebaseAuth.signInWithCredential(credential)
+            .addOnCompleteListener(this) { task ->
+                if (task.isSuccessful) {
+                    // Sign in success, update UI with the signed-in user's information
+                    Log.d(TAG, "signInWithCredential:success")
+
+                    val user = task.result?.user
+                    // ...
+                } else {
+                    // Sign in failed, display a message and update the UI
+                    Log.w(TAG, "signInWithCredential:failure", task.exception)
+                    if (task.exception is FirebaseAuthInvalidCredentialsException) {
+                        // The verification code entered was invalid
+                    }
+                }
+            }
+
+    }
+
+    private var counter = 0
+    private val decimalFormat = DecimalFormat("00")
+    private val countDown = object : CountDownTimer(90000, 1000) {
+
+        override fun onTick(millisUntilFinished: Long) {
+            decimalFormat.roundingMode = RoundingMode.CEILING
+            timer.text =
+                ((millisUntilFinished / 1000) / 60).toString() + ":" + decimalFormat.format((millisUntilFinished / 1000) % 60).toString()
+        }
+
+        override fun onFinish() {
+            startActivity(Intent(this@VerifyPhoneNumberActivity, ErrorActivity::class.java))
+            finish()
+        }
     }
 }

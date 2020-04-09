@@ -4,12 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.activity.registration.AddPersonalInfoActivity">
+    tools:context=".ui.activity.registration.AddHomeAdressActivity">
 
     <include
-        android:id="@+id/include3"
+        android:id="@+id/include4"
         layout="@layout/asan_into_header" />
-
 
     <LinearLayout
         android:layout_marginTop="24dp"
@@ -19,7 +18,7 @@
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/include3">
+        app:layout_constraintTop_toBottomOf="@+id/include4">
 
         <TextView
             android:id="@+id/emptyLeft"
@@ -36,7 +35,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:textColor="@color/black"
-            android:text="@string/personalDetails"
+            android:text="@string/personalAddress"
             android:fontFamily="@font/roboto_medium"
             android:textSize="20dp" />
 
@@ -51,7 +50,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/firstNameContainer"
+        android:id="@+id/countryContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -65,21 +64,18 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/firstName"
+            android:text="@string/country"
             android:textColor="@color/colorPrimary"
             android:fontFamily="@font/roboto_medium"/>
 
-        <EditText
-            android:id="@+id/firstName"
+        <Spinner
+            android:id="@+id/country"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:lines="1"
             android:hint="Elnur"
             android:layout_marginTop="4dp"
-            android:fontFamily="@font/roboto_medium"
-            android:textColorHint="@color/hint"
-            android:backgroundTint="@color/colorPrimary"
-            android:foregroundTint="@color/hint"/>
+            android:fontFamily="@font/roboto_medium" />
 
     </LinearLayout>
 
@@ -93,21 +89,21 @@
         android:layout_marginLeft="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/firstNameContainer">
+        app:layout_constraintTop_toBottomOf="@+id/countryContainer">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/lastName"
+            android:text="@string/postalCode"
             android:textColor="@color/colorPrimary"
             android:fontFamily="@font/roboto_medium"/>
 
         <EditText
-            android:id="@+id/lastName"
+            android:id="@+id/postCode"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:lines="1"
-            android:hint="Hajiyev"
+            android:hint="01069"
             android:layout_marginTop="4dp"
             android:fontFamily="@font/roboto_medium"
             android:textColorHint="@color/hint"
@@ -132,17 +128,16 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/dateOfBirth"
+            android:text="@string/address"
             android:textColor="@color/colorPrimary"
             android:fontFamily="@font/roboto_medium"/>
 
         <EditText
-            android:id="@+id/dateOfBirth"
+            android:id="@+id/address"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="date"
             android:lines="1"
-            android:hint="15/10/1992"
+            android:hint="Nermanov rayonu, "
             android:layout_marginTop="4dp"
             android:fontFamily="@font/roboto_medium"
             android:textColorHint="@color/hint"

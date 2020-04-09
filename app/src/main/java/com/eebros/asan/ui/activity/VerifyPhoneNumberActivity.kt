@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.eebros.asan.Constants.Companion.INTRO_DOTS
 import com.eebros.asan.R
+import com.eebros.asan.ui.activity.registration.AddPersonalInfoActivity
 import com.eebros.asan.view.AsanPinView
 import com.google.firebase.FirebaseException
 import com.google.firebase.FirebaseTooManyRequestsException
@@ -58,11 +59,12 @@ class VerifyPhoneNumberActivity : AppCompatActivity() {
 
         sendVerificationCode(phoneNumber)
 
-        pin = findViewById<AsanPinView>(R.id.pin)
+        pin = findViewById(R.id.pinCodeView)
         pin.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
-                if (s.toString().length == 4){
-                    startActivity(Intent(this@VerifyPhoneNumberActivity, MainActivity::class.java))
+                if (s.toString().length == 6){
+                    countDown.cancel()
+                    startActivity(Intent(this@VerifyPhoneNumberActivity, AddPersonalInfoActivity::class.java))
                 }
             }
 
@@ -125,12 +127,12 @@ class VerifyPhoneNumberActivity : AppCompatActivity() {
             params.setMargins(8, 0, 8, 0)
             sliderDotspanel!!.addView(dots[i], params)
         }
-        dots[0]?.setImageDrawable(ContextCompat.getDrawable(this,
-            R.drawable.selected_dot
-        ))
-        dots[1]?.setImageDrawable(ContextCompat.getDrawable(this,
-            R.drawable.selected_dot
-        ))
+        for(i in 0..1){
+            dots[i]?.setImageDrawable(
+                ContextCompat.getDrawable(this,
+                    R.drawable.selected_dot
+                ))
+        }
     }
 
 

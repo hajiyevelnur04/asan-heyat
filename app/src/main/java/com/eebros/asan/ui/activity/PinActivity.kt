@@ -178,14 +178,6 @@ class PinActivity : BaseActivity() {
     }
 
     private fun navigateTo(activity: Activity){
-        /*if (!updatingCurrentPin) {
-            viewModel.inputs.login()
-            val intent = Intent(this, activity::class.java)
-            intent.putExtra("phoneNumber",phoneNumber)
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
-            startActivity(intent)
-        }
-        finish()*/
         viewModel.inputs.login()
         val intent = Intent(this, activity::class.java)
         intent.putExtra("phoneNumber",phoneNumber)

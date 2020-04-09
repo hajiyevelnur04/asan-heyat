@@ -30,4 +30,20 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="default_error_message">Error</string>
+    <string name="terms">By entering your passcode you agree to our</string>
+    <string name="termsAndContition"><![CDATA[Terms & Contition]]></string>
+    <string name="termsAndCondition"><![CDATA[Terms & Conditions]]></string>
+    <string name="personalDetails">What are your personal details?</string>
+    <string name="firstName">First Name</string>
+    <string name="lastName">Last Name</string>
+    <string name="pleaseAdd">Please add value</string>
+    <string name="personalAddress">What\'s your home address?</string>
+    <string name="country">Country</string>
+    <string name="postalCode">Postal code</string>
+    <string name="address">Address</string>
+    <string name="primaryEmail">And what\'s your primary email?</string>
+    <string name="emailHint">We will only use to advise you for any important changes</string>
+    <string name="email">Email</string>
+    <string name="dateOfBirth">Date of Birth</string>
+    <string name="successText">Your account has been created</string>
 </resources>

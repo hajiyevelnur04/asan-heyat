@@ -51,7 +51,8 @@
                     android:gravity="center"
                     android:textColor="@color/black"
                     android:text="@string/code_sent_to"
-                    android:textSize="24dp" />
+                    android:fontFamily="@font/roboto_medium"
+                    android:textSize="20dp" />
 
                 <TextView
                     android:id="@+id/emptyRight"
@@ -74,6 +75,7 @@
                 android:gravity="center"
                 android:text="@string/enter_otp_code"
                 android:textColor="@color/black"
+                android:fontFamily="@font/roboto_medium"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/auth_message" />
@@ -138,6 +140,7 @@
             android:layout_weight="1"
             android:lineSpacingExtra="8sp"
             android:text="@string/send_code_again"
+            android:fontFamily="@font/roboto_medium"
             android:textColor="@color/hint"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/pinCodeView" />
@@ -150,6 +153,7 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:text="0:59"
+            android:fontFamily="@font/roboto_medium"
             android:textColor="@color/red"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"

@@ -38,6 +38,7 @@
                 android:textSize="12dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_medium"
                 android:gravity="center"
                 android:text="Country"/>
 
@@ -59,15 +60,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="12dp"
+                android:fontFamily="@font/roboto_medium"
                 android:text="Phone number"/>
 
             <EditText
                 android:id="@+id/phoneNumber"
                 android:inputType="phone"
                 android:layout_width="match_parent"
-                android:textSize="18dp"
                 android:layout_height="match_parent"
                 android:textColorHint="@color/hint"
+                android:fontFamily="@font/roboto_medium"
                 android:backgroundTint="@color/colorPrimary"
                 android:foregroundTint="@color/hint"
                 android:hint="Please enter phone number" />
@@ -84,6 +86,7 @@
         android:gravity="center"
         android:paddingBottom="8dp"
         android:paddingTop="8dp"
+        android:layout_marginBottom="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent">
@@ -94,6 +97,7 @@
             android:text="Changed your phone number?"
             android:layout_marginBottom="32dp"
             android:gravity="center"
+            android:fontFamily="@font/roboto_medium"
             android:textColor="@color/colorPrimary"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"/>
@@ -109,6 +113,7 @@
             android:paddingTop="15dp"
             android:paddingEnd="64dp"
             android:paddingBottom="15dp"
+            android:fontFamily="@font/roboto_medium"
             android:text="Continue"
             android:textColor="@color/white"
             android:textSize="16sp" />

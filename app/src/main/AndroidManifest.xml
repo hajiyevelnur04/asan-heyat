@@ -13,14 +13,27 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.activity.registration.AddPersonalInfoActivity"></activity>
+        <activity
+            android:theme="@style/NoActionBarThemeSuccess"
+            android:name=".ui.activity.registration.DoneRegistrationActivity"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity android:name=".ui.activity.registration.AddEmailActivity"
+            android:windowSoftInputMode="stateHidden|adjustResize"/>
+        <activity
+            android:name=".ui.activity.registration.AddHomeAdressActivity"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name=".ui.activity.registration.AddPersonalInfoActivity"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
         <activity
             android:name=".NumberActivity"
             android:windowSoftInputMode="stateHidden|adjustResize" />
         <activity
             android:name=".ui.activity.MainActivity"
             android:label="@string/title_activity_main" />
-        <activity android:name=".ui.activity.ErrorActivity" />
+        <activity
+            android:theme="@style/NoActionBarThemeError"
+            android:name=".ui.activity.ErrorActivity" />
         <activity android:name=".ui.activity.VerifyPhoneNumberActivity" />
         <activity android:name=".ui.activity.PinActivity" />
         <activity android:name=".SplashActivity">

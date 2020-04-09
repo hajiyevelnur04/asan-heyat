@@ -4,12 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.activity.registration.AddPersonalInfoActivity">
+    tools:context=".ui.activity.registration.AddEmailActivity">
+
 
     <include
-        android:id="@+id/include3"
+        android:id="@+id/include5"
         layout="@layout/asan_into_header" />
-
 
     <LinearLayout
         android:layout_marginTop="24dp"
@@ -19,7 +19,7 @@
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/include3">
+        app:layout_constraintTop_toBottomOf="@+id/include5">
 
         <TextView
             android:id="@+id/emptyLeft"
@@ -29,16 +29,36 @@
             android:gravity="center"
             android:textSize="24dp" />
 
-        <TextView
-            android:id="@+id/header1"
-            android:layout_weight="6"
+        <LinearLayout
             android:layout_width="0dp"
+            android:layout_weight="7"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:textColor="@color/black"
-            android:text="@string/personalDetails"
-            android:fontFamily="@font/roboto_medium"
-            android:textSize="20dp" />
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/header1"
+                android:layout_weight="5"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:text="@string/primaryEmail"
+                android:fontFamily="@font/roboto_medium"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/header2"
+                android:layout_weight="6"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:gravity="center"
+                android:text="@string/emailHint"
+                android:fontFamily="@font/roboto_medium"
+                android:textSize="14dp" />
+
+        </LinearLayout>
 
         <TextView
             android:id="@+id/emptyRight"
@@ -50,8 +70,9 @@
 
     </LinearLayout>
 
+
     <LinearLayout
-        android:id="@+id/firstNameContainer"
+        android:id="@+id/emailContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -65,84 +86,16 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/firstName"
+            android:text="@string/email"
             android:textColor="@color/colorPrimary"
             android:fontFamily="@font/roboto_medium"/>
 
         <EditText
-            android:id="@+id/firstName"
+            android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:lines="1"
-            android:hint="Elnur"
-            android:layout_marginTop="4dp"
-            android:fontFamily="@font/roboto_medium"
-            android:textColorHint="@color/hint"
-            android:backgroundTint="@color/colorPrimary"
-            android:foregroundTint="@color/hint"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/lasttNameContainer"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginRight="12dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginLeft="12dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/firstNameContainer">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/lastName"
-            android:textColor="@color/colorPrimary"
-            android:fontFamily="@font/roboto_medium"/>
-
-        <EditText
-            android:id="@+id/lastName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:lines="1"
-            android:hint="Hajiyev"
-            android:layout_marginTop="4dp"
-            android:fontFamily="@font/roboto_medium"
-            android:textColorHint="@color/hint"
-            android:backgroundTint="@color/colorPrimary"
-            android:foregroundTint="@color/hint"/>
-
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:id="@+id/dateOfBirthContainer"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginRight="12dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginLeft="12dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lasttNameContainer">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/dateOfBirth"
-            android:textColor="@color/colorPrimary"
-            android:fontFamily="@font/roboto_medium"/>
-
-        <EditText
-            android:id="@+id/dateOfBirth"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="date"
-            android:lines="1"
-            android:hint="15/10/1992"
+            android:hint="hajiyevelnur04@gmail.com"
             android:layout_marginTop="4dp"
             android:fontFamily="@font/roboto_medium"
             android:textColorHint="@color/hint"
@@ -176,7 +129,7 @@
             android:paddingEnd="64dp"
             android:paddingBottom="15dp"
             android:fontFamily="@font/roboto_medium"
-            android:text="Continue"
+            android:text="Done"
             android:textColor="@color/white"
             android:textSize="16sp" />
 

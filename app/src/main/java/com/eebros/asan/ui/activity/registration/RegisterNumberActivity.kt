@@ -1,23 +1,23 @@
-package com.eebros.asan
+package com.eebros.asan.ui.activity.registration
 
 import android.content.Intent
 import android.os.Bundle
-import android.provider.ContactsContract.PinnedPositions.pin
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
 import android.widget.*
 import android.widget.AdapterView.OnItemSelectedListener
 import androidx.lifecycle.ViewModelProvider
+import com.eebros.asan.R
 import com.eebros.asan.adapter.CountryCodeAdapter
 import com.eebros.asan.base.BaseActivity
 import com.eebros.asan.di.ViewModelProviderFactory
 import com.eebros.asan.model.CountryCode
-import com.eebros.asan.ui.activity.PinActivity
+import com.eebros.asan.ui.activity.EnterPinActivity
 import javax.inject.Inject
 
 
-class NumberActivity : BaseActivity() {
+class RegisterNumberActivity : BaseActivity() {
 
     @Inject
     lateinit var factory: ViewModelProviderFactory
@@ -28,14 +28,14 @@ class NumberActivity : BaseActivity() {
     lateinit var phoneNumber: EditText
     lateinit var continueB: Button
 
-    private lateinit var viewModel: MainActivityViewModel
+    private lateinit var viewModel: RegisterNumberViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_number)
 
         //init view model with factory
-        viewModel = ViewModelProvider(this, factory)[MainActivityViewModel::class.java]
+        viewModel = ViewModelProvider(this, factory)[RegisterNumberViewModel::class.java]
 
         initView()
         setUpSpinner()
@@ -43,7 +43,7 @@ class NumberActivity : BaseActivity() {
 
         continueB.setOnClickListener{
             var code:String = countryCodeSpinner.selectedItem.toString()
-            var intent = Intent(this, PinActivity::class.java)
+            var intent = Intent(this, EnterPinActivity::class.java)
             intent.putExtra("phoneNum", "$selectedCode${phoneNumber.text}")
             startActivity(intent)
         }

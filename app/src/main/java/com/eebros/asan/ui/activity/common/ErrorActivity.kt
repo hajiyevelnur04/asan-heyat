@@ -1,4 +1,4 @@
-package com.eebros.asan.ui.activity
+package com.eebros.asan.ui.activity.common
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

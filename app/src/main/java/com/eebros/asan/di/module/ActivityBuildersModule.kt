@@ -1,11 +1,11 @@
 package com.eebros.asan.di.module
 
-import com.eebros.asan.NumberActivity
+import com.eebros.asan.ui.activity.registration.RegisterNumberActivity
 import com.eebros.asan.SplashActivity
 import com.eebros.asan.di.module.sub.MainModule
 import com.eebros.asan.di.module.viewmodel.MainModuleViewModel
 import com.eebros.asan.di.scope.MainScope
-import com.eebros.asan.ui.activity.PinActivity
+import com.eebros.asan.ui.activity.EnterPinActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
@@ -13,11 +13,11 @@ import dagger.android.ContributesAndroidInjector
 abstract class ActivityBuildersModule {
     @MainScope
     @ContributesAndroidInjector(modules = [MainModule::class, MainModuleViewModel::class])
-    abstract fun mainActivity(): NumberActivity
+    abstract fun mainActivity(): RegisterNumberActivity
 
     @MainScope
     @ContributesAndroidInjector(modules = [MainModule::class, MainModuleViewModel::class])
-    abstract fun pinActivity(): PinActivity
+    abstract fun pinActivity(): EnterPinActivity
 
     @MainScope
     @ContributesAndroidInjector(modules = [MainModule::class, MainModuleViewModel::class])

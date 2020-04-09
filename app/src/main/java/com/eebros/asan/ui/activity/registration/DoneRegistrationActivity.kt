@@ -4,7 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.eebros.asan.R
-import com.eebros.asan.ui.activity.MainActivity
+import com.eebros.asan.ui.activity.main.MainActivity
 import kotlinx.android.synthetic.main.activity_done_registration.*
 
 class DoneRegistrationActivity : AppCompatActivity() {

@@ -4,6 +4,10 @@ import android.content.SharedPreferences
 import com.eebros.asan.base.BaseViewModel
 import com.eebros.asan.base.BaseViewModelInputs
 import com.eebros.asan.base.BaseViewModelOutputs
+import com.eebros.asan.usecases.CheckTokenUseCase
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.rxkotlin.addTo
+import io.reactivex.schedulers.Schedulers
 import io.reactivex.subjects.CompletableSubject
 import javax.inject.Inject
 
@@ -16,7 +20,9 @@ interface SplashViewModelOutputs : BaseViewModelOutputs {
     fun tokenUpdated(): CompletableSubject
 }
 
-class SplashActivityViewModel @Inject constructor(private val sharedPrefs: SharedPreferences):
+class SplashActivityViewModel @Inject constructor(private val sharedPrefs: SharedPreferences,
+                                                  private val checkTokenUseCase: CheckTokenUseCase
+):
     BaseViewModel(), SplashViewModelInputs, SplashViewModelOutputs {
 
     override val inputs: SplashViewModelInputs = this
@@ -27,20 +33,26 @@ class SplashActivityViewModel @Inject constructor(private val sharedPrefs: Share
     val pinIsSet =  sharedPrefs.getBoolean("pinIsSet", false)
 
     val token = sharedPrefs.getString("token", "")
+    val custId = sharedPrefs.getLong("custId", 0L)
 
 
     override fun checkToken() {
-        //call usecase and initialize it
-        /*if (it.status.statusCode == 1) {
-            updateToken(it.customer.token)
-        } else {
-            sharedPrefs.edit().putBoolean("pinIsSet", false).apply()
-            error.onNext(it.status.statusCode)
-        }
-    }, {
-        sharedPrefs.edit().putBoolean("pinIsSet", false).apply()
-        error.onNext(1878)
-        it.printStackTrace()*/
+        checkTokenUseCase.execute("",custId)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe({
+                if (it.status == 1) {
+                    updateToken(it.token)
+                } else {
+                    sharedPrefs.edit().putBoolean("pinIsSet", false).apply()
+                    error.onNext(it.status)
+                }
+            },{
+                sharedPrefs.edit().putBoolean("pinIsSet", false).apply()
+                error.onNext(1992)
+                it.printStackTrace()
+            }).addTo(subscriptions)
+
         updateToken("")
     }
 

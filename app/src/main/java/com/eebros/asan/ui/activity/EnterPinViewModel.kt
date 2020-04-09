@@ -9,7 +9,7 @@ import io.reactivex.Observable
 import io.reactivex.subjects.PublishSubject
 import javax.inject.Inject
 
-interface PinActivityViewModelInputs : BaseViewModelInputs{
+interface EnterPinViewModelInputs : BaseViewModelInputs{
     fun savePin(pin: String)
     fun checkPin(pin: String)
     fun fingerprintIsSet(authenticated: Boolean)
@@ -18,18 +18,18 @@ interface PinActivityViewModelInputs : BaseViewModelInputs{
     fun getUserInfo()
 }
 
-interface PinActivityViewModelOutputs : BaseViewModelOutputs{
+interface EnterPinViewModelOutputs : BaseViewModelOutputs{
     fun onPinIsCorrect(): Observable<Boolean>
     fun onFingerprintIsSet(): Observable<Boolean>
     fun onUserName(): String?
     fun onGetUserInfoSuccess(): PublishSubject<TestResponseModel>
 }
 
-class PinActivityViewModel @Inject constructor(private val sharedPreferences: SharedPreferences) :
-    BaseViewModel(), PinActivityViewModelInputs, PinActivityViewModelOutputs{
+class EnterPinViewModel @Inject constructor(private val sharedPreferences: SharedPreferences) :
+    BaseViewModel(), EnterPinViewModelInputs, EnterPinViewModelOutputs{
 
-    override val inputs: PinActivityViewModelInputs = this
-    override val outputs: PinActivityViewModelOutputs = this
+    override val inputs: EnterPinViewModelInputs = this
+    override val outputs: EnterPinViewModelOutputs = this
 
     private var pinIsCorrect = PublishSubject.create<Boolean>()
     private var fingerprintIsSet = PublishSubject.create<Boolean>()

@@ -1,4 +1,4 @@
-package com.eebros.asan.ui.activity
+package com.eebros.asan.ui.activity.main
 
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView

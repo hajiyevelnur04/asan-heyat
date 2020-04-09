@@ -1,6 +1,5 @@
-package com.eebros.asan.ui.activity
+package com.eebros.asan.ui.activity.registration
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -9,15 +8,13 @@ import android.text.TextWatcher
 import android.util.Log
 import android.widget.ImageView
 import android.widget.LinearLayout
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.eebros.asan.Constants.Companion.INTRO_DOTS
 import com.eebros.asan.R
-import com.eebros.asan.ui.activity.registration.AddPersonalInfoActivity
+import com.eebros.asan.ui.activity.common.ErrorActivity
 import com.eebros.asan.view.AsanPinView
 import com.google.firebase.FirebaseException
-import com.google.firebase.FirebaseTooManyRequestsException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.PhoneAuthCredential

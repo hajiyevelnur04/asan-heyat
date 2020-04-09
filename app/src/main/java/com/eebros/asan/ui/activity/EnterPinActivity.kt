@@ -20,6 +20,7 @@ import com.eebros.asan.Constants.Companion.INTRO_DOTS
 import com.eebros.asan.R
 import com.eebros.asan.base.BaseActivity
 import com.eebros.asan.di.ViewModelProviderFactory
+import com.eebros.asan.ui.activity.registration.VerifyPhoneNumberActivity
 import com.eebros.asan.view.AsanNumberBoard
 import com.eebros.asan.view.AsanPinView
 import io.reactivex.rxkotlin.addTo
@@ -28,12 +29,12 @@ import kotlinx.android.synthetic.main.number_board.*
 import javax.inject.Inject
 
 
-class PinActivity : BaseActivity() {
+class EnterPinActivity : BaseActivity() {
 
     @Inject
     lateinit var factory: ViewModelProviderFactory
 
-    lateinit var viewModel: PinActivityViewModel
+    lateinit var viewModel: EnterPinViewModel
 
     lateinit var pinCode: String
     private var pinStep: Int = 1
@@ -51,7 +52,7 @@ class PinActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pin)
 
-        viewModel = ViewModelProvider(this, factory)[PinActivityViewModel::class.java]
+        viewModel = ViewModelProvider(this, factory)[EnterPinViewModel::class.java]
 
         initView()
         initIndigator()
@@ -94,7 +95,7 @@ class PinActivity : BaseActivity() {
                             pin.setText("")
                             pinStep = 2
                             Toast.makeText(
-                                this@PinActivity,
+                                this@EnterPinActivity,
                                 getString(R.string.repeat_pin),
                                 Toast.LENGTH_SHORT
                             ).show()
@@ -116,7 +117,7 @@ class PinActivity : BaseActivity() {
                         pin.setText("")
                         if (s.toString() == viewModel.getCurrentPin()) {
                             Toast.makeText(
-                                this@PinActivity,
+                                this@EnterPinActivity,
                                 getString(R.string.enter_new_pin),
                                 Toast.LENGTH_SHORT
                             ).show()

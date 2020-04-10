@@ -1,13 +1,11 @@
-package com.eebros.asan.ui.fragment.home.dashboard
+package com.eebros.asan.ui.fragment.dashboard
 
+import android.content.SharedPreferences
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import com.eebros.asan.base.BaseViewModel
+import javax.inject.Inject
 
-class DashboardViewModel : ViewModel() {
+class DashboardViewModel  @Inject constructor(sharedPreferences: SharedPreferences) : BaseViewModel() {
 
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is dashboard Fragment"
-    }
-    val text: LiveData<String> = _text
 }

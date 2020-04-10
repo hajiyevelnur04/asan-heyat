@@ -1,13 +1,9 @@
-package com.eebros.asan.ui.fragment.home.notifications
+package com.eebros.asan.ui.fragment.notifications
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import android.content.SharedPreferences
+import com.eebros.asan.base.BaseViewModel
+import javax.inject.Inject
 
-class NotificationsViewModel : ViewModel() {
+class NotificationsViewModel @Inject constructor(sharedPreferences: SharedPreferences) : BaseViewModel() {
 
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is notifications Fragment"
-    }
-    val text: LiveData<String> = _text
 }

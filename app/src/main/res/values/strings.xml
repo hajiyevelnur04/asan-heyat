@@ -46,4 +46,5 @@
     <string name="email">Email</string>
     <string name="dateOfBirth">Date of Birth</string>
     <string name="successText">Your account has been created</string>
+    <string name="title_activity_maps">Map</string>
 </resources>

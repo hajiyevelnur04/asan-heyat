@@ -45,7 +45,7 @@ class PinActivity : BaseActivity() {
     lateinit var pinKeyBoard: AsanNumberBoard
     lateinit var pin: AsanPinView
 
-    private val phoneNumber: String by lazy{intent.getStringExtra("phoneNum")}
+    private val phoneNum: String by lazy{intent.getStringExtra("phoneNum")}
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -172,7 +172,6 @@ class PinActivity : BaseActivity() {
         AlertDialog.Builder(this)
             .setMessage(message)
             .setPositiveButton(getString(R.string.ok)) { _, _ ->
-
             }
             .show()
     }
@@ -188,14 +187,14 @@ class PinActivity : BaseActivity() {
         finish()*/
         viewModel.inputs.login()
         val intent = Intent(this, activity::class.java)
-        intent.putExtra("phoneNumber",phoneNumber)
+        intent.putExtra("phoneNum",phoneNum)
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         startActivity(intent)
     }
 
     private fun initView() {
-        pinKeyBoard = findViewById<AsanNumberBoard>(R.id.pinKeyBoard)
-        pin = findViewById<AsanPinView>(R.id.pin)
+        pinKeyBoard = findViewById(R.id.pinKeyBoard)
+        pin = findViewById(R.id.pin)
     }
 
     private fun initIndigator() {

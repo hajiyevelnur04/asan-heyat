@@ -1,6 +1,5 @@
 package com.eebros.asan.ui.activity
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -9,14 +8,13 @@ import android.text.TextWatcher
 import android.util.Log
 import android.widget.ImageView
 import android.widget.LinearLayout
-import android.widget.Toast
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.eebros.asan.Constants.Companion.INTRO_DOTS
 import com.eebros.asan.R
 import com.eebros.asan.view.AsanPinView
 import com.google.firebase.FirebaseException
-import com.google.firebase.FirebaseTooManyRequestsException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.PhoneAuthCredential
@@ -30,6 +28,8 @@ import java.util.concurrent.TimeUnit
 class VerifyPhoneNumberActivity : AppCompatActivity() {
 
     lateinit var sliderDotspanel: LinearLayout
+    lateinit var number: TextView
+    lateinit var pin: AsanPinView
 
     val firebaseAuth = FirebaseAuth.getInstance()
 
@@ -39,14 +39,15 @@ class VerifyPhoneNumberActivity : AppCompatActivity() {
 
     private var storedVerificationId: String =""
 
-    private val phoneNumber: String by lazy{intent.getStringExtra("phoneNumber")}
+    private val phoneNum: String by lazy{intent.getStringExtra("phoneNum")}
 
-    lateinit var pin: AsanPinView
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_verify_phone_number)
 
+        initView()
         initIndigator()
 
         leftContainer.setOnClickListener{onBackPressed()}
@@ -56,12 +57,13 @@ class VerifyPhoneNumberActivity : AppCompatActivity() {
 
         countDown.start()
 
-        sendVerificationCode(phoneNumber)
+        //sendVerificationCode(phoneNumber)
 
-        pin = findViewById<AsanPinView>(R.id.pin)
+        number.text = phoneNum
+
         pin.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
-                if (s.toString().length == 4){
+                if (s.toString().length == 6){
                     startActivity(Intent(this@VerifyPhoneNumberActivity, MainActivity::class.java))
                 }
             }
@@ -74,6 +76,12 @@ class VerifyPhoneNumberActivity : AppCompatActivity() {
             }
         })
 
+    }
+
+    private fun initView() {
+        sliderDotspanel = findViewById(R.id.slider_dots)
+        number = findViewById(R.id.number)
+        pin = findViewById(R.id.pin)
     }
 
     private fun blockUser() {
@@ -113,7 +121,6 @@ class VerifyPhoneNumberActivity : AppCompatActivity() {
     }
 
     private fun initIndigator() {
-        sliderDotspanel = findViewById(R.id.slider_dots)
         val dots = arrayOfNulls<ImageView>(INTRO_DOTS)
 
         for (i in 0 until INTRO_DOTS) {

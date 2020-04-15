@@ -5,7 +5,7 @@
     <string name="header_pin2">for your asan account</string>
     <string name="repeat_pin">repeat pin num</string>
     <string name="send_code_again">You can send code agin if it doe not reach in</string>
-    <string name="enter_otp_code">We have sent it to +994 50 655 79 15</string>
+    <string name="enter_otp_code">We have sent it to </string>
     <string name="code_sent_to">Enter the 6-digit code</string>
     <string name="error_message">Error</string>
     <string name="enter_pin">Enter pin</string>

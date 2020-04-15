@@ -15,7 +15,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".ui.activity.registration.AddPersonalInfoActivity"></activity>
         <activity
-            android:name=".NumberActivity"
+            android:name=".ui.activity.registration.NumberActivity"
             android:windowSoftInputMode="stateHidden|adjustResize" />
         <activity
             android:name=".ui.activity.MainActivity"

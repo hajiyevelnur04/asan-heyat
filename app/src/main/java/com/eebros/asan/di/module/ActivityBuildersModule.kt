@@ -1,6 +1,6 @@
 package com.eebros.asan.di.module
 
-import com.eebros.asan.NumberActivity
+import com.eebros.asan.ui.activity.registration.NumberActivity
 import com.eebros.asan.SplashActivity
 import com.eebros.asan.di.module.sub.MainModule
 import com.eebros.asan.di.module.viewmodel.MainModuleViewModel

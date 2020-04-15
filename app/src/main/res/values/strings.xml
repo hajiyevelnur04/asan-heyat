@@ -30,4 +30,5 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="default_error_message">Error</string>
+    <string name="mobile_pattern">+994</string>
 </resources>

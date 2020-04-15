@@ -1,13 +1,12 @@
 package com.eebros.asan
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
 import com.eebros.asan.base.BaseActivity
 import com.eebros.asan.di.ViewModelProviderFactory
 import com.eebros.asan.local.ErrorMapper
-import com.eebros.asan.ui.activity.PinActivity
+import com.eebros.asan.ui.activity.registration.NumberActivity
 import io.reactivex.rxkotlin.addTo
 import javax.inject.Inject
 

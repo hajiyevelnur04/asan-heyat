@@ -1,18 +1,15 @@
-package com.eebros.asan
+package com.eebros.asan.ui.activity.registration
 
 import android.content.Intent
 import android.os.Bundle
-import android.provider.ContactsContract.PinnedPositions.pin
 import android.text.Editable
+import android.text.InputFilter
 import android.text.TextWatcher
-import android.view.View
 import android.widget.*
-import android.widget.AdapterView.OnItemSelectedListener
 import androidx.lifecycle.ViewModelProvider
-import com.eebros.asan.adapter.CountryCodeAdapter
+import com.eebros.asan.R
 import com.eebros.asan.base.BaseActivity
 import com.eebros.asan.di.ViewModelProviderFactory
-import com.eebros.asan.model.CountryCode
 import com.eebros.asan.ui.activity.PinActivity
 import javax.inject.Inject
 
@@ -24,9 +21,12 @@ class NumberActivity : BaseActivity() {
 
     var selectedCode: String = "+994"
 
-    lateinit var countryCodeSpinner: Spinner
-    lateinit var phoneNumber: EditText
+    lateinit var itemCodeHolder: EditText
+    lateinit var phoneNumberHolder: EditText
     lateinit var continueB: Button
+
+    lateinit var itemCodeContainer: LinearLayout
+    lateinit var phoneNumberContainer: LinearLayout
 
     private lateinit var viewModel: MainActivityViewModel
 
@@ -38,25 +38,38 @@ class NumberActivity : BaseActivity() {
         viewModel = ViewModelProvider(this, factory)[MainActivityViewModel::class.java]
 
         initView()
-        setUpSpinner()
+        defaultButtonView()
+        //setUpSpinner()
         setUpEditText()
 
+        phoneNumberHolder.filters = arrayOf(InputFilter.LengthFilter(7))
+
         continueB.setOnClickListener{
-            var code:String = countryCodeSpinner.selectedItem.toString()
+            var code:String = itemCodeHolder.text.toString()
             var intent = Intent(this, PinActivity::class.java)
-            intent.putExtra("phoneNum", "$selectedCode${phoneNumber.text}")
+            intent.putExtra("phoneNum", "$selectedCode${phoneNumberHolder.text}")
             startActivity(intent)
         }
     }
 
     private fun initView(){
-        countryCodeSpinner = findViewById(R.id.countryCode)
-        phoneNumber = findViewById(R.id.phoneNumber)
+        itemCodeHolder = findViewById(R.id.itemCodeHolder)
+        phoneNumberHolder = findViewById(R.id.phoneNumberHolder)
+
+        itemCodeContainer = findViewById(R.id.itemCodeContainer)
+        phoneNumberContainer = findViewById(R.id.phoneNumberContainer)
+
         continueB = findViewById(R.id.continueButton)
     }
 
+    private fun defaultButtonView() {
+        continueB.isEnabled = false
+        continueB.isFocusable = false
+        continueB.setBackgroundResource(R.drawable.rounded_corners_gray)
+    }
+
     private fun setUpEditText() {
-        phoneNumber.addTextChangedListener(object : TextWatcher{
+        phoneNumberHolder.addTextChangedListener(object : TextWatcher{
             override fun afterTextChanged(s: Editable?) {
 
             }
@@ -80,7 +93,7 @@ class NumberActivity : BaseActivity() {
         })
     }
 
-    private fun setUpSpinner() {
+    /*private fun setUpSpinner() {
 
         val country: List<CountryCode> = arrayListOf(
             CountryCode("+994", R.drawable.aze),
@@ -100,6 +113,6 @@ class NumberActivity : BaseActivity() {
             }
             override fun onNothingSelected(parent: AdapterView<*>?) {}
         }
-    }
+    }*/
 
 }

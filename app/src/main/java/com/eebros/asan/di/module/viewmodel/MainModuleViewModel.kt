@@ -1,7 +1,7 @@
 package com.eebros.asan.di.module.viewmodel
 
 import androidx.lifecycle.ViewModel
-import com.eebros.asan.MainActivityViewModel
+import com.eebros.asan.ui.activity.registration.MainActivityViewModel
 import com.eebros.asan.SplashActivityViewModel
 import com.eebros.asan.di.scope.MainScope
 import com.eebros.asan.di.scope.ViewModelKey

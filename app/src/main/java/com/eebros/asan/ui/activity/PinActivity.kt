@@ -39,7 +39,7 @@ class PinActivity : BaseActivity() {
     private var pinStep: Int = 1
 
     var creatingNewPin: Boolean = true
-    var updatingCurrentPin: Boolean = true
+    var updatingCurrentPin: Boolean = false
 
     lateinit var sliderDotspanel: LinearLayout
     lateinit var pinKeyBoard: AsanNumberBoard

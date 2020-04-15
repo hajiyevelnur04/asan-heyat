@@ -1,4 +1,4 @@
-package com.eebros.asan.ui.activity.registration
+package com.eebros.asan.ui.activity
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,11 +8,11 @@ import android.text.TextWatcher
 import android.util.Log
 import android.widget.ImageView
 import android.widget.LinearLayout
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.eebros.asan.Constants.Companion.INTRO_DOTS
 import com.eebros.asan.R
-import com.eebros.asan.ui.activity.common.ErrorActivity
 import com.eebros.asan.view.AsanPinView
 import com.google.firebase.FirebaseException
 import com.google.firebase.auth.FirebaseAuth
@@ -28,6 +28,8 @@ import java.util.concurrent.TimeUnit
 class VerifyPhoneNumberActivity : AppCompatActivity() {
 
     lateinit var sliderDotspanel: LinearLayout
+    lateinit var number: TextView
+    lateinit var pin: AsanPinView
 
     val firebaseAuth = FirebaseAuth.getInstance()
 
@@ -37,14 +39,15 @@ class VerifyPhoneNumberActivity : AppCompatActivity() {
 
     private var storedVerificationId: String =""
 
-    private val phoneNumber: String by lazy{intent.getStringExtra("phoneNumber")}
+    private val phoneNum: String by lazy{intent.getStringExtra("phoneNum")}
 
-    lateinit var pin: AsanPinView
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_verify_phone_number)
 
+        initView()
         initIndigator()
 
         leftContainer.setOnClickListener{onBackPressed()}
@@ -54,14 +57,14 @@ class VerifyPhoneNumberActivity : AppCompatActivity() {
 
         countDown.start()
 
-        sendVerificationCode(phoneNumber)
+        //sendVerificationCode(phoneNumber)
 
-        pin = findViewById(R.id.pinCodeView)
+        number.text = phoneNum
+
         pin.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
                 if (s.toString().length == 6){
-                    countDown.cancel()
-                    startActivity(Intent(this@VerifyPhoneNumberActivity, AddPersonalInfoActivity::class.java))
+                    startActivity(Intent(this@VerifyPhoneNumberActivity, MainActivity::class.java))
                 }
             }
 
@@ -73,6 +76,12 @@ class VerifyPhoneNumberActivity : AppCompatActivity() {
             }
         })
 
+    }
+
+    private fun initView() {
+        sliderDotspanel = findViewById(R.id.slider_dots)
+        number = findViewById(R.id.number)
+        pin = findViewById(R.id.pin)
     }
 
     private fun blockUser() {
@@ -112,7 +121,6 @@ class VerifyPhoneNumberActivity : AppCompatActivity() {
     }
 
     private fun initIndigator() {
-        sliderDotspanel = findViewById(R.id.slider_dots)
         val dots = arrayOfNulls<ImageView>(INTRO_DOTS)
 
         for (i in 0 until INTRO_DOTS) {
@@ -124,12 +132,12 @@ class VerifyPhoneNumberActivity : AppCompatActivity() {
             params.setMargins(8, 0, 8, 0)
             sliderDotspanel!!.addView(dots[i], params)
         }
-        for(i in 0..1){
-            dots[i]?.setImageDrawable(
-                ContextCompat.getDrawable(this,
-                    R.drawable.selected_dot
-                ))
-        }
+        dots[0]?.setImageDrawable(ContextCompat.getDrawable(this,
+            R.drawable.selected_dot
+        ))
+        dots[1]?.setImageDrawable(ContextCompat.getDrawable(this,
+            R.drawable.selected_dot
+        ))
     }
 
 

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".ui.activity.EnterPinActivity">
+    tools:context=".ui.activity.PinActivity">
 
     <include
         android:id="@+id/include2"
@@ -65,20 +65,39 @@
 
             </LinearLayout>
 
-            <TextView
-                android:id="@+id/number"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="12dp"
                 android:layout_marginTop="8dp"
-                android:layout_marginEnd="12dp"
-                android:gravity="center"
-                android:text="@string/enter_otp_code"
-                android:textColor="@color/black"
-                android:fontFamily="@font/roboto_medium"
+                android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/auth_message" />
+                app:layout_constraintTop_toBottomOf="@+id/auth_message">
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/enter_otp_code"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/auth_message" />
+
+                <TextView
+                    android:id="@+id/number"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:layout_weight="1"
+                    android:text="+994 50 655 79 15"
+                    android:textColor="@color/black" />
+
+
+            </LinearLayout>
+
 
            <com.eebros.asan.view.AsanPinView
                 android:id="@+id/pinCodeView"

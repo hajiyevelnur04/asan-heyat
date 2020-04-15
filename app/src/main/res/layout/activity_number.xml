@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.activity.registration.RegisterNumberActivity">
+    tools:context=".ui.activity.registration.NumberActivity">
 
     <ImageView
         android:id="@+id/logoImage"
@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="36dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -36,23 +36,48 @@
 
             <TextView
                 android:textSize="12dp"
+                android:textAlignment="center"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_medium"
-                android:gravity="center"
                 android:text="Country"/>
 
-            <Spinner
-                android:id="@+id/countryCode"
-                android:textAlignment="textEnd"
+            <LinearLayout
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_marginTop="4dp"
+                android:id="@+id/itemCodeContainer"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:background="@drawable/input_item_background"
+                android:orientation="horizontal">
+                <EditText
+                    android:id="@+id/itemCodeHolder"
+                    android:focusable="false"
+                    android:layout_weight="2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:textAlignment="center"
+                    android:background="@android:color/transparent"
+                    android:hint="@string/mobile_pattern"
+                    android:inputType="number"
+                    android:textColorHint="#8e8e8e" />
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:scaleType="center"
+                    android:src="@drawable/chevron_down_copy_2"
+                    android:layout_width="0dp"
+                    android:layout_height="25dp"/>
+
+            </LinearLayout>
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_weight="6"
+            android:layout_marginLeft="12dp"
             android:layout_height="match_parent"
             android:orientation="vertical">
 
@@ -60,19 +85,29 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="12dp"
-                android:fontFamily="@font/roboto_medium"
                 android:text="Phone number"/>
 
-            <EditText
-                android:id="@+id/phoneNumber"
-                android:inputType="phone"
+            <LinearLayout
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_marginTop="4dp"
+                android:id="@+id/phoneNumberContainer"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:textColorHint="@color/hint"
-                android:fontFamily="@font/roboto_medium"
-                android:backgroundTint="@color/colorPrimary"
-                android:foregroundTint="@color/hint"
-                android:hint="Please enter phone number" />
+                android:background="@drawable/input_item_background"
+                android:orientation="horizontal">
+                <EditText
+                    android:id="@+id/phoneNumberHolder"
+                    android:focusable="true"
+                    android:padding="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:background="@android:color/transparent"
+                    android:hint="Please enter phone number"
+                    android:inputType="number"
+                    android:textColorHint="#8e8e8e" />
+            </LinearLayout>
 
         </LinearLayout>
 
@@ -86,7 +121,6 @@
         android:gravity="center"
         android:paddingBottom="8dp"
         android:paddingTop="8dp"
-        android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent">
@@ -97,7 +131,6 @@
             android:text="Changed your phone number?"
             android:layout_marginBottom="32dp"
             android:gravity="center"
-            android:fontFamily="@font/roboto_medium"
             android:textColor="@color/colorPrimary"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"/>
@@ -113,7 +146,6 @@
             android:paddingTop="15dp"
             android:paddingEnd="64dp"
             android:paddingBottom="15dp"
-            android:fontFamily="@font/roboto_medium"
             android:text="Continue"
             android:textColor="@color/white"
             android:textSize="16sp" />

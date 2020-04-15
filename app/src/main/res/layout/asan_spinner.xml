@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:minHeight="50dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:id="@+id/numberHolder"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="24dp"
+    android:layout_marginTop="21dp"
+    android:layout_marginRight="24dp"
+    android:background="@drawable/input_item_background"
+    android:orientation="horizontal"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <EditText
+        android:paddingStart="20.5dp"
+        android:id="@+id/itemHolder"
+        android:focusable="false"
+        android:layout_weight="8"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:background="@android:color/transparent"
+        android:hint="@string/mobile_pattern"
+        android:inputType="number"
+        android:textColorHint="#8e8e8e" />
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:scaleType="center"
+        android:src="@drawable/chevron_down_copy_2"
+        android:layout_width="0dp"
+        android:layout_height="25dp"/>
+
+</LinearLayout>

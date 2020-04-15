@@ -40,13 +40,13 @@ class EnterPinActivity : BaseActivity() {
     private var pinStep: Int = 1
 
     var creatingNewPin: Boolean = true
-    var updatingCurrentPin: Boolean = true
+    var updatingCurrentPin: Boolean = false
 
     lateinit var sliderDotspanel: LinearLayout
     lateinit var pinKeyBoard: AsanNumberBoard
     lateinit var pin: AsanPinView
 
-    private val phoneNumber: String by lazy{intent.getStringExtra("phoneNum")}
+    private val phoneNum: String by lazy{intent.getStringExtra("phoneNum")}
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -173,7 +173,6 @@ class EnterPinActivity : BaseActivity() {
         AlertDialog.Builder(this)
             .setMessage(message)
             .setPositiveButton(getString(R.string.ok)) { _, _ ->
-
             }
             .show()
     }
@@ -181,14 +180,14 @@ class EnterPinActivity : BaseActivity() {
     private fun navigateTo(activity: Activity){
         viewModel.inputs.login()
         val intent = Intent(this, activity::class.java)
-        intent.putExtra("phoneNumber",phoneNumber)
+        intent.putExtra("phoneNum",phoneNum)
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         startActivity(intent)
     }
 
     private fun initView() {
-        pinKeyBoard = findViewById<AsanNumberBoard>(R.id.pinKeyBoard)
-        pin = findViewById<AsanPinView>(R.id.pin)
+        pinKeyBoard = findViewById(R.id.pinKeyBoard)
+        pin = findViewById(R.id.pin)
     }
 
     private fun initIndigator() {

@@ -68,6 +68,7 @@ class VerifyPhoneNumberActivity : AppCompatActivity() {
         pin.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
                 if (s.toString().length == 6){
+                    countDown.onFinish()
                     startActivity(Intent(this@VerifyPhoneNumberActivity, AddPersonalInfoActivity::class.java))
                 }
             }

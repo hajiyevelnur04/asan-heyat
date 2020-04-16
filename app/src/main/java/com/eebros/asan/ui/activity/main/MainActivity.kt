@@ -26,11 +26,14 @@ class MainActivity : BaseActivity() {
 
         viewModel = ViewModelProvider(this, factory)[MainViewModel::class.java]
 
-        /*val toolbar: Toolbar = findViewById(R.id.home_screen_toolbar)
+        val toolbar: Toolbar = findViewById(R.id.home_screen_toolbar)
         setSupportActionBar(toolbar)
-        supportActionBar?.setDisplayShowTitleEnabled(false)*/
+        supportActionBar?.setDisplayShowTitleEnabled(false)
 
         val navView: BottomNavigationView = findViewById(R.id.bottomNavigationView)
+
+        val fragmentManager = supportFragmentManager
+        fragmentManager.beginTransaction().replace(R.id.host_fragment, HomeFragment()).commit()
 
         navView.setOnNavigationItemSelectedListener { item ->
             val transaction = supportFragmentManager.beginTransaction()

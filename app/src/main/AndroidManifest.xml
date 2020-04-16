@@ -52,7 +52,7 @@
             android:theme="@style/AppThemeNoActionBar"
             android:windowSoftInputMode="stateHidden|adjustResize" />
         <activity
-            android:name=".ui.activity.registration.RegisterNumberActivity"
+            android:name=".ui.activity.registration.NumberActivity"
             android:theme="@style/AppThemeNoActionBar"
             android:windowSoftInputMode="stateHidden|adjustResize" />
         <activity

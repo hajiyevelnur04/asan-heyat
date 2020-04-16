@@ -68,14 +68,39 @@
             android:textColor="@color/colorPrimary"
             android:fontFamily="@font/roboto_medium"/>
 
-        <Spinner
-            android:id="@+id/country"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:lines="1"
-            android:hint="Elnur"
+        <LinearLayout
+            android:clickable="true"
+            android:focusable="true"
             android:layout_marginTop="4dp"
-            android:fontFamily="@font/roboto_medium" />
+            android:id="@+id/cContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/input_item_background"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/country"
+                android:focusable="false"
+                android:padding="8dp"
+                android:layout_width="0dp"
+                android:layout_weight="6"
+                android:layout_height="wrap_content"
+                android:lines="1"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                android:hint="Azerbaijan"
+                android:inputType="text"
+                android:fontFamily="@font/roboto_medium"
+                android:textColorHint="#8e8e8e" />
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:scaleType="center"
+                android:src="@drawable/chevron_down_copy_2"
+                android:layout_width="0dp"
+                android:layout_height="25dp"/>
+
+        </LinearLayout>
 
     </LinearLayout>
 
@@ -98,17 +123,29 @@
             android:textColor="@color/colorPrimary"
             android:fontFamily="@font/roboto_medium"/>
 
-        <EditText
-            android:id="@+id/postCode"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:lines="1"
-            android:hint="01069"
+        <LinearLayout
+            android:clickable="true"
+            android:focusable="true"
             android:layout_marginTop="4dp"
-            android:fontFamily="@font/roboto_medium"
-            android:textColorHint="@color/hint"
-            android:backgroundTint="@color/colorPrimary"
-            android:foregroundTint="@color/hint"/>
+            android:id="@+id/postCodeContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/input_item_background"
+            android:orientation="horizontal">
+            <EditText
+                android:id="@+id/postCode"
+                android:focusable="true"
+                android:padding="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lines="1"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                android:hint="01069"
+                android:inputType="number"
+                android:fontFamily="@font/roboto_medium"
+                android:textColorHint="#8e8e8e" />
+        </LinearLayout>
 
     </LinearLayout>
 
@@ -132,17 +169,30 @@
             android:textColor="@color/colorPrimary"
             android:fontFamily="@font/roboto_medium"/>
 
-        <EditText
-            android:id="@+id/address"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:lines="1"
-            android:hint="Nermanov rayonu, "
+        <LinearLayout
+            android:clickable="true"
+            android:focusable="true"
             android:layout_marginTop="4dp"
-            android:fontFamily="@font/roboto_medium"
-            android:textColorHint="@color/hint"
-            android:backgroundTint="@color/colorPrimary"
-            android:foregroundTint="@color/hint"/>
+            android:id="@+id/addressContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/input_item_background"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/address"
+                android:focusable="true"
+                android:padding="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lines="1"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                android:hint="Baki seheri, Nermanov rayonu"
+                android:inputType="number"
+                android:fontFamily="@font/roboto_medium"
+                android:textColorHint="#8e8e8e" />
+        </LinearLayout>
 
     </LinearLayout>
 

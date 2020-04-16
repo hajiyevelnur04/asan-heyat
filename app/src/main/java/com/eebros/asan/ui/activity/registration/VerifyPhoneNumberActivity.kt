@@ -1,11 +1,13 @@
 package com.eebros.asan.ui.activity.registration
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
+import android.view.inputmethod.InputMethodManager
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -25,6 +27,7 @@ import kotlinx.android.synthetic.main.asan_into_header.*
 import java.math.RoundingMode
 import java.text.DecimalFormat
 import java.util.concurrent.TimeUnit
+
 
 class VerifyPhoneNumberActivity : AppCompatActivity() {
 
@@ -82,7 +85,7 @@ class VerifyPhoneNumberActivity : AppCompatActivity() {
     private fun initView() {
         sliderDotspanel = findViewById(R.id.slider_dots)
         number = findViewById(R.id.number)
-        pin = findViewById(R.id.pin)
+        pin = findViewById(R.id.pinCodeView)
     }
 
     private fun blockUser() {

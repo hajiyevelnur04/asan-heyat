@@ -69,22 +69,35 @@
             android:textColor="@color/colorPrimary"
             android:fontFamily="@font/roboto_medium"/>
 
-        <EditText
-            android:id="@+id/firstName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:lines="1"
-            android:hint="Elnur"
+        <LinearLayout
+            android:clickable="true"
+            android:focusable="true"
             android:layout_marginTop="4dp"
-            android:fontFamily="@font/roboto_medium"
-            android:textColorHint="@color/hint"
-            android:backgroundTint="@color/colorPrimary"
-            android:foregroundTint="@color/hint"/>
+            android:id="@+id/NameContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/input_item_background"
+            android:orientation="horizontal">
+            <EditText
+                android:id="@+id/firstName"
+                android:focusable="true"
+                android:padding="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lines="1"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                android:hint="@string/firstName"
+                android:inputType="number"
+                android:fontFamily="@font/roboto_medium"
+                android:textColorHint="#8e8e8e" />
+        </LinearLayout>
+
 
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/lasttNameContainer"
+        android:id="@+id/lastNameContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -102,54 +115,77 @@
             android:textColor="@color/colorPrimary"
             android:fontFamily="@font/roboto_medium"/>
 
-        <EditText
-            android:id="@+id/lastName"
+        <LinearLayout
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_marginTop="4dp"
+            android:id="@+id/lNameContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/input_item_background"
+            android:orientation="horizontal">
+            <EditText
+                android:id="@+id/lastName"
+                android:focusable="true"
+                android:padding="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lines="1"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                android:hint="@string/lastName"
+                android:inputType="number"
+                android:fontFamily="@font/roboto_medium"
+                android:textColorHint="#8e8e8e" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/dateOfBirthContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:lines="1"
-            android:hint="Hajiyev"
+            android:orientation="vertical"
             android:layout_marginTop="4dp"
-            android:fontFamily="@font/roboto_medium"
-            android:textColorHint="@color/hint"
-            android:backgroundTint="@color/colorPrimary"
-            android:foregroundTint="@color/hint"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lasttNameContainer">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/dateOfBirth"
+                android:textColor="@color/colorPrimary"
+                android:fontFamily="@font/roboto_medium"/>
+
+            <LinearLayout
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_marginTop="4dp"
+                android:id="@+id/dOfBContainer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/input_item_background"
+                android:orientation="horizontal">
+                <EditText
+                    android:id="@+id/dateOfBirth"
+                    android:focusable="true"
+                    android:padding="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:lines="1"
+                    android:layout_gravity="center"
+                    android:background="@android:color/transparent"
+                    android:hint="15/10/1992"
+                    android:inputType="date"
+                    android:fontFamily="@font/roboto_medium"
+                    android:textColorHint="#8e8e8e" />
+            </LinearLayout>
+
+        </LinearLayout>
 
     </LinearLayout>
 
 
-    <LinearLayout
-        android:id="@+id/dateOfBirthContainer"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginRight="12dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginLeft="12dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lasttNameContainer">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/dateOfBirth"
-            android:textColor="@color/colorPrimary"
-            android:fontFamily="@font/roboto_medium"/>
-
-        <EditText
-            android:id="@+id/dateOfBirth"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="date"
-            android:lines="1"
-            android:hint="15/10/1992"
-            android:layout_marginTop="4dp"
-            android:fontFamily="@font/roboto_medium"
-            android:textColorHint="@color/hint"
-            android:backgroundTint="@color/colorPrimary"
-            android:foregroundTint="@color/hint"/>
-
-    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/continueContainer"

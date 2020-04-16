@@ -90,17 +90,27 @@
             android:textColor="@color/colorPrimary"
             android:fontFamily="@font/roboto_medium"/>
 
-        <EditText
-            android:id="@+id/email"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:lines="1"
-            android:hint="hajiyevelnur04@gmail.com"
+        <LinearLayout
+            android:clickable="true"
+            android:focusable="true"
             android:layout_marginTop="4dp"
-            android:fontFamily="@font/roboto_medium"
-            android:textColorHint="@color/hint"
-            android:backgroundTint="@color/colorPrimary"
-            android:foregroundTint="@color/hint"/>
+            android:id="@+id/eContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/input_item_background"
+            android:orientation="horizontal">
+            <EditText
+                android:id="@+id/email"
+                android:focusable="true"
+                android:padding="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                android:hint="hajiyevelnur04@gmail.com"
+                android:inputType="textEmailAddress"
+                android:textColorHint="#8e8e8e" />
+        </LinearLayout>
 
     </LinearLayout>
 

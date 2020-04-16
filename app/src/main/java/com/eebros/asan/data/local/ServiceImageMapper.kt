@@ -15,10 +15,21 @@ class ServiceImageMapper {
     }
     fun saveCategoryMapping() {
 
-        serviceMap["asan təmizlik"] = R.mipmap.ic_launcher
-        serviceMap["asan santexnik"] = R.mipmap.ic_launcher
-        serviceMap["asan bərbər"] = R.mipmap.ic_launcher
-        serviceMap["asan çatdirilma"] = R.mipmap.ic_launcher
+        serviceMap["baby care"] = R.drawable.main_ic_baby_care
+        serviceMap["beauty services"] = R.drawable.main_ic_beauty_services
+        serviceMap["dog walking"] = R.drawable.main_ic_dog_walking
+        serviceMap["pet care"] = R.drawable.main_ic_pet_care
+
+        serviceMap["car wash"] = R.drawable.main_ic_car_wash
+        serviceMap["car repair"] = R.drawable.main_ic_car_repair
+        serviceMap["electronics"] = R.drawable.main_ic_electricians
+        serviceMap["pest control"] = R.drawable.main_ic_pest_control
+
+
+        serviceMap["bike ride"] = R.drawable.main_ic_bike_ride
+        serviceMap["flowers delivery"] = R.drawable.main_ic_flowers_delivery
+        serviceMap["courier service"] = R.drawable.main_ic_courier_service
+        serviceMap["workout trainer"] = R.drawable.main_ic_workout_trainer
 
     }
 }

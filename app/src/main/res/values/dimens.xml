@@ -20,5 +20,6 @@
     <dimen name="pin_keyboard_button_cancel_text_size">35sp</dimen>
     <dimen name="profile_image_size">100dp</dimen>
     <dimen name="stc_pin_view_height">16dp</dimen>
+    <dimen name="borderThickness">128dp</dimen>
 
 </resources>

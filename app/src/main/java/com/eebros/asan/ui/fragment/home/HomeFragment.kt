@@ -60,15 +60,22 @@ class HomeFragment : BaseFragment() {
         storyList.add(R.drawable.santexnik)
         storyList.add(R.drawable.beverage)
 
-        serviceList.add("asan təmizlik")
-        serviceList.add("asan santexnik")
-        serviceList.add("asan bərbər")
-        serviceList.add("asan çatdirilma")
 
-        serviceList.add("asan təmizlik")
-        serviceList.add("asan santexnik")
-        serviceList.add("asan bərbər")
-        serviceList.add("asan çatdirilma")
+        serviceList.add("baby care")
+        serviceList.add("beauty services")
+        serviceList.add("dog walking")
+        serviceList.add("pet care")
+
+
+        serviceList.add("car wash")
+        serviceList.add("car repair")
+        serviceList.add("electronics")
+        serviceList.add("pest control")
+
+        serviceList.add("bike ride")
+        serviceList.add("flowers delivery")
+        serviceList.add("courier service")
+        serviceList.add("workout trainer")
 
 
         val storyAdapter = StoriesRecyclerViewAdapter(storyList) {

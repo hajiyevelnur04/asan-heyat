@@ -4,7 +4,8 @@ import androidx.lifecycle.ViewModel
 import com.eebros.asan.SplashActivityViewModel
 import com.eebros.asan.di.scope.MainScope
 import com.eebros.asan.di.scope.ViewModelKey
-import com.eebros.asan.ui.activity.EnterPinViewModel
+import com.eebros.asan.ui.activity.PinRegisteredViewModel
+import com.eebros.asan.ui.activity.PinRegistrationViewModel
 import com.eebros.asan.ui.activity.main.MainViewModel
 import com.eebros.asan.ui.activity.registration.DoneRegistrationViewModel
 import com.eebros.asan.ui.activity.registration.NumberViewModel
@@ -26,8 +27,14 @@ abstract class MainModuleViewModel {
     @Binds
     @MainScope
     @IntoMap
-    @ViewModelKey(EnterPinViewModel::class)
-    abstract fun bindEnterPinViewModel(viewModel: EnterPinViewModel): ViewModel
+    @ViewModelKey(PinRegisteredViewModel::class)
+    abstract fun bindPinRegisteredViewModel(viewModel: PinRegisteredViewModel): ViewModel
+
+    @Binds
+    @MainScope
+    @IntoMap
+    @ViewModelKey(PinRegistrationViewModel::class)
+    abstract fun bindPinRegistrationViewModel(viewModel: PinRegistrationViewModel): ViewModel
 
     @Binds
     @MainScope

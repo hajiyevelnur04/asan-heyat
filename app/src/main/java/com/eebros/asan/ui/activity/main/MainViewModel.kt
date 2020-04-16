@@ -5,5 +5,5 @@ import com.eebros.asan.base.BaseViewModel
 import javax.inject.Inject
 
 class MainViewModel @Inject constructor(sharedPreferences: SharedPreferences) : BaseViewModel() {
-
+    val value = sharedPreferences.getBoolean("pinIsSet",false)
 }

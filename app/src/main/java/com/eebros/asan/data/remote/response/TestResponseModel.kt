@@ -1,4 +1,4 @@
-package com.eebros.asan.remote.data.response
+package com.eebros.asan.data.remote.response
 
 data class TestResponseModel(
     //100,200,300,404,500 etc

@@ -20,6 +20,7 @@ import com.eebros.asan.Constants.Companion.INTRO_DOTS
 import com.eebros.asan.R
 import com.eebros.asan.base.BaseActivity
 import com.eebros.asan.di.ViewModelProviderFactory
+import com.eebros.asan.ui.activity.main.MainActivity
 import com.eebros.asan.ui.activity.registration.VerifyPhoneNumberActivity
 import com.eebros.asan.view.AsanNumberBoard
 import com.eebros.asan.view.AsanPinView
@@ -29,35 +30,30 @@ import kotlinx.android.synthetic.main.number_board.*
 import javax.inject.Inject
 
 
-class PinActivity : BaseActivity() {
+class PinRegisteredActivity : BaseActivity() {
 
     @Inject
     lateinit var factory: ViewModelProviderFactory
 
-    lateinit var viewModel: EnterPinViewModel
+    lateinit var viewModel: PinRegisteredViewModel
 
-    lateinit var pinCode: String
+    var pinCode: String = "1111"
     private var pinStep: Int = 1
 
     var creatingNewPin: Boolean = true
     var updatingCurrentPin: Boolean = false
 
-    lateinit var sliderDotspanel: LinearLayout
     lateinit var pinKeyBoard: AsanNumberBoard
     lateinit var pin: AsanPinView
 
-    private val phoneNum: String by lazy{intent.getStringExtra("phoneNum")}
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_pin)
+        setContentView(R.layout.pin_registered_activity)
 
-        viewModel = ViewModelProvider(this, factory)[EnterPinViewModel::class.java]
+        viewModel = ViewModelProvider(this, factory)[PinRegisteredViewModel::class.java]
 
         initView()
-        initIndigator()
-
-        leftContainer.setOnClickListener{onBackPressed()}
 
         buttonCancel.setOnClickListener { finish() }
 
@@ -68,7 +64,7 @@ class PinActivity : BaseActivity() {
             disablePinCancelling()
             showBiometricPrompt(true)
         } else {
-            viewModel.inputs.checkIfFingerPrintIsSet()
+            //viewModel.inputs.checkIfFingerPrintIsSet()
         }
 
         pin.setTextIsSelectable(true)
@@ -90,45 +86,31 @@ class PinActivity : BaseActivity() {
             override fun afterTextChanged(s: Editable?) {
                 if (creatingNewPin) {
                     if (s.toString().length == 4) {
-                        if (pinStep == 1) {
-                            pinCode = s.toString()
-                            pin.setText("")
-                            pinStep = 2
-                            Toast.makeText(
-                                this@PinActivity,
-                                getString(R.string.repeat_pin),
-                                Toast.LENGTH_SHORT
-                            ).show()
+                        if (s.toString() == pinCode) {
+                            navigateTo(MainActivity())
                         } else {
-                            if (s.toString() == pinCode) {
-                                viewModel.inputs.savePin(pinCode)
-                                navigateTo(VerifyPhoneNumberActivity())
-                            } else {
-                                showDialog(getString(R.string.repeat_pin_is_wrong))
-                                pinStep = 1
-                                pinCode = ""
-                                pin.setText("")
-                            }
+                            showDialog(getString(R.string.pin_is_wrong))
+                            pin.setText("")
                         }
                     }
 
                 } else if (updatingCurrentPin) {
                     if (s.toString().length == 4) {
                         pin.setText("")
-                        if (s.toString() == viewModel.getCurrentPin()) {
+                        /*if (s.toString() == viewModel.getCurrentPin()) {
                             Toast.makeText(
-                                this@PinActivity,
+                                this@PinRegisteredActivity,
                                 getString(R.string.enter_new_pin),
                                 Toast.LENGTH_SHORT
                             ).show()
                             creatingNewPin = true
-                        }
+                        }*/
                         creatingNewPin = true
                     }
                     //Enter current PIN
                 } else {
                     if (s.toString().length == 4) {
-                        viewModel.inputs.checkPin(s.toString())
+                        //viewModel.inputs.checkPin(s.toString())
                     }
                 }
             }
@@ -143,7 +125,7 @@ class PinActivity : BaseActivity() {
     }
 
     private fun setInputListener() {
-        viewModel.inputs.getUserInfo()
+        //viewModel.inputs.getUserInfo()
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             pin.showSoftInputOnFocus = false
         } else {
@@ -153,7 +135,7 @@ class PinActivity : BaseActivity() {
 
     private fun setOutputListener() {
 
-        viewModel.outputs.onFingerprintIsSet().subscribe { isSet ->
+       /* viewModel.outputs.onFingerprintIsSet().subscribe { isSet ->
             if (isSet)
                 showBiometricPrompt(isSet)
         }.addTo(subscriptions)
@@ -166,7 +148,7 @@ class PinActivity : BaseActivity() {
                 showDialog(getString(R.string.pin_is_wrong))
                 pin.setText("")
             }
-        }.addTo(subscriptions)
+        }.addTo(subscriptions)*/
     }
 
     private fun showDialog(message: String) {
@@ -178,9 +160,8 @@ class PinActivity : BaseActivity() {
     }
 
     private fun navigateTo(activity: Activity){
-        viewModel.inputs.login()
+       /* viewModel.inputs.login()*/
         val intent = Intent(this, activity::class.java)
-        intent.putExtra("phoneNum",phoneNum)
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         startActivity(intent)
     }
@@ -190,23 +171,6 @@ class PinActivity : BaseActivity() {
         pin = findViewById(R.id.pin)
     }
 
-    private fun initIndigator() {
-        sliderDotspanel = findViewById(R.id.slider_dots)
-        val dots = arrayOfNulls<ImageView>(INTRO_DOTS)
-
-        for (i in 0 until INTRO_DOTS) {
-            dots[i] = ImageView(this)
-            dots[i]!!.setImageDrawable(ContextCompat.getDrawable(this,
-                R.drawable.default_dot
-            ))
-            val params = LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT)
-            params.setMargins(8, 0, 8, 0)
-            sliderDotspanel!!.addView(dots[i], params)
-        }
-        dots[0]?.setImageDrawable(ContextCompat.getDrawable(this,
-            R.drawable.selected_dot
-        ))
-    }
 
     private fun disablePinCancelling() {
         buttonCancel.isEnabled = false
@@ -244,7 +208,7 @@ class PinActivity : BaseActivity() {
                                 if (!creatingNewPin) {
                                     navigateTo(VerifyPhoneNumberActivity())
                                 } else {
-                                    viewModel.inputs.fingerprintIsSet(true)
+                                    //viewModel.inputs.fingerprintIsSet(true)
                                 }
                             }
                         }

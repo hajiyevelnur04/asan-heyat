@@ -10,7 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.eebros.asan.R
 import com.eebros.asan.base.BaseActivity
 import com.eebros.asan.di.ViewModelProviderFactory
-import com.eebros.asan.ui.activity.PinActivity
+import com.eebros.asan.ui.activity.PinRegistrationActivity
 import javax.inject.Inject
 
 
@@ -46,7 +46,7 @@ class NumberActivity : BaseActivity() {
 
         continueB.setOnClickListener{
             var code:String = itemCodeHolder.text.toString()
-            var intent = Intent(this, PinActivity::class.java)
+            var intent = Intent(this, PinRegistrationActivity::class.java)
             intent.putExtra("phoneNum", "$selectedCode${phoneNumberHolder.text}")
             startActivity(intent)
         }

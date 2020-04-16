@@ -48,4 +48,5 @@
     <string name="successText">Your account has been created</string>
     <string name="title_activity_maps">Map</string>
     <string name="mobile_pattern">+994</string>
+    <string name="login_with_pin">Login with your pin</string>
 </resources>

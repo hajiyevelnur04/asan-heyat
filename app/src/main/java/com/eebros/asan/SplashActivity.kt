@@ -1,11 +1,15 @@
 package com.eebros.asan
 
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
 import com.eebros.asan.base.BaseActivity
+import com.eebros.asan.data.local.ServiceImageMapper
 import com.eebros.asan.di.ViewModelProviderFactory
 import com.eebros.asan.local.ErrorMapper
+import com.eebros.asan.ui.activity.PinRegisteredActivity
+import com.eebros.asan.ui.activity.PinRegistrationActivity
 import com.eebros.asan.ui.activity.registration.NumberActivity
 import io.reactivex.rxkotlin.addTo
 import javax.inject.Inject
@@ -22,6 +26,7 @@ class SplashActivity : BaseActivity() {
         setContentView(R.layout.activity_splash)
 
         ErrorMapper().saveDataToMap()
+        ServiceImageMapper().saveCategoryMapping()
 
         viewModel = ViewModelProvider(this, factory)[SplashActivityViewModel::class.java]
 
@@ -31,7 +36,9 @@ class SplashActivity : BaseActivity() {
 
     private fun setInputListener() {
         if (viewModel.pinIsSet) {
-            viewModel.inputs.checkToken()
+            startActivity(Intent(this@SplashActivity, PinRegisteredActivity::class.java))
+            finish()
+            //viewModel.inputs.checkToken()
         } else {
             startActivity(Intent(this@SplashActivity, NumberActivity::class.java))
             finish()
@@ -39,7 +46,7 @@ class SplashActivity : BaseActivity() {
     }
 
     private fun setOutputListener() {
-        viewModel.outputs.tokenUpdated().subscribe {
+        /*viewModel.outputs.tokenUpdated().subscribe {
             startActivity(Intent(this@SplashActivity, NumberActivity::class.java))
             finish()
         }.addTo(subscriptions)
@@ -48,6 +55,6 @@ class SplashActivity : BaseActivity() {
             intent.putExtra("description", getString(ErrorMapper().getErrorMessage(it)))
             startActivity(intent)
             finish()
-        }.addTo(subscriptions)
+        }.addTo(subscriptions)*/
     }
 }

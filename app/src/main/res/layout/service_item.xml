@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    android:layout_gravity="center"
+    android:id="@+id/first"
+    android:layout_width="95dp"
+    android:layout_weight="1"
+    android:layout_height="95dp"
+    android:background="@drawable/cardview_service_background"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="8dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_weight="1"
+            android:scaleType="centerInside"
+            android:id="@+id/firstImage"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:src="@drawable/aze"/>
+
+        <TextView
+            app:autoSizeTextType="uniform"
+            app:autoSizeMinTextSize="1sp"
+            app:autoSizeMaxTextSize="100sp"
+            app:autoSizeStepGranularity="3sp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:id="@+id/firstText"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:textColor="@color/colorPrimary"
+            android:text="Asan temizlik"/>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

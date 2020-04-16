@@ -4,12 +4,12 @@ import android.content.SharedPreferences
 import com.eebros.asan.base.BaseViewModel
 import com.eebros.asan.base.BaseViewModelInputs
 import com.eebros.asan.base.BaseViewModelOutputs
-import com.eebros.asan.remote.data.response.TestResponseModel
+import com.eebros.asan.data.remote.response.TestResponseModel
 import io.reactivex.Observable
 import io.reactivex.subjects.PublishSubject
 import javax.inject.Inject
 
-interface EnterPinViewModelInputs : BaseViewModelInputs{
+interface PinRegistrationViewModelInputs : BaseViewModelInputs{
     fun savePin(pin: String)
     fun checkPin(pin: String)
     fun fingerprintIsSet(authenticated: Boolean)
@@ -18,18 +18,18 @@ interface EnterPinViewModelInputs : BaseViewModelInputs{
     fun getUserInfo()
 }
 
-interface EnterPinViewModelOutputs : BaseViewModelOutputs{
+interface PinRegistrationViewModelOutputs : BaseViewModelOutputs{
     fun onPinIsCorrect(): Observable<Boolean>
     fun onFingerprintIsSet(): Observable<Boolean>
     fun onUserName(): String?
     fun onGetUserInfoSuccess(): PublishSubject<TestResponseModel>
 }
 
-class EnterPinViewModel @Inject constructor(private val sharedPreferences: SharedPreferences) :
-    BaseViewModel(), EnterPinViewModelInputs, EnterPinViewModelOutputs{
+class PinRegistrationViewModel @Inject constructor(private val sharedPreferences: SharedPreferences) :
+    BaseViewModel(), PinRegistrationViewModelInputs, PinRegistrationViewModelOutputs{
 
-    override val inputs: EnterPinViewModelInputs = this
-    override val outputs: EnterPinViewModelOutputs = this
+    override val inputs: PinRegistrationViewModelInputs = this
+    override val outputs: PinRegistrationViewModelOutputs = this
 
     private var pinIsCorrect = PublishSubject.create<Boolean>()
     private var fingerprintIsSet = PublishSubject.create<Boolean>()
@@ -40,7 +40,7 @@ class EnterPinViewModel @Inject constructor(private val sharedPreferences: Share
 
     //inputs
     override fun savePin(pin: String) {
-        sharedPreferences.edit().putBoolean("pinIsSet", true).apply()
+        sharedPreferences.edit().putBoolean("pinIsSet", true).commit()
         sharedPreferences.edit().putString("loginPin", pin).apply()
     }
 

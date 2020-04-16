@@ -4,8 +4,8 @@ import com.eebros.asan.repository.MainRepository
 import com.eebros.asan.repository.MainRepositoryType
 import com.eebros.asan.di.scope.MainScope
 import com.eebros.asan.Constants.Companion.BASE_URL
-import com.eebros.asan.remote.service.MainApiService
-import com.eebros.asan.remote.service.MainApiServiceProvider
+import com.eebros.asan.data.remote.service.MainApiService
+import com.eebros.asan.data.remote.service.MainApiServiceProvider
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient

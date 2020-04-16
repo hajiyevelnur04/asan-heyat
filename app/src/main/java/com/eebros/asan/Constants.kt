@@ -16,8 +16,10 @@ class Constants{
     }
 }
 
-fun animateProgressImage(progressImage: ImageView) {
-    progressImage.visibility = View.VISIBLE
+fun animateProgressImage(progressImage: ArrayList<ImageView>) {
+    progressImage.forEach{
+        it.visibility = View.VISIBLE
+    }
     val rotate = RotateAnimation(
         0f,
         360f,
@@ -29,5 +31,7 @@ fun animateProgressImage(progressImage: ImageView) {
     rotate.duration = 2000
     rotate.interpolator = LinearInterpolator()
     rotate.repeatCount = Animation.INFINITE
-    progressImage.startAnimation(rotate)
+    progressImage.forEach{
+        it.startAnimation(rotate)
+    }
 }

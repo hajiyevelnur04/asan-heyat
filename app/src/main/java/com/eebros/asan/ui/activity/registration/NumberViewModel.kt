@@ -5,7 +5,7 @@ import android.content.Context
 import com.eebros.asan.base.BaseViewModel
 import com.eebros.asan.base.BaseViewModelInputs
 import com.eebros.asan.base.BaseViewModelOutputs
-import com.eebros.asan.remote.data.response.TestResponseModel
+import com.eebros.asan.data.remote.response.TestResponseModel
 import io.reactivex.subjects.PublishSubject
 
 import javax.inject.Inject

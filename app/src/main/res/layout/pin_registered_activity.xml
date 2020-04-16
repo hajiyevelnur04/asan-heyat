@@ -6,55 +6,43 @@
     android:layout_height="match_parent"
     android:background="@color/white">
 
-    <include
-        android:id="@+id/include1"
-        layout="@layout/asan_into_header" />
 
     <LinearLayout
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="?actionBarSize"
         android:id="@+id/headerContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/include1">
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/emptyLeft"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:gravity="center"
             android:textSize="24dp" />
 
         <LinearLayout
             android:layout_width="0dp"
-            android:layout_weight="6"
+            android:layout_marginTop="24dp"
             android:layout_height="wrap_content"
+            android:layout_weight="6"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/header1"
-                android:layout_weight="1"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:gravity="center"
-                android:textColor="@color/black"
-                android:text="@string/header_pin1"
+                android:layout_weight="1"
                 android:fontFamily="@font/roboto_medium"
+                android:gravity="center"
+                android:text="@string/login_with_pin"
+                android:textColor="@color/black"
                 android:textSize="24dp" />
 
-            <TextView
-                android:id="@+id/header2"
-                android:layout_weight="1"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:gravity="center"
-                android:textColor="@color/black"
-                android:text="@string/header_pin2"
-                android:fontFamily="@font/roboto_medium"
-                android:textSize="24dp" />
 
         </LinearLayout>
 
@@ -62,6 +50,7 @@
             android:id="@+id/emptyRight"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:gravity="center"
             android:textSize="24dp" />
 
@@ -129,16 +118,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
+            android:textColor="@color/colorPrimary"
             android:fontFamily="@font/roboto_medium"
-            android:text="@string/terms"
+            android:text="@string/login_with_biometric_credentials"
             android:textSize="14dp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:fontFamily="@font/roboto_bold"
-            android:text="@string/termsAndCondition"/>
 
     </LinearLayout>
 

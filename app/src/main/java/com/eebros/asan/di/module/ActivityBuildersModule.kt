@@ -4,7 +4,8 @@ import com.eebros.asan.SplashActivity
 import com.eebros.asan.di.module.sub.MainModule
 import com.eebros.asan.di.module.viewmodel.MainModuleViewModel
 import com.eebros.asan.di.scope.MainScope
-import com.eebros.asan.ui.activity.PinActivity
+import com.eebros.asan.ui.activity.PinRegisteredActivity
+import com.eebros.asan.ui.activity.PinRegistrationActivity
 import com.eebros.asan.ui.activity.main.MainActivity
 import com.eebros.asan.ui.activity.registration.DoneRegistrationActivity
 import com.eebros.asan.ui.activity.registration.NumberActivity
@@ -22,7 +23,11 @@ abstract class ActivityBuildersModule {
 
     @MainScope
     @ContributesAndroidInjector(modules = [MainModule::class, MainModuleViewModel::class])
-    abstract fun enterPinActivity(): PinActivity
+    abstract fun pinRegistrationActivity(): PinRegistrationActivity
+
+    @MainScope
+    @ContributesAndroidInjector(modules = [MainModule::class, MainModuleViewModel::class])
+    abstract fun pinRegisteredActivity(): PinRegisteredActivity
 
     @MainScope
     @ContributesAndroidInjector(modules = [MainModule::class, MainModuleViewModel::class])

@@ -1,8 +1,8 @@
-package com.eebros.asan.remote.service
+package com.eebros.asan.data.remote.service
 
-import com.eebros.asan.remote.data.request.TestRequestModel
-import com.eebros.asan.remote.data.response.TestResponseModel
-import com.eebros.asan.remote.provider.ServiceProvider
+import com.eebros.asan.data.remote.request.TestRequestModel
+import com.eebros.asan.data.remote.response.TestResponseModel
+import com.eebros.asan.data.remote.provider.ServiceProvider
 import io.reactivex.Single
 import retrofit2.http.Body
 import retrofit2.http.POST

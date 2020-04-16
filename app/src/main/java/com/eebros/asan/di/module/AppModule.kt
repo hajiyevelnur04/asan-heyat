@@ -21,5 +21,5 @@ class AppModule {
 
     @Provides
     @Reusable
-    fun provideSharedPreferences(context: Context)= context.getSharedPreferences("some_test", Context.MODE_PRIVATE)
+    fun provideSharedPreferences(context: Context)= context.getSharedPreferences("asan", Context.MODE_PRIVATE)
 }

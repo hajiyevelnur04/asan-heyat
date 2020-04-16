@@ -44,11 +44,11 @@ class SplashActivityViewModel @Inject constructor(private val sharedPrefs: Share
                 if (it.status == 1) {
                     updateToken(it.token)
                 } else {
-                    sharedPrefs.edit().putBoolean("pinIsSet", false).apply()
+                    //sharedPrefs.edit().putBoolean("pinIsSet", false).apply()
                     error.onNext(it.status)
                 }
             },{
-                sharedPrefs.edit().putBoolean("pinIsSet", false).apply()
+                //sharedPrefs.edit().putBoolean("pinIsSet", false).apply()
                 error.onNext(1992)
                 it.printStackTrace()
             }).addTo(subscriptions)

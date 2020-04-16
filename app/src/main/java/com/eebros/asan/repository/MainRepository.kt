@@ -1,10 +1,9 @@
 package com.eebros.asan.repository
 
-import com.eebros.asan.remote.data.request.TestRequestModel
-import com.eebros.asan.remote.data.response.TestResponseModel
-import com.eebros.asan.remote.service.MainApiServiceProvider
+import com.eebros.asan.data.remote.request.TestRequestModel
+import com.eebros.asan.data.remote.response.TestResponseModel
+import com.eebros.asan.data.remote.service.MainApiServiceProvider
 
-import io.reactivex.Observable
 import io.reactivex.Single
 import javax.inject.Inject
 

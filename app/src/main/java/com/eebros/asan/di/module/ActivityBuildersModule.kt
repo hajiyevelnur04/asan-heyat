@@ -1,11 +1,13 @@
 package com.eebros.asan.di.module
 
-import com.eebros.asan.ui.activity.registration.RegisterNumberActivity
 import com.eebros.asan.SplashActivity
 import com.eebros.asan.di.module.sub.MainModule
 import com.eebros.asan.di.module.viewmodel.MainModuleViewModel
 import com.eebros.asan.di.scope.MainScope
-import com.eebros.asan.ui.activity.EnterPinActivity
+import com.eebros.asan.ui.activity.PinActivity
+import com.eebros.asan.ui.activity.main.MainActivity
+import com.eebros.asan.ui.activity.registration.DoneRegistrationActivity
+import com.eebros.asan.ui.activity.registration.NumberActivity
 import com.eebros.asan.ui.fragment.dashboard.DashboardFragment
 import com.eebros.asan.ui.fragment.home.HomeFragment
 import com.eebros.asan.ui.fragment.notifications.NotificationsFragment
@@ -16,15 +18,23 @@ import dagger.android.ContributesAndroidInjector
 abstract class ActivityBuildersModule {
     @MainScope
     @ContributesAndroidInjector(modules = [MainModule::class, MainModuleViewModel::class])
-    abstract fun registerNumberActivity(): RegisterNumberActivity
+    abstract fun numberActivity(): NumberActivity
 
     @MainScope
     @ContributesAndroidInjector(modules = [MainModule::class, MainModuleViewModel::class])
-    abstract fun enterPinActivity(): EnterPinActivity
+    abstract fun enterPinActivity(): PinActivity
 
     @MainScope
     @ContributesAndroidInjector(modules = [MainModule::class, MainModuleViewModel::class])
     abstract fun splashActivity(): SplashActivity
+
+    @MainScope
+    @ContributesAndroidInjector(modules = [MainModule::class, MainModuleViewModel::class])
+    abstract fun doneRegistrationActivity(): DoneRegistrationActivity
+
+    @MainScope
+    @ContributesAndroidInjector(modules = [MainModule::class, MainModuleViewModel::class])
+    abstract fun mainActivity(): MainActivity
 
 
     @MainScope

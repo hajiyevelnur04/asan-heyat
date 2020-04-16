@@ -29,7 +29,7 @@ import kotlinx.android.synthetic.main.number_board.*
 import javax.inject.Inject
 
 
-class EnterPinActivity : BaseActivity() {
+class PinActivity : BaseActivity() {
 
     @Inject
     lateinit var factory: ViewModelProviderFactory
@@ -95,7 +95,7 @@ class EnterPinActivity : BaseActivity() {
                             pin.setText("")
                             pinStep = 2
                             Toast.makeText(
-                                this@EnterPinActivity,
+                                this@PinActivity,
                                 getString(R.string.repeat_pin),
                                 Toast.LENGTH_SHORT
                             ).show()
@@ -117,7 +117,7 @@ class EnterPinActivity : BaseActivity() {
                         pin.setText("")
                         if (s.toString() == viewModel.getCurrentPin()) {
                             Toast.makeText(
-                                this@EnterPinActivity,
+                                this@PinActivity,
                                 getString(R.string.enter_new_pin),
                                 Toast.LENGTH_SHORT
                             ).show()

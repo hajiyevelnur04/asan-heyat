@@ -10,19 +10,19 @@ import io.reactivex.subjects.PublishSubject
 
 import javax.inject.Inject
 
-interface RegisterNumberInputs : BaseViewModelInputs{
+interface NumberInputs : BaseViewModelInputs{
     fun sendVerificationNumber(activity: Activity, number: String)
 }
 
-interface RegisterNumberOutputs: BaseViewModelOutputs{
+interface NumberOutputs: BaseViewModelOutputs{
     fun testOnSuccess(): PublishSubject<ArrayList<TestResponseModel>>
 }
 
-class RegisterNumberViewModel @Inject constructor(context: Context) : BaseViewModel(),
-    RegisterNumberInputs,
-    RegisterNumberOutputs {
-    override val inputs: RegisterNumberInputs = this
-    override val outputs: RegisterNumberOutputs = this
+class NumberViewModel @Inject constructor(context: Context) : BaseViewModel(),
+    NumberInputs,
+    NumberOutputs {
+    override val inputs: NumberInputs = this
+    override val outputs: NumberOutputs = this
 
     private val testSuccess = PublishSubject.create<ArrayList<TestResponseModel>>()
 

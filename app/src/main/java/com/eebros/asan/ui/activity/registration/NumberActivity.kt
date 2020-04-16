@@ -28,14 +28,14 @@ class NumberActivity : BaseActivity() {
     lateinit var itemCodeContainer: LinearLayout
     lateinit var phoneNumberContainer: LinearLayout
 
-    private lateinit var viewModel: MainActivityViewModel
+    private lateinit var viewModel: NumberViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_number)
 
         //init view model with factory
-        viewModel = ViewModelProvider(this, factory)[MainActivityViewModel::class.java]
+        viewModel = ViewModelProvider(this, factory)[NumberViewModel::class.java]
 
         initView()
         defaultButtonView()

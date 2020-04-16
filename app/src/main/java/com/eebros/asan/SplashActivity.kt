@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.eebros.asan.base.BaseActivity
 import com.eebros.asan.di.ViewModelProviderFactory
 import com.eebros.asan.local.ErrorMapper
-import com.eebros.asan.ui.activity.registration.RegisterNumberActivity
+import com.eebros.asan.ui.activity.registration.NumberActivity
 import io.reactivex.rxkotlin.addTo
 import javax.inject.Inject
 
@@ -33,18 +33,18 @@ class SplashActivity : BaseActivity() {
         if (viewModel.pinIsSet) {
             viewModel.inputs.checkToken()
         } else {
-            startActivity(Intent(this@SplashActivity, RegisterNumberActivity::class.java))
+            startActivity(Intent(this@SplashActivity, NumberActivity::class.java))
             finish()
         }
     }
 
     private fun setOutputListener() {
         viewModel.outputs.tokenUpdated().subscribe {
-            startActivity(Intent(this@SplashActivity, RegisterNumberActivity::class.java))
+            startActivity(Intent(this@SplashActivity, NumberActivity::class.java))
             finish()
         }.addTo(subscriptions)
         viewModel.outputs.onError().subscribe {
-            val intent = Intent(this, RegisterNumberActivity::class.java)
+            val intent = Intent(this, NumberActivity::class.java)
             intent.putExtra("description", getString(ErrorMapper().getErrorMessage(it)))
             startActivity(intent)
             finish()

@@ -1,4 +1,4 @@
-package com.eebros.asan.ui.activity
+package com.eebros.asan.ui.activity.registration
 
 import android.content.Intent
 import android.os.Bundle
@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.eebros.asan.Constants.Companion.INTRO_DOTS
 import com.eebros.asan.R
+import com.eebros.asan.ui.activity.common.ErrorActivity
 import com.eebros.asan.view.AsanPinView
 import com.google.firebase.FirebaseException
 import com.google.firebase.auth.FirebaseAuth
@@ -64,7 +65,7 @@ class VerifyPhoneNumberActivity : AppCompatActivity() {
         pin.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
                 if (s.toString().length == 6){
-                    startActivity(Intent(this@VerifyPhoneNumberActivity, MainActivity::class.java))
+                    startActivity(Intent(this@VerifyPhoneNumberActivity, AddPersonalInfoActivity::class.java))
                 }
             }
 

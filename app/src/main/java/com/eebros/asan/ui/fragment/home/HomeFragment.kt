@@ -75,7 +75,7 @@ class HomeFragment : BaseFragment() {
         serviceList.add("bike ride")
         serviceList.add("flowers delivery")
         serviceList.add("courier service")
-        serviceList.add("workout trainer")
+        serviceList.add("more")
 
 
         val storyAdapter = StoriesRecyclerViewAdapter(storyList) {

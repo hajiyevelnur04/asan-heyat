@@ -24,7 +24,7 @@
             android:layout_height="0dp"
             android:padding="6dp"
             android:layout_gravity="center"
-            android:src="@drawable/main_ic_baby_care"/>
+            android:src="@drawable/main_ic_more"/>
 
         <TextView
             app:autoSizeTextType="uniform"
@@ -37,7 +37,7 @@
             android:id="@+id/firstText"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/hint"
             android:text="Asan temizlik"/>
 
     </LinearLayout>

@@ -29,7 +29,7 @@ class ServiceImageMapper {
         serviceMap["bike ride"] = R.drawable.main_ic_bike_ride
         serviceMap["flowers delivery"] = R.drawable.main_ic_flowers_delivery
         serviceMap["courier service"] = R.drawable.main_ic_courier_service
-        serviceMap["workout trainer"] = R.drawable.main_ic_workout_trainer
+        serviceMap["more"] = R.drawable.main_ic_more
 
     }
 }

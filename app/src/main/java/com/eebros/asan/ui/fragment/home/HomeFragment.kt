@@ -1,5 +1,6 @@
 package com.eebros.asan.ui.fragment.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -22,6 +23,7 @@ class HomeFragment : BaseFragment() {
     private lateinit var homeViewModel: HomeViewModel
 
     private lateinit var storyRecyclerView: RecyclerView
+
     lateinit var asanProgress: ImageView
 
     private val storyList: ArrayList<Int> = arrayListOf()
@@ -43,23 +45,18 @@ class HomeFragment : BaseFragment() {
         llm.orientation = LinearLayoutManager.HORIZONTAL
         storyRecyclerView.layoutManager = llm
 
-        storyList.add(R.drawable.aze)
-        storyList.add(R.drawable.rus)
-        storyList.add(R.drawable.usa)
+        storyList.add(R.drawable.pizza)
+        storyList.add(R.drawable.cleaning)
+        storyList.add(R.drawable.barbar)
 
-        storyList.add(R.drawable.aze)
-        storyList.add(R.drawable.rus)
-        storyList.add(R.drawable.usa)
-
-        storyList.add(R.drawable.aze)
-        storyList.add(R.drawable.rus)
-        storyList.add(R.drawable.usa)
+        storyList.add(R.drawable.santexnik)
+        storyList.add(R.drawable.beverage)
 
 
         val storyAdapter = StoriesRecyclerViewAdapter(storyList) {
-                //val intent = Intent(requireActivity(), CampaignActivity::class.java)
-                //intent.putExtra("campaignId", storyList[it].campaignId)
-                //startActivity(intent)
+                val intent = Intent(requireActivity(), CampaignActivity::class.java)
+                intent.putExtra("campaignId", storyList[it])
+                startActivity(intent)
             }
         storyRecyclerView.adapter = storyAdapter
 

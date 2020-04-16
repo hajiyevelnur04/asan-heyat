@@ -9,8 +9,8 @@
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/storyImage"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
         android:src="@drawable/aze"
         app:civ_border_color="@color/colorPrimary"
         app:civ_border_width="1dp" />

@@ -6,6 +6,7 @@ import com.eebros.asan.di.scope.MainScope
 import com.eebros.asan.di.scope.ViewModelKey
 import com.eebros.asan.ui.activity.PinRegisteredViewModel
 import com.eebros.asan.ui.activity.PinRegistrationViewModel
+import com.eebros.asan.ui.activity.driver.MapsViewModel
 import com.eebros.asan.ui.activity.main.MainViewModel
 import com.eebros.asan.ui.activity.registration.DoneRegistrationViewModel
 import com.eebros.asan.ui.activity.registration.NumberViewModel
@@ -23,6 +24,12 @@ abstract class MainModuleViewModel {
     @IntoMap
     @ViewModelKey(NumberViewModel::class)
     abstract fun bindNumberViewModel(viewModel: NumberViewModel): ViewModel
+
+    @Binds
+    @MainScope
+    @IntoMap
+    @ViewModelKey(MapsViewModel::class)
+    abstract fun bindMapsViewModel(viewModel: MapsViewModel): ViewModel
 
     @Binds
     @MainScope

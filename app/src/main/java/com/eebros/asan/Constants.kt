@@ -13,6 +13,7 @@ class Constants{
         const val BASE_URL = BuildConfig.BASIC_URL
         const val PEM_FILE = BuildConfig.PEM_FILE_NAME
         const val INTRO_DOTS: Int = 7
+        const val LOCATION_PERMISSION_REQUEST_CODE = 1
     }
 }
 

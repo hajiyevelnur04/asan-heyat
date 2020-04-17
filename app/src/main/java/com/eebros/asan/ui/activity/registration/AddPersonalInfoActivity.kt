@@ -33,6 +33,7 @@ class AddPersonalInfoActivity : AppCompatActivity() {
         continueButton.setOnClickListener{
             if(checkValidation()){
                 startActivity(Intent(this@AddPersonalInfoActivity, AddHomeAdressActivity::class.java))
+                overridePendingTransition(R.anim.enter, R.anim.exit)
             } else{
                 //do something
             }

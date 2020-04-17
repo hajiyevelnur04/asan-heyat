@@ -183,6 +183,7 @@ class PinRegistrationActivity : BaseActivity() {
         intent.putExtra("phoneNum",phoneNum)
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         startActivity(intent)
+        overridePendingTransition(R.anim.enter, R.anim.exit)
     }
 
     private fun initView() {

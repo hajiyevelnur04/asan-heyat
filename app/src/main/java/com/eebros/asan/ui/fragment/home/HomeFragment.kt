@@ -102,6 +102,7 @@ class HomeFragment : BaseFragment() {
             when(it){
                 0 -> {
                     startActivity(Intent(requireActivity(), MapsActivity::class.java))
+                    requireActivity().overridePendingTransition(R.anim.enter, R.anim.exit)
                 }
             }
             /*if (bottomSheetBehavior!!.state != BottomSheetBehavior.STATE_EXPANDED) {

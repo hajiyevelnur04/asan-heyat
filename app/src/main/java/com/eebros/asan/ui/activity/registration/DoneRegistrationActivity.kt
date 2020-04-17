@@ -26,6 +26,7 @@ class DoneRegistrationActivity : BaseActivity() {
 
         doneButton.setOnClickListener{
             startActivity(Intent(this@DoneRegistrationActivity, MainActivity::class.java))
+            overridePendingTransition(R.anim.enter, R.anim.exit)
         }
 
     }

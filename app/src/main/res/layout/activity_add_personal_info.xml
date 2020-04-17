@@ -88,7 +88,7 @@
                 android:layout_gravity="center"
                 android:background="@android:color/transparent"
                 android:hint="@string/firstName"
-                android:inputType="number"
+                android:inputType="textPersonName"
                 android:fontFamily="@font/roboto_medium"
                 android:textColorHint="#8e8e8e" />
         </LinearLayout>
@@ -134,7 +134,7 @@
                 android:layout_gravity="center"
                 android:background="@android:color/transparent"
                 android:hint="@string/lastName"
-                android:inputType="number"
+                android:inputType="textPersonName"
                 android:fontFamily="@font/roboto_medium"
                 android:textColorHint="#8e8e8e" />
         </LinearLayout>

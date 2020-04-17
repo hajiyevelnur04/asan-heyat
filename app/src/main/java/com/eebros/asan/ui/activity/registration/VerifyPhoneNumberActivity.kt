@@ -70,6 +70,7 @@ class VerifyPhoneNumberActivity : AppCompatActivity() {
                 if (s.toString().length == 6){
                     countDown.onFinish()
                     startActivity(Intent(this@VerifyPhoneNumberActivity, AddPersonalInfoActivity::class.java))
+                    overridePendingTransition(R.anim.enter, R.anim.exit)
                 }
             }
 

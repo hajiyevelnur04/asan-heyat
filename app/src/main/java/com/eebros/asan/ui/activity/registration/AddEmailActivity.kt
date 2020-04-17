@@ -24,6 +24,7 @@ class AddEmailActivity : AppCompatActivity() {
 
         continueButton.setOnClickListener{
             startActivity(Intent(this, DoneRegistrationActivity::class.java))
+            overridePendingTransition(R.anim.enter, R.anim.exit)
         }
     }
 

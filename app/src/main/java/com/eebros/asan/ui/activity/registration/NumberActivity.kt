@@ -49,6 +49,7 @@ class NumberActivity : BaseActivity() {
             var intent = Intent(this, PinRegistrationActivity::class.java)
             intent.putExtra("phoneNum", "$selectedCode${phoneNumberHolder.text}")
             startActivity(intent)
+            overridePendingTransition(R.anim.enter, R.anim.exit)
         }
     }
 

@@ -26,6 +26,7 @@ class AddHomeAdressActivity : AppCompatActivity() {
 
         continueButton.setOnClickListener{
             startActivity(Intent(this@AddHomeAdressActivity, AddEmailActivity::class.java))
+            overridePendingTransition(R.anim.enter, R.anim.exit)
         }
     }
 

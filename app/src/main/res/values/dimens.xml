@@ -21,5 +21,20 @@
     <dimen name="profile_image_size">100dp</dimen>
     <dimen name="stc_pin_view_height">16dp</dimen>
     <dimen name="borderThickness">128dp</dimen>
+    <dimen name="_12sdp">12dp</dimen>
+    <dimen name="_4sdp">4dp</dimen>
+    <dimen name="_50sdp">50dp</dimen>
+    <dimen name="_60sdp">60dp</dimen>
+    <dimen name="_70sdp">70dp</dimen>
+    <dimen name="_10sdp">10dp</dimen>
+    <dimen name="_3sdp">3dp</dimen>
+    <dimen name="text_size_smallest">10dp</dimen>
+    <dimen name="_90sdp">90dp</dimen>
+    <dimen name="_23sdp">23dp</dimen>
+    <dimen name="_5sdp">5dp</dimen>
+    <dimen name="_2sdp">2dp</dimen>
+    <dimen name="_15sdp">15dp</dimen>
+    <dimen name="_14sdp">14dp</dimen>
+    <dimen name="_6sdp">6dp</dimen>
 
 </resources>

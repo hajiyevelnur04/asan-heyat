@@ -13,6 +13,7 @@ import com.eebros.asan.ui.fragment.dashboard.DashboardFragment
 import com.eebros.asan.ui.fragment.notifications.NotificationsFragment
 import javax.inject.Inject
 
+
 class MainActivity : BaseActivity() {
 
     @Inject
@@ -23,6 +24,8 @@ class MainActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+
 
         viewModel = ViewModelProvider(this, factory)[MainViewModel::class.java]
 
@@ -41,11 +44,14 @@ class MainActivity : BaseActivity() {
                 R.id.navigation_home -> {
                     transaction.replace(R.id.host_fragment, HomeFragment()).commit()
                 }
-                R.id.navigation_dashboard -> {
+                R.id.navigation_order -> {
                     transaction.replace(R.id.host_fragment, DashboardFragment()).commit()
                 }
-                R.id.navigation_notifications -> {
+                R.id.navigation_live_agent -> {
                     transaction.replace(R.id.host_fragment, NotificationsFragment()).commit()
+                }
+                R.id.navigation_setting -> {
+                    //transaction.replace(R.id.host_fragment, NotificationsFragment()).commit()
                 }
             }
             true

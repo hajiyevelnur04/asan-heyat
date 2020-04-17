@@ -1,44 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    android:layout_gravity="center"
-    android:id="@+id/first"
-    android:layout_width="96dp"
-    android:layout_weight="1"
-    android:layout_height="96dp"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/serviceContainer"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/_4sdp"
+    android:layout_marginBottom="@dimen/_4sdp"
+    android:paddingBottom="4dp"
+    android:paddingTop="4dp"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_gravity="center"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="@dimen/_60sdp"
+        android:layout_height="@dimen/_60sdp"
+        android:background="@drawable/service_background"
+        android:padding="@dimen/_10sdp"
+        android:scaleType="fitCenter" />
+
+    <TextView
+        android:id="@+id/serviceName"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_3sdp"
+        android:ellipsize="end"
+        android:fontFamily="@font/roboto_medium"
         android:gravity="center"
-        android:background="@drawable/cardview_service_background"
-        android:orientation="vertical">
-
-        <ImageView
-            android:layout_weight="10"
-            android:scaleType="centerInside"
-            android:id="@+id/firstImage"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:padding="6dp"
-            android:layout_gravity="center"
-            android:src="@drawable/main_ic_more"/>
-
-        <TextView
-            app:autoSizeTextType="uniform"
-            app:autoSizeMinTextSize="1sp"
-            app:autoSizeMaxTextSize="100sp"
-            app:autoSizeStepGranularity="3sp"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:layout_weight="8"
-            android:id="@+id/firstText"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:textColor="@color/hint"
-            android:text="Asan temizlik"/>
-
-    </LinearLayout>
-</androidx.cardview.widget.CardView>
+        android:includeFontPadding="false"
+        android:maxLines="3"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:text="asan xidmet masin"
+        android:textSize="@dimen/text_size_smallest" />
+</LinearLayout>

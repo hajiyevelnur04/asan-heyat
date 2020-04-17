@@ -7,10 +7,10 @@
     tools:context=".ui.fragment.home.HomeFragment">
 
     <LinearLayout
+        android:id="@+id/storyContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:id="@+id/storyContainer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -18,8 +18,8 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/storyRecyclerView"
             android:layout_width="match_parent"
-            android:layout_marginTop="16dp"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp" />
 
         <ImageView
             android:id="@+id/asanStoryProgress"
@@ -31,35 +31,35 @@
             android:visibility="visible" />
     </LinearLayout>
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/storyContainer">
 
         <TextView
-            android:layout_marginTop="16dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto_medium"
-            android:textColor="@color/colorPrimary"
             android:layout_marginStart="12dp"
-            android:text="Services"/>
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/roboto_medium"
+            android:text="Services"
+            android:textColor="@color/colorPrimary" />
 
         <GridView
-            android:visibility="visible"
-            android:gravity="center"
-            android:verticalSpacing="2dp"
-            android:horizontalSpacing="2dp"
-            android:numColumns="4"
-            android:padding="8dp"
             android:id="@+id/serviceGridView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp" />
+            android:layout_marginTop="4dp"
+            android:gravity="center"
+            android:horizontalSpacing="2dp"
+            android:numColumns="4"
+            android:padding="8dp"
+            android:verticalSpacing="16dp"
+            android:visibility="visible" />
 
         <ImageView
             android:id="@+id/asanServiceProgress"
@@ -71,6 +71,13 @@
             android:visibility="visible" />
     </LinearLayout>
 
+    <View
+        android:id="@+id/view_bottom_sheet_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorTransBlack"
+        android:visibility="gone" />
 
+    <!--<include layout="@layout/bottom_sheet" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -49,4 +49,10 @@
     <string name="title_activity_maps">Map</string>
     <string name="mobile_pattern">+994</string>
     <string name="login_with_pin">Login with your pin</string>
+    <string name="title_orders">Order</string>
+    <string name="title_setting">Setting</string>
+    <string name="title_live_chat">Chat</string>
+    <string name="asan_services">Asan Services</string>
+    <string name="where_to_go">Where to go?</string>
+    <string name="taxi">find your taxi</string>
 </resources>

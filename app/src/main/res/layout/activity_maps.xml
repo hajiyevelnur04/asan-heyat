@@ -1,9 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
-<fragment xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:map="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/map"
-    android:name="com.google.android.gms.maps.SupportMapFragment"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.activity.driver.MapsActivity" />
+    android:layout_height="match_parent">
+
+    <include layout="@layout/asan_toolbar_layout"
+        android:id="@+id/include6"/>
+
+    <RelativeLayout
+        android:id="@+id/map_rideHome"
+        android:layout_width="0.0dip"
+        android:layout_height="0.0dip"
+        map:layout_constraintBottom_toBottomOf="parent"
+        map:layout_constraintEnd_toEndOf="parent"
+        map:layout_constraintStart_toStartOf="parent"
+        map:layout_constraintTop_toBottomOf="@+id/include6">
+
+        <fragment
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".ui.activity.driver.MapsActivity" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        map:layout_constraintEnd_toEndOf="parent"
+        map:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="32dp"
+        android:padding="8dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/textview_backgroung"
+        map:layout_constraintTop_toBottomOf="@+id/include6">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="32dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_pin" />
+
+        <TextView
+            android:id="@+id/whereToGo"
+            android:layout_width="0dp"
+            android:layout_weight="6"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:maxLines="2"
+            android:text="@string/where_to_go"
+            android:textSize="@dimen/_10sdp" />
+
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/ban_mainChildSeat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:background="@drawable/rider_round_bg_white"
+        android:padding="@dimen/_10sdp"
+        android:src="@drawable/ic_main_chield_seat"
+        android:tint="@color/colorPrimary"
+        android:visibility="visible"
+        map:layout_constraintBottom_toTopOf="@+id/btn_homeRiderMainFocus"
+        map:layout_constraintEnd_toEndOf="@+id/btn_homeRiderMainFocus"
+        map:layout_constraintStart_toStartOf="@+id/btn_homeRiderMainFocus" />
+
+    <ImageButton
+        android:id="@+id/btn_homeRiderMainHandicap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_12sdp"
+        android:background="@drawable/rider_round_bg_white"
+        android:padding="@dimen/_10sdp"
+        android:src="@drawable/ic_main_chield_seat"
+        map:layout_constraintBottom_toBottomOf="@id/btn_homeRiderMainFocus"
+        map:layout_constraintEnd_toStartOf="@id/btn_homeRiderMainFocus"
+        map:layout_constraintTop_toTopOf="@id/btn_homeRiderMainFocus" />
+
+    <ImageButton
+        android:id="@+id/btn_homeRiderMainNavigation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_12sdp"
+        android:background="@drawable/rider_round_bg_white"
+        android:padding="@dimen/_10sdp"
+        android:src="@drawable/ic_main_chield_seat"
+        android:visibility="gone"
+        map:layout_constraintBottom_toTopOf="@id/btn_homeRiderMainFocus"
+        map:layout_constraintEnd_toEndOf="@id/btn_homeRiderMainFocus" />
+
+    <ImageButton
+        android:id="@+id/btn_homeRiderMainFocus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_23sdp"
+        android:background="@drawable/rider_round_bg_white"
+        android:contentDescription="TODO"
+        android:padding="@dimen/_10sdp"
+        android:src="@drawable/ic_main_chield_seat"
+        map:layout_constraintBottom_toBottomOf="parent"
+        map:layout_constraintEnd_toEndOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

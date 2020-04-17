@@ -19,8 +19,8 @@ class ServiceRecyclerViewAdapter(
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View{
         val view = inflater.inflate(R.layout.service_item, parent, false)
 
-        view.firstImage.setImageResource(ServiceImageMapper().getCategoryImage(serviceList[position]))
-        view.firstText.text = serviceList[position]
+        view.icon.setImageResource(ServiceImageMapper().getCategoryImage(serviceList[position]))
+        view.serviceName.text = serviceList[position]
 
         view.setOnClickListener { clickListener.invoke(position) }
 

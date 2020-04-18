@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Asan</string>
+    <string name="app_name">RAHAT</string>
     <string name="cancel_camel_case">Cancel</string>
     <string name="header_pin1">Create a passcode</string>
     <string name="header_pin2">for your asan account</string>
@@ -58,4 +58,9 @@
     <string name="submit">Submit</string>
     <string name="rider_cancel">Cancel</string>
     <string name="food_delivery">Food Delivery</string>
+    <string name="deliveries">Deliveries</string>
+    <string name="rides">Rides</string>
+    <string name="on_demand">On Demand</string>
+    <string name="sort">Sort</string>
+    <string name="filter">Filter</string>
 </resources>

@@ -150,6 +150,7 @@
             android:id="@+id/buttonDelete"
             android:layout_width="match_parent"
             android:gravity="center"
+            android:text="x"
             android:fontFamily="@font/roboto_medium"
             android:layout_height="match_parent"
             android:background="@color/white"

@@ -9,6 +9,8 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <uses-permission android:name="android.permission.VIBRATE" />
+
     <application
         android:name=".base.BaseApplication"
         android:allowBackup="true"
@@ -18,10 +20,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.activity.delivery.FoodDelivery"
+        <activity android:name=".ui.activity.ComingSoonActivity"
             android:theme="@style/AppThemeNoActionBar"></activity>
-        <activity android:name=".ui.activity.driver.SearchRiderActivity"
-            android:theme="@style/AppThemeNoActionBar"/>
+        <activity
+            android:name=".ui.activity.delivery.FoodDeliveryActivity"
+            android:theme="@style/AppThemeNoActionBar" />
+        <activity
+            android:name=".ui.activity.driver.SearchRiderActivity"
+            android:theme="@style/AppThemeNoActionBar" />
         <activity
             android:name=".ui.fragment.home.CampaignActivity"
             android:theme="@style/AppThemeNoActionBar" />

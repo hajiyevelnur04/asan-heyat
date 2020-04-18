@@ -17,4 +17,6 @@
 
 
     <color name="background">#dddddd</color>
+
+    <color name="unSelectedRegisterTabColor">#7dffffff</color>
 </resources>

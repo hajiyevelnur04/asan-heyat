@@ -1,17 +1,24 @@
 package com.eebros.asan.ui.activity.delivery
 
-import android.R.attr.x
 import android.os.Bundle
 import android.view.View
-import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.eebros.asan.R
+import com.eebros.asan.base.BaseActivity
+import com.eebros.asan.di.ViewModelProviderFactory
 import com.facebook.shimmer.ShimmerFrameLayout
 import kotlinx.android.synthetic.main.asan_toolbar_layout.*
+import javax.inject.Inject
 
 
-class FoodDelivery : AppCompatActivity() {
+class FoodDeliveryActivity : BaseActivity() {
+
+    @Inject
+    lateinit var factory: ViewModelProviderFactory
+
+    lateinit var viewModel: FoodDeliveryViewModel
 
     private lateinit var foodRecyclerView: RecyclerView
     private val foodList: ArrayList<Int> = arrayListOf()
@@ -21,6 +28,8 @@ class FoodDelivery : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_food_delivery)
+
+        viewModel = ViewModelProvider(this, factory)[FoodDeliveryViewModel::class.java]
 
         foodRecyclerView = findViewById(R.id.foodRecyclerView)
 

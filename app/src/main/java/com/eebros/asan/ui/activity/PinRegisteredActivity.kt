@@ -1,31 +1,29 @@
 package com.eebros.asan.ui.activity
 
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.os.VibrationEffect
+import android.os.Vibrator
 import android.text.Editable
 import android.text.TextWatcher
+import android.view.View
 import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputConnection
-import android.widget.ImageView
-import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.biometric.BiometricManager
 import androidx.biometric.BiometricPrompt
-import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
-import com.eebros.asan.Constants.Companion.INTRO_DOTS
 import com.eebros.asan.R
 import com.eebros.asan.base.BaseActivity
 import com.eebros.asan.di.ViewModelProviderFactory
 import com.eebros.asan.ui.activity.main.MainActivity
-import com.eebros.asan.ui.activity.registration.VerifyPhoneNumberActivity
 import com.eebros.asan.view.AsanNumberBoard
 import com.eebros.asan.view.AsanPinView
 import io.reactivex.rxkotlin.addTo
-import kotlinx.android.synthetic.main.asan_into_header.*
 import kotlinx.android.synthetic.main.number_board.*
 import javax.inject.Inject
 
@@ -36,12 +34,6 @@ class PinRegisteredActivity : BaseActivity() {
     lateinit var factory: ViewModelProviderFactory
 
     lateinit var viewModel: PinRegisteredViewModel
-
-    var pinCode: String = "1111"
-    private var pinStep: Int = 1
-
-    var creatingNewPin: Boolean = true
-    var updatingCurrentPin: Boolean = false
 
     lateinit var pinKeyBoard: AsanNumberBoard
     lateinit var pin: AsanPinView
@@ -56,62 +48,28 @@ class PinRegisteredActivity : BaseActivity() {
         initView()
 
         buttonCancel.setOnClickListener { finish() }
+        buttonDelete.visibility = View.VISIBLE
 
         setOutputListener()
         setInputListener()
 
-        if (creatingNewPin) {
+        /*if (creatingNewPin) {
             disablePinCancelling()
             showBiometricPrompt(true)
         } else {
             //viewModel.inputs.checkIfFingerPrintIsSet()
         }
-
+*/
         pin.setTextIsSelectable(true)
 
-        if (updatingCurrentPin) {
-            Toast.makeText(
-                this,
-                getString(R.string.enter_current_pin),
-                Toast.LENGTH_LONG
-            ).show()
-        } else if(creatingNewPin){
-            Toast.makeText(this, getString(R.string.enter_pin), Toast.LENGTH_SHORT).show()
-        }
 
         val ic: InputConnection = pin.onCreateInputConnection(EditorInfo())
         pinKeyBoard.setInputConnection(ic)
 
         pin.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
-                if (creatingNewPin) {
-                    if (s.toString().length == 4) {
-                        if (s.toString() == pinCode) {
-                            navigateTo(MainActivity())
-                        } else {
-                            showDialog(getString(R.string.pin_is_wrong))
-                            pin.setText("")
-                        }
-                    }
-
-                } else if (updatingCurrentPin) {
-                    if (s.toString().length == 4) {
-                        pin.setText("")
-                        /*if (s.toString() == viewModel.getCurrentPin()) {
-                            Toast.makeText(
-                                this@PinRegisteredActivity,
-                                getString(R.string.enter_new_pin),
-                                Toast.LENGTH_SHORT
-                            ).show()
-                            creatingNewPin = true
-                        }*/
-                        creatingNewPin = true
-                    }
-                    //Enter current PIN
-                } else {
-                    if (s.toString().length == 4) {
-                        //viewModel.inputs.checkPin(s.toString())
-                    }
+                if (s.toString().length == 4) {
+                    viewModel.inputs.checkPin(s.toString())
                 }
             }
 
@@ -125,7 +83,6 @@ class PinRegisteredActivity : BaseActivity() {
     }
 
     private fun setInputListener() {
-        //viewModel.inputs.getUserInfo()
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             pin.showSoftInputOnFocus = false
         } else {
@@ -135,20 +92,28 @@ class PinRegisteredActivity : BaseActivity() {
 
     private fun setOutputListener() {
 
-       /* viewModel.outputs.onFingerprintIsSet().subscribe { isSet ->
+        viewModel.outputs.onFingerprintIsSet().subscribe { isSet ->
             if (isSet)
                 showBiometricPrompt(isSet)
         }.addTo(subscriptions)
 
         viewModel.outputs.onPinIsCorrect().subscribe { pinIsCorrect ->
             if (pinIsCorrect) {
-                navigateTo(VerifyPhoneNumberActivity())
+                navigateTo(MainActivity())
                 finish()
             } else {
-                showDialog(getString(R.string.pin_is_wrong))
+                Toast.makeText(this, R.string.pin_is_wrong, Toast.LENGTH_SHORT).show()
+                //showDialog(getString(R.string.pin_is_wrong))
+                val v = getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                    v.vibrate(VibrationEffect.createOneShot(500, VibrationEffect.DEFAULT_AMPLITUDE))
+                } else {
+                    //deprecated in API 26
+                    v.vibrate(500)
+                }
                 pin.setText("")
             }
-        }.addTo(subscriptions)*/
+        }.addTo(subscriptions)
     }
 
     private fun showDialog(message: String) {
@@ -204,13 +169,13 @@ class PinRegisteredActivity : BaseActivity() {
                             // User has verified the signature, cipher, or message
                             // authentication code (MAC) associated with the crypto object,
                             // so you can use it in your app's crypto-driven workflows.
-                            if (!updatingCurrentPin) {
+                            /*if (!updatingCurrentPin) {
                                 if (!creatingNewPin) {
                                     navigateTo(VerifyPhoneNumberActivity())
                                 } else {
                                     //viewModel.inputs.fingerprintIsSet(true)
                                 }
-                            }
+                            }*/
                         }
 
                         override fun onAuthenticationFailed() {

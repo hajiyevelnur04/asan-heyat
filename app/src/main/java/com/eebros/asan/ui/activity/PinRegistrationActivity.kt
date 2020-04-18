@@ -125,7 +125,6 @@ class PinRegistrationActivity : BaseActivity() {
                         }
                         creatingNewPin = true
                     }
-                    //Enter current PIN
                 } else {
                     if (s.toString().length == 4) {
                         viewModel.inputs.checkPin(s.toString())
@@ -181,6 +180,7 @@ class PinRegistrationActivity : BaseActivity() {
         viewModel.inputs.login()
         val intent = Intent(this, activity::class.java)
         intent.putExtra("phoneNum",phoneNum)
+        intent.putExtra("pin", pinCode )
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         startActivity(intent)
         overridePendingTransition(R.anim.enter, R.anim.exit)

@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.GridView
 import android.widget.ImageView
-import android.widget.LinearLayout
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -15,10 +14,10 @@ import com.eebros.asan.R
 import com.eebros.asan.animateProgressImage
 import com.eebros.asan.base.BaseFragment
 import com.eebros.asan.di.ViewModelProviderFactory
-import com.eebros.asan.ui.activity.delivery.FoodDelivery
-import com.eebros.asan.ui.activity.delivery.FoodDeliveryAdapter
+import com.eebros.asan.ui.activity.ComingSoonActivity
+import com.eebros.asan.ui.activity.ComingSoonViewModel
+import com.eebros.asan.ui.activity.delivery.FoodDeliveryActivity
 import com.eebros.asan.ui.activity.driver.MapsActivity
-import com.google.android.material.bottomsheet.BottomSheetBehavior
 import javax.inject.Inject
 
 
@@ -113,10 +112,15 @@ class HomeFragment : BaseFragment() {
                 }
 
                 1 -> {
-                    startActivity(Intent(requireActivity(), FoodDelivery::class.java))
+                    startActivity(Intent(requireActivity(), FoodDeliveryActivity::class.java))
+                    requireActivity().overridePendingTransition(R.anim.enter, R.anim.exit)
+                }
+                else -> {
+                    startActivity(Intent(requireActivity(), ComingSoonActivity::class.java))
                     requireActivity().overridePendingTransition(R.anim.enter, R.anim.exit)
                 }
             }
+
             /*if (bottomSheetBehavior!!.state != BottomSheetBehavior.STATE_EXPANDED) {
                 bottomSheetBehavior!!.state = BottomSheetBehavior.STATE_EXPANDED
             } else {

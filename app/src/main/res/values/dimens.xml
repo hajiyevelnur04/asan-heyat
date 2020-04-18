@@ -37,5 +37,13 @@
     <dimen name="_14sdp">14dp</dimen>
     <dimen name="_6sdp">6dp</dimen>
     <dimen name="_46sdp">46dp</dimen>
+    <dimen name="_35sdp">35dp</dimen>
+    <dimen name="_20sdp">20dp</dimen>
+
+
+    <dimen name="activityPadding">16dp</dimen>
+    <dimen name="placeholderImage">60dp</dimen>
+    <dimen name="placeholderTextHeight">12dp</dimen>
+    <dimen name="padding_10">10dp</dimen>
 
 </resources>

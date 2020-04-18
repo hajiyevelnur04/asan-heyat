@@ -9,8 +9,12 @@
     <color name="white">#ffffff</color>
     <color name="black">#000000</color>
     <color name="indigator">#b8b8b8</color>
+    <color name="light_gray">#e8e8e8</color>
 
     <color name="colorTransBlack">#8c000000</color>
 
     <color name="transparent">#00ffffff</color>
+
+
+    <color name="background">#dddddd</color>
 </resources>

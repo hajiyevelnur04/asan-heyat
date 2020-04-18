@@ -1,15 +1,23 @@
 package com.eebros.asan.ui.activity.driver
 
+import android.app.AlertDialog
+import android.content.Context
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.BitmapFactory
 import android.location.Location
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.widget.ImageButton
+import android.widget.LinearLayout
+import android.widget.TextView
 import androidx.core.app.ActivityCompat
 import androidx.lifecycle.ViewModelProvider
 import com.eebros.asan.Constants.Companion.LOCATION_PERMISSION_REQUEST_CODE
 import com.eebros.asan.R
 import com.eebros.asan.base.BaseActivity
 import com.eebros.asan.di.ViewModelProviderFactory
+import com.eebros.asan.ui.activity.common.RiderDialog
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -31,16 +39,24 @@ class MapsActivity : BaseActivity(), OnMapReadyCallback {
 
     lateinit var viewModel: MapsViewModel
 
+    lateinit var searchContainer: LinearLayout
+
+    lateinit var btn_homeRiderMainHandicap: ImageButton
+
     private lateinit var mMap: GoogleMap
     private lateinit var lastLocation: Location
 
     private lateinit var fusedLocationClient: FusedLocationProviderClient
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_maps)
 
         viewModel = ViewModelProvider(this, factory)[MapsViewModel::class.java]
+
+        searchContainer = findViewById(R.id.searchContainer)
+        btn_homeRiderMainHandicap = findViewById(R.id.btn_homeRiderMainHandicap)
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         val mapFragment = supportFragmentManager
@@ -54,6 +70,19 @@ class MapsActivity : BaseActivity(), OnMapReadyCallback {
         toolbar_title.text = getString(R.string.taxi)
 
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
+
+        searchContainer.setOnClickListener{
+            startActivity(Intent(this, SearchRiderActivity::class.java))
+            overridePendingTransition(R.anim.enter, R.anim.exit)
+        }
+
+        btn_homeRiderMainHandicap.setOnClickListener{
+            val title = "handicap accessibility"
+            val msg = "Do you want ti get handicap seat in your ride"
+
+            RiderDialog(this).dialogCreate(title,msg,btn_homeRiderMainHandicap)
+
+        }
 
     }
 
@@ -79,7 +108,7 @@ class MapsActivity : BaseActivity(), OnMapReadyCallback {
         mMap.addMarker(
             markerOptions.icon(
                 BitmapDescriptorFactory.fromBitmap(
-                    BitmapFactory.decodeResource(resources, R.drawable.ic_car)
+                    BitmapFactory.decodeResource(resources, R.drawable.ic_pin_current_location)
                 )
             )
         )

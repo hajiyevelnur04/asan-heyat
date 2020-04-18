@@ -18,8 +18,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.fragment.home.CampaignActivity"
+        <activity android:name=".ui.activity.delivery.FoodDelivery"
             android:theme="@style/AppThemeNoActionBar"></activity>
+        <activity android:name=".ui.activity.driver.SearchRiderActivity"
+            android:theme="@style/AppThemeNoActionBar"/>
+        <activity
+            android:name=".ui.fragment.home.CampaignActivity"
+            android:theme="@style/AppThemeNoActionBar" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -34,8 +39,8 @@
 
         <activity
             android:name=".ui.activity.driver.MapsActivity"
-            android:theme="@style/AppThemeNoActionBar"
-            android:label="@string/title_activity_maps" />
+            android:label="@string/title_activity_maps"
+            android:theme="@style/AppThemeNoActionBar" />
         <activity
             android:name=".ui.activity.registration.DoneRegistrationActivity"
             android:theme="@style/NoActionBarThemeSuccess"
@@ -69,7 +74,6 @@
         <activity
             android:name=".ui.activity.PinRegistrationActivity"
             android:theme="@style/AppThemeNoActionBar" />
-
         <activity
             android:name=".ui.activity.PinRegisteredActivity"
             android:theme="@style/AppThemeNoActionBar" />

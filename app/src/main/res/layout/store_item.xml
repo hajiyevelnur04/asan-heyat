@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ds_card_store_list_home"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/_3sdp"
+    android:layout_marginBottom="@dimen/_5sdp"
+    android:background="@color/indigator">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_10sdp">
+
+        <ImageView
+            android:id="@+id/ds_iv_store_profile"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_60sdp"
+            android:src="@drawable/aze"
+            android:scaleType="centerCrop" />
+
+        <TextView
+            android:id="@+id/ds_tv_store_name_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:fontFamily="@font/roboto_regular"
+            android:maxLines="1"
+            android:text="McDonalds"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toEndOf="@id/ds_iv_store_profile"
+            app:layout_constraintTop_toTopOf="@id/ds_iv_store_profile" />
+
+        <LinearLayout
+            android:id="@+id/ds_ll_store_cate_home"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/ds_ll_store_details"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/ds_tv_store_name_home"
+            app:layout_constraintTop_toBottomOf="@id/ds_tv_store_name_home">
+
+            <TextView
+                android:id="@+id/ds_tv_store_cat1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/textview_backgroung"
+                android:ellipsize="end"
+                android:fontFamily="@font/roboto_regular"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:maxLength="15"
+                android:maxLines="1"
+                android:paddingTop="@dimen/_3sdp"
+                android:paddingBottom="@dimen/_3sdp"
+                android:text="Multi cuisine "
+                android:textColor="@color/hint"
+                android:textSize="@dimen/text_size_smallest"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/ds_tv_store_cat2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_3sdp"
+                android:background="@drawable/textview_backgroung"
+                android:ellipsize="end"
+                android:fontFamily="@font/roboto_regular"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:maxLength="15"
+                android:maxLines="1"
+                android:paddingTop="@dimen/_3sdp"
+                android:paddingBottom="@dimen/_3sdp"
+                android:text="Italian"
+                android:textColor="@color/hint"
+                android:textSize="@dimen/text_size_smallest"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/ds_tv_store_cat3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_3sdp"
+                android:background="@drawable/textview_backgroung"
+                android:ellipsize="end"
+                android:fontFamily="@font/roboto_regular"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:maxLength="15"
+                android:maxLines="1"
+                android:paddingTop="@dimen/_3sdp"
+                android:paddingBottom="@dimen/_3sdp"
+                android:text="Fast Food"
+                android:textColor="@color/hint"
+                android:textSize="@dimen/text_size_smallest"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@id/ds_ll_store_details"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="@id/ds_iv_store_profile"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/ds_ll_store_cate_home">
+
+            <ImageView
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="@dimen/_10sdp"
+                android:layout_gravity="center_vertical"
+                android:tint="@color/colorPrimaryDark"
+                app:srcCompat="@drawable/aze" />
+
+            <TextView
+                android:id="@+id/ds_tv_store_rating_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/_2sdp"
+                android:fontFamily="@font/roboto_regular"
+                android:includeFontPadding="false"
+                android:text="4.6"
+                android:textColor="@color/hint"
+                android:textSize="@dimen/text_size_smallest" />
+
+            <ImageView
+                android:layout_width="@dimen/_3sdp"
+                android:layout_height="@dimen/_3sdp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:background="@drawable/text_circle_background"
+                android:gravity="center"
+                android:textColor="@color/white" />
+
+            <ImageView
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="@dimen/_10sdp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:src="@drawable/aze"
+                android:tint="@color/indigator" />
+
+            <TextView
+                android:id="@+id/ds_tv_res_delivery_time_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_regular"
+                android:includeFontPadding="false"
+                android:text="20 min"
+                android:textColor="@color/hint"
+                android:textSize="@dimen/text_size_smallest" />
+
+            <ImageView
+                android:layout_width="@dimen/_3sdp"
+                android:layout_height="@dimen/_3sdp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:background="@drawable/text_circle_background"
+                android:gravity="center"
+                android:textColor="@color/hint" />
+
+            <TextView
+                android:id="@+id/ds_tv_min_order_amount_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:fontFamily="@font/roboto_regular"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:text="$5 Min order"
+                android:textColor="@color/hint"
+                android:textSize="@dimen/text_size_smallest"
+                app:layout_constraintEnd_toEndOf="parent" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/ds_iv_percentage_offer_home"
+            android:layout_width="@dimen/_15sdp"
+            android:layout_height="@dimen/_15sdp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:src="@drawable/ic_percentage_color"
+            app:layout_constraintTop_toBottomOf="@id/ds_iv_store_profile" />
+
+        <TextView
+            android:id="@+id/ds_tv_offer_home"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:ellipsize="end"
+            android:fontFamily="@font/roboto_regular"
+            android:gravity="center_vertical"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            android:text="Get 10% off on all order"
+            android:textColor="@color/hint"
+            android:textSize="@dimen/_10sdp"
+            app:layout_constraintBottom_toBottomOf="@id/ds_iv_percentage_offer_home"
+            app:layout_constraintEnd_toStartOf="@+id/ds_iv_store_status"
+            app:layout_constraintStart_toEndOf="@+id/ds_iv_percentage_offer_home"
+            app:layout_constraintTop_toTopOf="@+id/ds_iv_percentage_offer_home" />
+
+        <TextView
+            android:id="@+id/ds_tv_store_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_regular"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:paddingTop="@dimen/_3sdp"
+            android:paddingBottom="@dimen/_3sdp"
+            android:text="open_now"
+            android:textAllCaps="true"
+            android:textColor="@color/red"
+            android:textStyle="normal"
+            app:layout_constraintBottom_toBottomOf="@id/ds_iv_percentage_offer_home"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/ds_iv_percentage_offer_home" />
+
+        <ImageView
+            android:id="@id/ds_iv_store_status"
+            android:layout_width="@dimen/_6sdp"
+            android:layout_height="@dimen/_6sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:background="@drawable/text_circle_background"
+            app:layout_constraintBottom_toBottomOf="@id/ds_tv_store_status"
+            app:layout_constraintEnd_toStartOf="@id/ds_tv_store_status"
+            app:layout_constraintTop_toTopOf="@id/ds_tv_store_status" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

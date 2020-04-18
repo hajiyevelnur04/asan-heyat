@@ -15,6 +15,8 @@ import com.eebros.asan.R
 import com.eebros.asan.animateProgressImage
 import com.eebros.asan.base.BaseFragment
 import com.eebros.asan.di.ViewModelProviderFactory
+import com.eebros.asan.ui.activity.delivery.FoodDelivery
+import com.eebros.asan.ui.activity.delivery.FoodDeliveryAdapter
 import com.eebros.asan.ui.activity.driver.MapsActivity
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import javax.inject.Inject
@@ -70,16 +72,21 @@ class HomeFragment : BaseFragment() {
         storyList.add(R.drawable.beverage)
 
 
-        serviceList.add("taxi")
+        serviceList.add("taxi ride")
+        serviceList.add("food delivery")
+        serviceList.add("courier service")
+        serviceList.add("home cleaning")
+
+
         serviceList.add("beauty services")
-        serviceList.add("dog walking")
-        serviceList.add("pet care")
+        serviceList.add("workout trainer")
+        serviceList.add("flowers delivery")
+        serviceList.add("water delivery")
 
-
+        serviceList.add("baby care")
         serviceList.add("car wash")
-        serviceList.add("car repair")
         serviceList.add("electronics")
-        serviceList.add("more")
+        serviceList.add("pest control")
 
         /*serviceList.add("bike ride")
         serviceList.add("flowers delivery")
@@ -102,6 +109,11 @@ class HomeFragment : BaseFragment() {
             when(it){
                 0 -> {
                     startActivity(Intent(requireActivity(), MapsActivity::class.java))
+                    requireActivity().overridePendingTransition(R.anim.enter, R.anim.exit)
+                }
+
+                1 -> {
+                    startActivity(Intent(requireActivity(), FoodDelivery::class.java))
                     requireActivity().overridePendingTransition(R.anim.enter, R.anim.exit)
                 }
             }

@@ -55,4 +55,7 @@
     <string name="asan_services">Asan Services</string>
     <string name="where_to_go">Where to go?</string>
     <string name="taxi">TAXI</string>
+    <string name="submit">Submit</string>
+    <string name="rider_cancel">Cancel</string>
+    <string name="food_delivery">Food Delivery</string>
 </resources>

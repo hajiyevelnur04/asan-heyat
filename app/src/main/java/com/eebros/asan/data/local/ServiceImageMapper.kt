@@ -25,10 +25,17 @@ class ServiceImageMapper {
         serviceMap["electronics"] = R.drawable.main_ic_electricians
         serviceMap["pest control"] = R.drawable.main_ic_pest_control
 
+        serviceMap["home cleaning"] = R.drawable.main_ic_home_cleaning
+        serviceMap["pest control"] = R.drawable.main_ic_pest_control
 
-        serviceMap["taxi"] = R.drawable.main_ic_taxi_ride_category
+
+        serviceMap["taxi ride"] = R.drawable.main_ic_taxi_ride_category
         serviceMap["flowers delivery"] = R.drawable.main_ic_flowers_delivery
         serviceMap["courier service"] = R.drawable.main_ic_courier_service
+        serviceMap["workout trainer"] = R.drawable.main_ic_workout_trainer
+
+        serviceMap["food delivery"] = R.drawable.main_ic_food_delivery
+        serviceMap["water delivery"] = R.drawable.main_ic_water_delivery
         serviceMap["more"] = R.drawable.main_ic_more
 
     }

@@ -18,7 +18,7 @@
             android:id="@+id/ds_iv_store_profile"
             android:layout_width="@dimen/_60sdp"
             android:layout_height="@dimen/_60sdp"
-            android:src="@drawable/aze"
+            android:src="@drawable/pizza"
             android:scaleType="centerCrop" />
 
         <TextView
@@ -113,8 +113,7 @@
                 android:layout_width="@dimen/_10sdp"
                 android:layout_height="@dimen/_10sdp"
                 android:layout_gravity="center_vertical"
-                android:tint="@color/colorPrimaryDark"
-                app:srcCompat="@drawable/aze" />
+                app:srcCompat="@drawable/ic_star" />
 
             <TextView
                 android:id="@+id/ds_tv_store_rating_home"
@@ -142,7 +141,7 @@
                 android:layout_height="@dimen/_10sdp"
                 android:layout_gravity="center_vertical"
                 android:layout_marginRight="@dimen/_5sdp"
-                android:src="@drawable/aze"
+                android:src="@drawable/ic_rider_ride_time"
                 android:tint="@color/indigator" />
 
             <TextView
@@ -219,7 +218,7 @@
             android:paddingBottom="@dimen/_3sdp"
             android:text="open_now"
             android:textAllCaps="true"
-            android:textColor="@color/red"
+            android:textColor="@color/green"
             android:textStyle="normal"
             app:layout_constraintBottom_toBottomOf="@id/ds_iv_percentage_offer_home"
             app:layout_constraintEnd_toEndOf="parent"

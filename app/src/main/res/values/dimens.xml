@@ -45,5 +45,9 @@
     <dimen name="placeholderImage">60dp</dimen>
     <dimen name="placeholderTextHeight">12dp</dimen>
     <dimen name="padding_10">10dp</dimen>
+    <dimen name="_16sdp">16dp</dimen>
+    <dimen name="_1sdp">1dp</dimen>
+    <dimen name="_55sdp">55dp</dimen>
+    <dimen name="_40sdp">40dp</dimen>
 
 </resources>

@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activity.delivery.StoreDetailActivity">
+
+    <include layout="@layout/asan_toolbar_layout"
+        android:id="@+id/include8"/>
+
+    <RelativeLayout
+        android:id="@+id/fullContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include8">
+
+    <androidx.core.widget.NestedScrollView
+            android:id="@+id/nestedScrollView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:descendantFocusability="blocksDescendants">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/storeDetailTopContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <RelativeLayout
+                                android:id="@+id/storeDetailContainer"
+                                android:layout_width="0.0dip"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/_16sdp"
+                                android:background="@color/colorPrimary"
+                                android:paddingBottom="@dimen/_35sdp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:id="@+id/storeLogo"
+                                        android:layout_width="50dp"
+                                        android:layout_height="50dp"
+                                        android:src="@drawable/pizza"
+                                        android:layout_marginTop="@dimen/_12sdp"/>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_alignEnd=""
+                                        android:layout_height="match_parent"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:id="@+id/storeTitle"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="@dimen/_10sdp"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:includeFontPadding="false"
+                                            android:text="Mcdonald"
+                                            android:layout_marginLeft="12dp"
+                                            android:textColor="@color/white"
+                                            android:textSize="@dimen/_15sdp" />
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_marginTop="@dimen/_5sdp"
+                                            android:layout_marginLeft="12dp"
+                                            android:orientation="horizontal">
+
+                                            <TextView
+                                                android:id="@+id/storeProductType1"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:background="@drawable/text_background_3"
+                                                android:ellipsize="end"
+                                                android:fontFamily="@font/roboto_regular"
+                                                android:includeFontPadding="false"
+                                                android:maxLines="1"
+                                                android:padding="@dimen/_2sdp"
+                                                android:text="Fast food"
+                                                android:textColor="@color/white"
+                                                android:visibility="visible" />
+
+                                            <TextView
+                                                android:id="@+id/storeProductType2"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:background="@drawable/text_background_3"
+                                                android:ellipsize="end"
+                                                android:layout_marginLeft="12dp"
+                                                android:fontFamily="@font/roboto_regular"
+                                                android:includeFontPadding="false"
+                                                android:maxWidth="@dimen/_70sdp"
+                                                android:maxLines="1"
+                                                android:padding="@dimen/_2sdp"
+                                                android:text="Local food"
+                                                android:textColor="@color/white"
+                                                android:visibility="visible" />
+
+                                            <TextView
+                                                android:id="@+id/storeProductType3"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginLeft="12dp"
+                                                android:background="@drawable/text_background_3"
+                                                android:ellipsize="end"
+                                                android:fontFamily="@font/roboto_regular"
+                                                android:includeFontPadding="false"
+                                                android:maxLines="1"
+                                                android:padding="@dimen/_2sdp"
+                                                android:text="Tez bazar"
+                                                android:textColor="@color/white"
+                                                android:visibility="visible" />
+                                        </LinearLayout>
+                                    </LinearLayout>
+                                </LinearLayout>
+
+                            </RelativeLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="12dp"
+                                android:layout_marginRight="12dp"
+                                app:layout_constraintBottom_toBottomOf="@+id/storeDetailContainer"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/storeDetailContainer">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+                                    <LinearLayout
+                                        android:id="@+id/storeOfferContainer"
+                                        android:layout_width="0dp"
+                                        android:layout_weight="5"
+                                        android:layout_height="wrap_content"
+                                        android:background="@drawable/round_corner_3"
+                                        android:gravity="center_vertical"
+                                        android:orientation="horizontal">
+
+                                        <ImageView
+                                            android:id="@+id/ds_iv_offer_percentage_SD"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:paddingTop="@dimen/_5sdp"
+                                            android:paddingBottom="@dimen/_5sdp"
+                                            android:src="@drawable/ic_percentage_color" />
+
+                                        <TextView
+                                            android:id="@+id/ds_tv_store_offer_SD"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="@dimen/_6sdp"
+                                            android:ellipsize="end"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:includeFontPadding="false"
+                                            android:maxLines="2"
+                                            android:text="No offer available"
+                                            android:padding="@dimen/_4sdp"
+                                            android:textColor="@color/black"
+                                            android:textSize="@dimen/text_size_smallest" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/ratingContainer"
+                                        android:layout_width="0dp"
+                                        android:layout_weight="1"
+                                        android:layout_marginLeft="12dp"
+                                        android:layout_height="match_parent"
+                                        android:background="@drawable/round_corner_3"
+                                        android:gravity="center"
+                                        android:orientation="horizontal"
+                                        app:layout_constraintBottom_toBottomOf="@id/storeOfferContainer"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toEndOf="@id/storeOfferContainer"
+                                        app:layout_constraintTop_toTopOf="@id/storeOfferContainer"
+                                        app:layout_constraintWidth_percent="0.25">
+                                        <ImageView
+                                            android:layout_width="@dimen/_15sdp"
+                                            android:layout_height="@dimen/_15sdp"
+                                            android:tint="@color/colorPrimaryDark"
+                                            app:srcCompat="@drawable/ic_star" />
+
+                                        <TextView
+                                            android:id="@+id/ds_tv_store_rating_SD"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="@dimen/_2sdp"
+                                            android:ellipsize="end"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:includeFontPadding="false"
+                                            android:maxLines="1"
+                                            android:text="0.0"
+                                            android:textColor="@color/black"
+                                            android:textSize="@dimen/text_size_smallest" />
+                                    </LinearLayout>
+                                </LinearLayout>
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:orientation="horizontal"
+                        android:weightSum="3.0">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/round_corner_3"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="@dimen/_6sdp">
+
+                            <TextView
+                                android:id="@+id/ds_tv_store_min_order_SD"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/roboto_regular"
+                                android:includeFontPadding="false"
+                                android:textColor="@color/black"
+                                android:text="5 ₼"
+                                android:textSize="@dimen/text_size_smallest" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="@dimen/_3sdp"
+                                android:ellipsize="end"
+                                android:fontFamily="@font/roboto_regular"
+                                android:includeFontPadding="false"
+                                android:maxLines="1"
+                                android:text="@string/minimum_order"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/text_size_smallest" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_5sdp"
+                            android:layout_weight="1"
+                            android:background="@drawable/round_corner_3"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="@dimen/_6sdp">
+
+                            <TextView
+                                android:id="@+id/ds_tv_store_opening_hour_SD"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/roboto_regular"
+                                android:includeFontPadding="false"
+                                android:text="09:00 - 18:00"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/text_size_smallest" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="@dimen/_3sdp"
+                                android:ellipsize="end"
+                                android:fontFamily="@font/roboto_regular"
+                                android:includeFontPadding="false"
+                                android:maxLines="1"
+                                android:text="@string/opening_hour"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/text_size_smallest" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:layout_weight="1"
+                            android:background="@drawable/round_corner_3"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="@dimen/_6sdp">
+
+                            <TextView
+                                android:id="@+id/ds_tv_store_delivery_time_SD"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/roboto_bold"
+                                android:includeFontPadding="false"
+                                android:textColor="@color/black"
+                                android:text="5 min"
+                                android:textSize="@dimen/text_size_smallest" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="@dimen/_3sdp"
+                                android:ellipsize="end"
+                                android:fontFamily="@font/roboto_regular"
+                                android:includeFontPadding="false"
+                                android:maxLines="1"
+                                android:text="@string/delivery_time"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/text_size_smallest" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/ds_tv_store_desc_SD"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:includeFontPadding="false"
+                        android:maxLines="2"
+                        android:text="McDonalds is really famous restuarant in azerbaijan, it has more than 500 employees"
+                        android:textColor="@color/hint"
+                        android:textSize="@dimen/text_size_smallest" />
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="@dimen/_1sdp"
+                        android:layout_marginTop="@dimen/_6sdp"
+                        android:background="@color/indigator" />
+
+                    <LinearLayout
+                        android:id="@+id/productOfCuisineContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginRight="@dimen/_12sdp">
+
+                        <TextView
+                            android:id="@+id/productOfCuisine"
+                            android:layout_width="0dp"
+                            android:layout_weight="2"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/_3sdp"
+                            android:fontFamily="@font/roboto_bold"
+                            android:text="@string/products"
+                            android:gravity="center"
+                            android:layout_gravity="center"
+                            android:textAllCaps="true"
+                            android:textColor="@color/black" />
+
+                        <CheckBox
+                            android:id="@+id/ds_check_only_veg_SD"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="@dimen/_5sdp"
+                            android:text="@string/only_veg"
+                            android:textAllCaps="true"
+                            android:gravity="center"
+                            android:textColor="@color/black" />
+
+                        <!--android:theme="@style/checkBoxStylePrimary"-->
+
+                        <ImageView
+                            android:id="@+id/ds_iv_veg_non_veg_SD"
+                            android:layout_width="@dimen/_12sdp"
+                            android:layout_height="@dimen/_12sdp"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="@dimen/_10sdp"
+                            android:src="@drawable/ic_star" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/ds_rv_store_product_SD"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:paddingBottom="@dimen/_55sdp"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <LinearLayout
+            android:id="@+id/ds_tv_product_cate_bottom_btn_SD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/_15sdp"
+            android:background="@drawable/top_left"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/_6sdp"
+            android:paddingBottom="@dimen/_6sdp">
+
+            <ImageView
+                android:id="@+id/ds_iv_bottom_product_btn_SD"
+                android:layout_width="@dimen/_15sdp"
+                android:layout_height="@dimen/_15sdp"
+                android:src="@drawable/main_ic_food_delivery" />
+
+            <TextView
+                android:id="@+id/ds_tv_bottom_product_btn_SD"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:fontFamily="@font/roboto_bold"
+                android:includeFontPadding="false"
+                android:text="@string/cuisine"
+                android:textColor="@color/white" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <!--<include
+        android:id="@+id/include9"
+        layout="@layout/data_placeholder_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/ds_rl_cart_detail_SD"
+        android:layout_below="@+id/ds_rl_toolbar_SD" />
+
+    <include
+        layout="@layout/"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@id/ds_rl_cart_detail_SD"
+        android:layout_below="@id/ds_rl_toolbar_SD" />-->
+
+    <RelativeLayout
+        android:id="@+id/ds_rl_cart_detail_SD"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/black"
+        android:gravity="center_vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:id="@+id/ds_tv_cart_total_size_amount_SD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_bold"
+            android:includeFontPadding="false"
+            android:text="1 item | $10.80"
+            android:textColor="@color/white" />
+
+        <ImageView
+            android:id="@+id/ds_iv_cart_SD"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_alignParentRight="true"
+            app:srcCompat="@drawable/ic_star" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:layout_toLeftOf="@id/ds_iv_cart_SD"
+            android:fontFamily="@font/roboto_bold"
+            android:includeFontPadding="false"
+            android:text="@string/view_cart"
+            android:textAllCaps="true"
+            android:textColor="@color/white" />
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

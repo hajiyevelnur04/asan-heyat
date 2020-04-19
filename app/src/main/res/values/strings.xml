@@ -63,4 +63,11 @@
     <string name="on_demand">On Demand</string>
     <string name="sort">Sort</string>
     <string name="filter">Filter</string>
+    <string name="minimum_order">minimum order</string>
+    <string name="opening_hour">Openning hour</string>
+    <string name="delivery_time">Delivery Time</string>
+    <string name="products">Products</string>
+    <string name="only_veg">Only vegan</string>
+    <string name="cuisine">cusine</string>
+    <string name="view_cart">View Card</string>
 </resources>

@@ -1,5 +1,6 @@
 package com.eebros.asan.ui.activity.delivery
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.LinearLayout
@@ -66,7 +67,7 @@ class FoodDeliveryActivity : BaseActivity() {
 
         foodRecyclerView.visibility = View.VISIBLE
         val storyAdapter = FoodDeliveryAdapter(foodList) {
-
+            startActivity(Intent(this, StoreDetailActivity::class.java))
         }
         foodRecyclerView.adapter = storyAdapter
 

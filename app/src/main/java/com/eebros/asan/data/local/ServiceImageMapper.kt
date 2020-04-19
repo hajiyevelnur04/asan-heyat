@@ -36,7 +36,7 @@ class ServiceImageMapper {
 
         serviceMap["food delivery"] = R.drawable.main_ic_food_delivery
         serviceMap["water delivery"] = R.drawable.main_ic_water_delivery
-        serviceMap["more"] = R.drawable.main_ic_more
+        serviceMap["more"] = R.drawable.ic_menu
 
     }
 }

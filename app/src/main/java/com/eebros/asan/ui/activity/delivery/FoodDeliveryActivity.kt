@@ -2,6 +2,7 @@ package com.eebros.asan.ui.activity.delivery
 
 import android.os.Bundle
 import android.view.View
+import android.widget.LinearLayout
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -23,6 +24,9 @@ class FoodDeliveryActivity : BaseActivity() {
     private lateinit var foodRecyclerView: RecyclerView
     private val foodList: ArrayList<Int> = arrayListOf()
 
+    lateinit var productSort: LinearLayout
+    lateinit var productFilter: LinearLayout
+
     lateinit var mShimmerViewContainer: ShimmerFrameLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,11 +39,19 @@ class FoodDeliveryActivity : BaseActivity() {
 
         mShimmerViewContainer = findViewById(R.id.shimmer_view_container)
 
+        productSort = findViewById(R.id.product_sorting)
+
+        productFilter = findViewById(R.id.product_filter)
+
         toolbar_back_button.setOnClickListener{
             onBackPressed()
         }
 
         toolbar_title.text = getString(R.string.food_delivery)
+
+        productSort.setOnClickListener{
+
+        }
 
         val llm = LinearLayoutManager(this)
         llm.orientation = LinearLayoutManager.VERTICAL

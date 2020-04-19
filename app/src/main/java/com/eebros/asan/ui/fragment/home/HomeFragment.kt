@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.GridView
 import android.widget.ImageView
+import android.widget.LinearLayout
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -18,6 +19,8 @@ import com.eebros.asan.ui.activity.ComingSoonActivity
 import com.eebros.asan.ui.activity.ComingSoonViewModel
 import com.eebros.asan.ui.activity.delivery.FoodDeliveryActivity
 import com.eebros.asan.ui.activity.driver.MapsActivity
+import com.google.android.material.bottomsheet.BottomSheetBehavior
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import javax.inject.Inject
 
 
@@ -30,19 +33,21 @@ class HomeFragment : BaseFragment() {
 
     private lateinit var storyRecyclerView: RecyclerView
     private lateinit var serviceGridView: GridView
+    lateinit var bottomGridView: GridView
 
     lateinit var asanStoryProgress: ImageView
     lateinit var asanServiceProgress: ImageView
 
     private val storyList: ArrayList<Int> = arrayListOf()
 
-    private val serviceList: ArrayList<String> = arrayListOf()
+    private val mainServiceList: ArrayList<String> = arrayListOf()
+    private val bottomServiceList: ArrayList<String> = arrayListOf()
 
-    /*private lateinit var bottomSheetBehavior: BottomSheetBehavior<LinearLayout>
+    private lateinit var bottomSheetBehavior: BottomSheetBehavior<LinearLayout>
 
     private lateinit var bottomSheet: LinearLayout
 
-    lateinit var viewBottom: View*/
+    lateinit var viewBottom: View
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -70,28 +75,37 @@ class HomeFragment : BaseFragment() {
         storyList.add(R.drawable.santexnik)
         storyList.add(R.drawable.beverage)
 
+        mainServiceList.add("taxi ride")
+        mainServiceList.add("food delivery")
+        mainServiceList.add("courier service")
+        mainServiceList.add("home cleaning")
 
-        serviceList.add("taxi ride")
-        serviceList.add("food delivery")
-        serviceList.add("courier service")
-        serviceList.add("home cleaning")
+        mainServiceList.add("workout trainer")
+        mainServiceList.add("flowers delivery")
+        mainServiceList.add("water delivery")
+        mainServiceList.add("more")
 
 
-        serviceList.add("beauty services")
-        serviceList.add("workout trainer")
-        serviceList.add("flowers delivery")
-        serviceList.add("water delivery")
+        bottomServiceList.add("taxi ride")
+        bottomServiceList.add("food delivery")
+        bottomServiceList.add("courier service")
+        bottomServiceList.add("home cleaning")
 
-        serviceList.add("baby care")
-        serviceList.add("car wash")
-        serviceList.add("electronics")
-        serviceList.add("pest control")
 
-        /*serviceList.add("bike ride")
-        serviceList.add("flowers delivery")
-        serviceList.add("courier service")
-        serviceList.add("more")*/
+        bottomServiceList.add("beauty services")
+        bottomServiceList.add("workout trainer")
+        bottomServiceList.add("flowers delivery")
+        bottomServiceList.add("water delivery")
 
+        bottomServiceList.add("baby care")
+        bottomServiceList.add("car wash")
+        bottomServiceList.add("electronics")
+        bottomServiceList.add("pest control")
+
+        bottomServiceList.add("baby care")
+        bottomServiceList.add("pest control")
+        bottomServiceList.add("car repair")
+        bottomServiceList.add("dog walking")
 
         val storyAdapter = StoriesRecyclerViewAdapter(storyList) {
                 val intent = Intent(requireActivity(), CampaignActivity::class.java)
@@ -104,7 +118,35 @@ class HomeFragment : BaseFragment() {
         asanStoryProgress.visibility = View.GONE
 
 
-        val serviceAdapter = ServiceRecyclerViewAdapter(requireContext(), serviceList) {
+        val mainServiceAdapter = ServiceRecyclerViewAdapter(requireContext(), mainServiceList) {
+            when(it){
+                0 -> {
+                    startActivity(Intent(requireActivity(), MapsActivity::class.java))
+                    requireActivity().overridePendingTransition(R.anim.enter, R.anim.exit)
+                }
+
+                1 -> {
+                    startActivity(Intent(requireActivity(), FoodDeliveryActivity::class.java))
+                    requireActivity().overridePendingTransition(R.anim.enter, R.anim.exit)
+                }
+                7 -> {
+
+                    if (bottomSheetBehavior.state != BottomSheetBehavior.STATE_EXPANDED) {
+                        bottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED)
+                    } else {
+                        bottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED)
+                    }
+                }
+                else -> {
+                    startActivity(Intent(requireActivity(), ComingSoonActivity::class.java))
+                    requireActivity().overridePendingTransition(R.anim.enter, R.anim.exit)
+                }
+            }
+
+        }
+
+
+        val bottomServiceAdapter = ServiceRecyclerViewAdapter(requireContext(), bottomServiceList) {
             when(it){
                 0 -> {
                     startActivity(Intent(requireActivity(), MapsActivity::class.java))
@@ -121,18 +163,14 @@ class HomeFragment : BaseFragment() {
                 }
             }
 
-            /*if (bottomSheetBehavior!!.state != BottomSheetBehavior.STATE_EXPANDED) {
-                bottomSheetBehavior!!.state = BottomSheetBehavior.STATE_EXPANDED
-            } else {
-                bottomSheetBehavior!!.state = BottomSheetBehavior.STATE_COLLAPSED
-            }*/
         }
-        serviceGridView.adapter = serviceAdapter
+        serviceGridView.adapter = mainServiceAdapter
+        bottomGridView.adapter = bottomServiceAdapter
 
         asanServiceProgress.clearAnimation()
         asanServiceProgress.visibility = View.GONE
 
-        /*bottomSheetBehavior.setBottomSheetCallback(object : BottomSheetBehavior.BottomSheetCallback() {
+        bottomSheetBehavior.setBottomSheetCallback(object : BottomSheetBehavior.BottomSheetCallback() {
             override fun onStateChanged(bottomSheet: View, newState: Int) {
                 when (newState) {
                     BottomSheetBehavior.STATE_HIDDEN -> { }
@@ -152,8 +190,8 @@ class HomeFragment : BaseFragment() {
         })
 
         viewBottom.setOnClickListener {
-            *//*bottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED)*//*
-        }*/
+            bottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED)
+        }
 
         return root
     }
@@ -162,22 +200,10 @@ class HomeFragment : BaseFragment() {
         asanStoryProgress = root.findViewById(R.id.asanStoryProgress)
         asanServiceProgress = root.findViewById(R.id.asanServiceProgress)
         serviceGridView = root.findViewById(R.id.serviceGridView)
+        bottomGridView = root.findViewById(R.id.bottomGridView)
         storyRecyclerView = root.findViewById(R.id.storyRecyclerView)
-        /*viewBottom = root.findViewById(R.id.view_bottom_sheet_bg)
+        viewBottom = root.findViewById(R.id.view_bottom_sheet_bg)
         bottomSheet = root.findViewById(R.id.bottom_sheet)
-        bottomSheetBehavior = BottomSheetBehavior.from(bottomSheet)*/
+        bottomSheetBehavior = BottomSheetBehavior.from(bottomSheet)
     }
-
-    /*private fun openBottomSheet() {
-        if (bottomSheetBehavior.state == BottomSheetBehavior.STATE_COLLAPSED) {
-            bottomSheetBehavior.state = BottomSheetBehavior.STATE_EXPANDED
-        }
-    }
-
-    private fun closeBottomSheet() {
-        if (bottomSheetBehavior != null && bottomSheetBehavior.state == BottomSheetBehavior.STATE_EXPANDED) {
-            bottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
-        }
-    }*/
-
 }

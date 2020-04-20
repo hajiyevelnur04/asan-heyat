@@ -86,7 +86,8 @@ class HomeFragment : BaseFragment() {
         mainServiceList.add("more")
 
 
-        bottomServiceList.add("taxi ride")
+
+        bottomServiceList.add("water delivery")
         bottomServiceList.add("food delivery")
         bottomServiceList.add("courier service")
         bottomServiceList.add("home cleaning")
@@ -95,7 +96,8 @@ class HomeFragment : BaseFragment() {
         bottomServiceList.add("beauty services")
         bottomServiceList.add("workout trainer")
         bottomServiceList.add("flowers delivery")
-        bottomServiceList.add("water delivery")
+        bottomServiceList.add("taxi ride")
+
 
         bottomServiceList.add("baby care")
         bottomServiceList.add("car wash")

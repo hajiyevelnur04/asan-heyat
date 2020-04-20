@@ -56,6 +56,8 @@
                                 <LinearLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
+                                    android:layout_marginLeft="12dp"
+                                    android:layout_marginRight="12dp"
                                     android:orientation="horizontal">
 
                                     <ImageView
@@ -65,9 +67,9 @@
                                         android:src="@drawable/pizza"
                                         android:layout_marginTop="@dimen/_12sdp"/>
 
+
                                     <LinearLayout
                                         android:layout_width="match_parent"
-                                        android:layout_alignEnd=""
                                         android:layout_height="match_parent"
                                         android:orientation="vertical">
 
@@ -81,7 +83,7 @@
                                             android:text="Mcdonald"
                                             android:layout_marginLeft="12dp"
                                             android:textColor="@color/white"
-                                            android:textSize="@dimen/_15sdp" />
+                                            android:textSize="@dimen/_20sdp" />
 
                                         <LinearLayout
                                             android:layout_width="match_parent"
@@ -186,8 +188,7 @@
                                             android:maxLines="2"
                                             android:text="No offer available"
                                             android:padding="@dimen/_4sdp"
-                                            android:textColor="@color/black"
-                                            android:textSize="@dimen/text_size_smallest" />
+                                            android:textColor="@color/black" />
                                     </LinearLayout>
 
                                     <LinearLayout
@@ -220,8 +221,7 @@
                                             android:includeFontPadding="false"
                                             android:maxLines="1"
                                             android:text="0.0"
-                                            android:textColor="@color/black"
-                                            android:textSize="@dimen/text_size_smallest" />
+                                            android:textColor="@color/black" />
                                     </LinearLayout>
                                 </LinearLayout>
                                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -251,8 +251,7 @@
                                 android:fontFamily="@font/roboto_regular"
                                 android:includeFontPadding="false"
                                 android:textColor="@color/black"
-                                android:text="5 ₼"
-                                android:textSize="@dimen/text_size_smallest" />
+                                android:text="5 ₼" />
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -264,8 +263,7 @@
                                 android:includeFontPadding="false"
                                 android:maxLines="1"
                                 android:text="@string/minimum_order"
-                                android:textColor="@color/black"
-                                android:textSize="@dimen/text_size_smallest" />
+                                android:textColor="@color/black" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -285,8 +283,7 @@
                                 android:fontFamily="@font/roboto_regular"
                                 android:includeFontPadding="false"
                                 android:text="09:00 - 18:00"
-                                android:textColor="@color/black"
-                                android:textSize="@dimen/text_size_smallest" />
+                                android:textColor="@color/black" />
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -298,8 +295,7 @@
                                 android:includeFontPadding="false"
                                 android:maxLines="1"
                                 android:text="@string/opening_hour"
-                                android:textColor="@color/black"
-                                android:textSize="@dimen/text_size_smallest" />
+                                android:textColor="@color/black" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -316,11 +312,10 @@
                                 android:id="@+id/ds_tv_store_delivery_time_SD"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:fontFamily="@font/roboto_bold"
+                                android:fontFamily="@font/roboto_regular"
                                 android:includeFontPadding="false"
                                 android:textColor="@color/black"
-                                android:text="5 min"
-                                android:textSize="@dimen/text_size_smallest" />
+                                android:text="5 min" />
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -332,8 +327,7 @@
                                 android:includeFontPadding="false"
                                 android:maxLines="1"
                                 android:text="@string/delivery_time"
-                                android:textColor="@color/black"
-                                android:textSize="@dimen/text_size_smallest" />
+                                android:textColor="@color/black" />
                         </LinearLayout>
                     </LinearLayout>
 
@@ -344,6 +338,7 @@
                         android:layout_gravity="center_vertical"
                         android:layout_marginTop="@dimen/_10sdp"
                         android:fontFamily="@font/roboto_regular"
+                        android:padding="8dp"
                         android:includeFontPadding="false"
                         android:maxLines="2"
                         android:text="McDonalds is really famous restuarant in azerbaijan, it has more than 500 employees"
@@ -402,7 +397,7 @@
                 </LinearLayout>
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/ds_rv_store_product_SD"
+                    android:id="@+id/storeProductContainer"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
                     android:paddingBottom="@dimen/_55sdp"
@@ -456,42 +451,52 @@
         android:layout_above="@id/ds_rl_cart_detail_SD"
         android:layout_below="@id/ds_rl_toolbar_SD" />-->
 
-    <RelativeLayout
-        android:id="@+id/ds_rl_cart_detail_SD"
-        android:layout_width="fill_parent"
-        android:layout_height="@dimen/_40sdp"
-        android:layout_alignParentBottom="true"
+    <LinearLayout
+        android:id="@+id/cardDetailContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:background="@color/black"
-        android:gravity="center_vertical"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent">
+        android:padding="@dimen/_10sdp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <TextView
-            android:id="@+id/ds_tv_cart_total_size_amount_SD"
-            android:layout_width="wrap_content"
+            android:id="@+id/itemAmount"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
+            android:layout_gravity="start"
             android:fontFamily="@font/roboto_bold"
-            android:includeFontPadding="false"
-            android:text="1 item | $10.80"
+            android:text="1 item | ₼10.80"
             android:textColor="@color/white" />
 
-        <ImageView
-            android:id="@+id/ds_iv_cart_SD"
-            android:layout_width="@dimen/_20sdp"
-            android:layout_height="@dimen/_20sdp"
-            android:layout_alignParentRight="true"
-            app:srcCompat="@drawable/ic_star" />
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="@dimen/_10sdp"
-            android:layout_toLeftOf="@id/ds_iv_cart_SD"
-            android:fontFamily="@font/roboto_bold"
-            android:includeFontPadding="false"
-            android:text="@string/view_cart"
-            android:textAllCaps="true"
-            android:textColor="@color/white" />
-    </RelativeLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/roboto_bold"
+                android:text="@string/view_cart"
+                android:textAllCaps="true"
+                android:textColor="@color/white" />
+
+            <ImageView
+                android:id="@+id/cardImage"
+                android:layout_marginLeft="10dp"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                app:srcCompat="@drawable/ic_shopping_cart" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

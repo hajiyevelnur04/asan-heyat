@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <include
+        android:id="@+id/toolbar_RideRider"
+        layout="@layout/asan_toolbar_layout" />
+
+    <!--<include layout="@layout/common_progressbar_full" />-->
+
+    <RelativeLayout
+        android:id="@+id/rl_map_rider"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        map:layout_constraintEnd_toEndOf="parent"
+        map:layout_constraintStart_toStartOf="parent"
+        map:layout_constraintTop_toBottomOf="@+id/toolbar_RideRider">
+
+        <fragment
+            android:id="@+id/map_rideRider"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/progress_rideRider"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        map:layout_constraintBottom_toBottomOf="parent"
+        map:layout_constraintEnd_toEndOf="parent"
+        map:layout_constraintStart_toStartOf="parent"
+        map:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/car_rideRider_serviceLayout"
+        android:layout_width="0dp"
+        android:visibility="visible"
+        android:layout_height="wrap_content"
+        map:layout_constraintBottom_toBottomOf="parent"
+        map:layout_constraintEnd_toEndOf="parent"
+        map:layout_constraintStart_toStartOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:padding="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_rideRider_cars"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                map:layout_constraintBottom_toTopOf="@+id/view_mapDividerVertical1"
+                map:layout_constraintEnd_toEndOf="@+id/view_mapDividerVertical2"
+                map:layout_constraintStart_toStartOf="@+id/view_mapDividerVertical2"
+                map:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/view_mapDividerVertical1"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:background="@color/colorPrimaryDark"
+                map:layout_constraintBottom_toTopOf="@+id/lay_rideRider_amount"
+                map:layout_constraintEnd_toEndOf="@+id/rv_rideRider_cars"
+                map:layout_constraintStart_toStartOf="@+id/rv_rideRider_cars"
+                map:layout_constraintTop_toBottomOf="@+id/rv_rideRider_cars" />
+
+            <View
+                android:id="@+id/view_mapDividerVertical2"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:background="@color/colorPrimaryDark"
+                map:layout_constraintEnd_toEndOf="parent"
+                map:layout_constraintStart_toStartOf="parent"
+                map:layout_constraintTop_toBottomOf="@id/lay_rideRider_amount" />
+
+            <LinearLayout
+                android:id="@+id/lay_rideRider_amount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                map:layout_constraintBottom_toTopOf="@id/view_mapDividerVertical2"
+                map:layout_constraintEnd_toStartOf="@+id/view_mapDivider"
+                map:layout_constraintStart_toStartOf="@+id/view_mapDividerVertical1"
+                map:layout_constraintTop_toBottomOf="@+id/view_mapDividerVertical1">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_rider_ride_amount"
+                    android:tint="@color/hint" />
+
+                <TextView
+                    android:id="@+id/txt_ride_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:gravity="center"
+                    android:text="00"
+                    android:textColor="@color/hint" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lay_rideRider_time"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                map:layout_constraintBottom_toTopOf="@+id/view_mapDividerVertical2"
+                map:layout_constraintEnd_toStartOf="@+id/view_mapDivider1"
+                map:layout_constraintStart_toEndOf="@+id/view_mapDivider"
+                map:layout_constraintTop_toBottomOf="@+id/view_mapDividerVertical1">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_rider_ride_time"
+                    android:tint="@color/hint" />
+
+                <TextView
+                    android:id="@+id/txt_ride_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:gravity="center"
+                    android:text="00"
+                    android:textColor="@color/hint" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lay_rideRider_distance"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                map:layout_constraintBottom_toTopOf="@id/view_mapDividerVertical2"
+                map:layout_constraintEnd_toEndOf="@id/view_mapDividerVertical1"
+                map:layout_constraintStart_toEndOf="@+id/view_mapDivider1"
+                map:layout_constraintTop_toBottomOf="@id/view_mapDividerVertical1">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_rider_ride_distance"
+                    android:tint="@color/hint" />
+
+                <TextView
+                    android:id="@+id/txt_ride_distance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:gravity="center"
+                    android:text="0 KM"
+                    android:textColor="@color/hint" />
+            </LinearLayout>
+
+            <View
+                android:id="@id/view_mapDivider"
+                android:layout_width="1.0dip"
+                android:layout_height="@dimen/_23sdp"
+                android:background="@color/colorPrimaryDark"
+                map:layout_constraintBottom_toTopOf="@id/view_mapDividerVertical2"
+                map:layout_constraintEnd_toStartOf="@id/view_mapDivider1"
+                map:layout_constraintStart_toStartOf="parent"
+                map:layout_constraintTop_toBottomOf="@id/view_mapDividerVertical1" />
+
+            <View
+                android:id="@id/view_mapDivider1"
+                android:layout_width="1.0dip"
+                android:layout_height="@dimen/_23sdp"
+                android:background="@color/colorPrimaryDark"
+                map:layout_constraintBottom_toBottomOf="@id/view_mapDivider"
+                map:layout_constraintEnd_toEndOf="parent"
+                map:layout_constraintStart_toEndOf="@id/view_mapDivider"
+                map:layout_constraintTop_toTopOf="@id/view_mapDivider" />
+
+            <RelativeLayout
+                android:id="@+id/lay_ridePaymentMethod"
+                android:layout_width="0dp"
+                android:layout_height="32dp"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_6sdp"
+                android:background="@drawable/main_top_left_border_12"
+                map:layout_constraintBottom_toTopOf="@+id/btn_rideNow"
+                map:layout_constraintEnd_toStartOf="@+id/lay_ridePromoCode"
+                map:layout_constraintStart_toStartOf="parent"
+                map:layout_constraintTop_toBottomOf="@id/view_mapDividerVertical2">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/iv_ridePaymentMethod_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_rider_cash"
+                        android:tint="@color/hint" />
+
+                    <TextView
+                        android:id="@+id/tv_ridePaymentMethod_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_3sdp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="Cash"
+                        android:textColor="@color/hint" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@id/lay_ridePromoCode"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:background="@drawable/main_top_left_border_12"
+                map:layout_constraintBottom_toBottomOf="@id/lay_ridePaymentMethod"
+                map:layout_constraintEnd_toEndOf="parent"
+                map:layout_constraintStart_toEndOf="@id/lay_ridePaymentMethod"
+                map:layout_constraintTop_toTopOf="@id/lay_ridePaymentMethod">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_rider_promo_code"
+                        android:tint="@color/hint" />
+
+                    <TextView
+                        android:id="@+id/tv_rideSelectedPromoCode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_3sdp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="promo_code"
+                        android:textColor="@color/hint" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@id/btn_rideNow"
+                android:layout_width="0.0dip"
+                android:layout_height="50dp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:background="@drawable/main_top_left_bg_12"
+                android:fontFamily="@font/roboto_regular"
+                android:foreground="?selectableItemBackground"
+                android:gravity="center"
+                android:text="Ride now"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                map:layout_constraintBottom_toBottomOf="parent"
+                map:layout_constraintEnd_toStartOf="@+id/btn_rideLater"
+                map:layout_constraintStart_toStartOf="@id/lay_ridePaymentMethod"
+                map:layout_constraintTop_toBottomOf="@id/lay_ridePaymentMethod" />
+
+            <TextView
+                android:id="@id/btn_rideLater"
+                android:layout_width="0.0dip"
+                android:layout_height="50dp"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:background="@drawable/main_top_left_bg_12"
+                android:fontFamily="@font/roboto_regular"
+                android:foreground="?selectableItemBackground"
+                android:gravity="center"
+                android:text="Schedule ride"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                map:layout_constraintBottom_toBottomOf="parent"
+                map:layout_constraintEnd_toEndOf="@id/lay_ridePromoCode"
+                map:layout_constraintStart_toEndOf="@id/btn_rideNow" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- <com.fox.jek.user.rider.CustomView.RippleBackground
+         android:id="@id/ripple_requestDriver"
+         android:layout_width="fill_parent"
+         android:layout_height="fill_parent"
+         android:background="#b9838383"
+         android:visibility="gone"
+         map:rb_color="@color/colorWhite"
+         map:rb_duration="3000"
+         map:rb_radius="@dimen/_25sdp"
+         map:rb_rippleAmount="5"
+         map:rb_scale="5.0"
+         map:rb_strokeWidth="@dimen/_50sdp"
+         map:rb_type="fillRipple">
+
+         <ImageView
+             android:id="@id/iv_requestRide_user"
+             android:layout_width="@dimen/_60sdp"
+             android:layout_height="@dimen/_60sdp"
+             android:layout_centerInParent="true"
+             android:layout_margin="@dimen/_20sdp"
+             android:background="@drawable/rider_ripple_bg_white"
+             android:padding="@dimen/_10sdp"
+             android:src="@drawable/ic_rider_request_driver"
+             android:tint="@color/colorPrimary" />
+
+         <ImageButton
+             android:id="@id/btn_cancel_driver_req"
+             android:layout_width="@dimen/_40sdp"
+             android:layout_height="@dimen/_40sdp"
+             android:layout_alignParentBottom="true"
+             android:layout_centerHorizontal="true"
+             android:layout_margin="@dimen/_20sdp"
+             android:background="@drawable/rider_ripple_bg_white"
+             android:src="@drawable/ic_rider_ride_cancel"
+             android:tint="@color/colorPrimary" />
+     </com.fox.jek.user.rider.CustomView.RippleBackground>-->
+
+    <com.skyfishjy.library.RippleBackground
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/content"
+        android:background="#b9838383"
+        android:visibility="gone"
+        map:rb_color="@color/white"
+        map:rb_duration="3000"
+        map:rb_radius="25dp"
+        map:rb_rippleAmount="5"
+        map:rb_scale="5.0"
+        map:rb_strokeWidth="@dimen/_50sdp"
+        map:rb_type="fillRipple">
+
+        <ImageView
+            android:id="@+id/centerImage"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_60sdp"
+            android:layout_centerInParent="true"
+            android:layout_margin="@dimen/_20sdp"
+            android:background="@drawable/rider_ripple_bg_white"
+            android:padding="@dimen/_10sdp"
+            android:src="@drawable/ic_rider_request_driver"
+            android:tint="@color/colorPrimary" />
+
+        <ImageButton
+            android:id="@+id/btn_cancel_driver_req"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="@dimen/_20sdp"
+            android:background="@drawable/rider_ripple_bg_white"
+            android:src="@drawable/ic_close"
+            android:tint="@color/colorPrimary" />
+
+    </com.skyfishjy.library.RippleBackground>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -135,4 +135,7 @@ dependencies {
     //shimmer library
     implementation 'com.facebook.shimmer:shimmer:0.1.0@aar'
 
+    //ripple effect
+    implementation 'com.skyfishjy.ripplebackground:library:1.0.1'
+
 }

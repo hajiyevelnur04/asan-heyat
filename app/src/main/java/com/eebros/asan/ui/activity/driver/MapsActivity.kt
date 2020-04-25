@@ -42,6 +42,7 @@ class MapsActivity : BaseActivity(), OnMapReadyCallback {
     lateinit var searchContainer: LinearLayout
 
     lateinit var btn_homeRiderMainHandicap: ImageButton
+    lateinit var btn_ban_mainChildSeat: ImageButton
 
     private lateinit var mMap: GoogleMap
     private lateinit var lastLocation: Location
@@ -57,6 +58,7 @@ class MapsActivity : BaseActivity(), OnMapReadyCallback {
 
         searchContainer = findViewById(R.id.searchContainer)
         btn_homeRiderMainHandicap = findViewById(R.id.btn_homeRiderMainHandicap)
+        btn_ban_mainChildSeat = findViewById(R.id.ban_mainChildSeat)
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         val mapFragment = supportFragmentManager
@@ -82,6 +84,11 @@ class MapsActivity : BaseActivity(), OnMapReadyCallback {
 
             RiderDialog(this).dialogCreate(title,msg,btn_homeRiderMainHandicap)
 
+        }
+
+        btn_ban_mainChildSeat.setOnClickListener{
+            startActivity(Intent(this, SelectDriver::class.java))
+            overridePendingTransition(R.anim.enter, R.anim.exit)
         }
 
     }

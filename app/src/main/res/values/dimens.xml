@@ -51,5 +51,7 @@
     <dimen name="_40sdp">40dp</dimen>
     <dimen name="_100sdp">100dp</dimen>
     <dimen name="_32sdp">32dp</dimen>
+    <dimen name="_13sdp">13dp</dimen>
+    <dimen name="_62sdp">62dp</dimen>
 
 </resources>

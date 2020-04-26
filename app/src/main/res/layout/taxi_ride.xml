@@ -2,7 +2,6 @@
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/riderCar"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
@@ -14,12 +13,12 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_3sdp"
         android:layout_marginBottom="@dimen/_5sdp"
-        android:padding="@dimen/_10sdp">
+        android:padding="@dimen/_5sdp">
 
         <ImageView
             android:id="@+id/carIcon"
-            android:layout_width="@dimen/_55sdp"
-            android:layout_height="@dimen/_55sdp"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_32sdp"
             android:scaleType="fitCenter"
             android:tint="@color/colorPrimary"
             app:layout_constraintEnd_toEndOf="parent"
@@ -36,7 +35,7 @@
             android:maxLines="1"
             android:gravity="center"
             android:text="Sedan"
-            android:textColor="@color/black"
+            android:textColor="@color/hint"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

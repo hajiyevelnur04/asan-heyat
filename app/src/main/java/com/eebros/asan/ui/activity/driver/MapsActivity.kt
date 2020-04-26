@@ -74,7 +74,7 @@ class MapsActivity : BaseActivity(), OnMapReadyCallback {
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
 
         searchContainer.setOnClickListener{
-            startActivity(Intent(this, SearchRiderActivity::class.java))
+            startActivity(Intent(this, SelectDriver::class.java))
             overridePendingTransition(R.anim.enter, R.anim.exit)
         }
 
@@ -87,8 +87,12 @@ class MapsActivity : BaseActivity(), OnMapReadyCallback {
         }
 
         btn_ban_mainChildSeat.setOnClickListener{
-            startActivity(Intent(this, SelectDriver::class.java))
-            overridePendingTransition(R.anim.enter, R.anim.exit)
+            val title = "Add child seat"
+            val msg = "Do you want ti get child seat in your ride"
+
+            RiderDialog(this).dialogCreate(title,msg,btn_homeRiderMainHandicap)
+            /*startActivity(Intent(this, SearchRiderActivity::class.java))
+            overridePendingTransition(R.anim.enter, R.anim.exit)*/
         }
 
     }

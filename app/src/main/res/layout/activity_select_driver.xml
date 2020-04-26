@@ -28,6 +28,83 @@
             android:layout_height="match_parent" />
     </RelativeLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        map:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        map:layout_constraintStart_toStartOf="parent"
+        map:layout_constraintTop_toBottomOf="@+id/toolbar_RideRider">
+
+        <LinearLayout
+            android:id="@+id/fromContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            map:layout_constraintEnd_toEndOf="parent"
+            map:layout_constraintStart_toStartOf="parent"
+            android:padding="4dp"
+            android:background="@drawable/textview_backgroung"
+            map:layout_constraintTop_toBottomOf="@+id/include6">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="24dp"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_car" />
+
+            <TextView
+                android:id="@+id/fromWhere"
+                android:layout_width="0dp"
+                android:layout_weight="6"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:maxLines="2"
+                android:text="Turan bank elmler"
+                android:textSize="@dimen/_10sdp" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/toContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            map:layout_constraintEnd_toEndOf="parent"
+            map:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="8dp"
+            android:padding="4dp"
+            android:background="@drawable/textview_backgroung"
+            map:layout_constraintTop_toBottomOf="@+id/include6">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="24dp"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_star" />
+
+            <TextView
+                android:id="@+id/to"
+                android:layout_width="0dp"
+                android:layout_weight="6"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:maxLines="2"
+                android:text="Baki nerimanov rayonu"
+                android:textSize="@dimen/_10sdp" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
     <ProgressBar
         android:id="@+id/progress_rideRider"
         android:layout_width="wrap_content"
@@ -48,7 +125,7 @@
         map:layout_constraintStart_toStartOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:padding="8dp"
+            android:padding="4dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -65,7 +142,7 @@
                 android:id="@+id/view_mapDividerVertical1"
                 android:layout_width="0dp"
                 android:layout_height="1dp"
-                android:layout_marginBottom="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_4sdp"
                 android:background="@color/colorPrimaryDark"
                 map:layout_constraintBottom_toTopOf="@+id/lay_rideRider_amount"
                 map:layout_constraintEnd_toEndOf="@+id/rv_rideRider_cars"
@@ -76,8 +153,8 @@
                 android:id="@+id/view_mapDividerVertical2"
                 android:layout_width="0dp"
                 android:layout_height="1dp"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:layout_marginBottom="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:layout_marginBottom="@dimen/_4sdp"
                 android:background="@color/colorPrimaryDark"
                 map:layout_constraintEnd_toEndOf="parent"
                 map:layout_constraintStart_toStartOf="parent"
@@ -169,7 +246,7 @@
 
             <View
                 android:id="@id/view_mapDivider"
-                android:layout_width="1.0dip"
+                android:layout_width="1dp"
                 android:layout_height="@dimen/_23sdp"
                 android:background="@color/colorPrimaryDark"
                 map:layout_constraintBottom_toTopOf="@id/view_mapDividerVertical2"
@@ -179,7 +256,7 @@
 
             <View
                 android:id="@id/view_mapDivider1"
-                android:layout_width="1.0dip"
+                android:layout_width="1dp"
                 android:layout_height="@dimen/_23sdp"
                 android:background="@color/colorPrimaryDark"
                 map:layout_constraintBottom_toBottomOf="@id/view_mapDivider"
@@ -229,7 +306,7 @@
                 android:id="@id/lay_ridePromoCode"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginLeft="@dimen/_3sdp"
                 android:background="@drawable/main_top_left_border_12"
                 map:layout_constraintBottom_toBottomOf="@id/lay_ridePaymentMethod"
                 map:layout_constraintEnd_toEndOf="parent"
@@ -262,7 +339,7 @@
 
             <TextView
                 android:id="@id/btn_rideNow"
-                android:layout_width="0.0dip"
+                android:layout_width="0dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="@dimen/_5sdp"
                 android:layout_marginRight="@dimen/_5sdp"
@@ -281,7 +358,7 @@
 
             <TextView
                 android:id="@id/btn_rideLater"
-                android:layout_width="0.0dip"
+                android:layout_width="0dp"
                 android:layout_height="50dp"
                 android:layout_marginLeft="@dimen/_5sdp"
                 android:layout_marginTop="@dimen/_10sdp"

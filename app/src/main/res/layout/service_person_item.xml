@@ -53,8 +53,9 @@
                                     android:fontFamily="@font/roboto_regular"
                                     android:includeFontPadding="false"
                                     android:maxLines="1"
+                                    android:text="Hajiyev Elnur"
                                     android:paddingRight="@dimen/_15sdp"
-                                    android:textColor="@color/hint"
+                                    android:textColor="@color/black"
                                     app:layout_constraintStart_toStartOf="parent"
                                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -119,6 +120,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="@dimen/_3sdp"
+                                android:text= "3.5 km"
                                 android:fontFamily="@font/roboto_regular"
                                 android:includeFontPadding="false" />
 
@@ -134,6 +136,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="@dimen/_10sdp"
                                 android:drawablePadding="@dimen/_5sdp"
+                                android:text="pencere silmek"
                                 android:fontFamily="@font/roboto_regular"
                                 android:includeFontPadding="false" />
                         </LinearLayout>
@@ -143,7 +146,7 @@
                         android:layout_width="fill_parent"
                         android:layout_height="1.0dip"
                         android:layout_marginTop="@dimen/_10sdp"
-                        android:background="@color/colorPrimary" />
+                        android:background="@color/indigator" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -171,7 +174,7 @@
                             android:maxLines="1"
                             android:text="Home Cleaning"
                             android:textColor="@color/hint"
-                            android:visibility="gone" />
+                            android:visibility="visible" />
 
                         <TextView
                             android:id="@id/sp_tv_pkg_1_price_AP"
@@ -183,7 +186,7 @@
                             android:includeFontPadding="false"
                             android:text="65$"
                             android:textColor="@color/colorPrimary"
-                            android:visibility="gone" />
+                            android:visibility="visible" />
 
                         <TextView
                             android:id="@+id/sp_tv_pkg_3_name_AP"
@@ -198,7 +201,7 @@
                             android:maxLines="1"
                             android:text="Home Cleaning"
                             android:textColor="@color/hint"
-                            android:visibility="gone" />
+                            android:visibility="visible" />
 
                         <TextView
                             android:id="@id/sp_tv_pkg_3_price_AP"
@@ -211,7 +214,7 @@
                             android:includeFontPadding="false"
                             android:text="65$"
                             android:textColor="@color/colorPrimary"
-                            android:visibility="gone" />
+                            android:visibility="visible" />
 
                         <View
                             android:id="@id/view_vertical"
@@ -232,7 +235,7 @@
                             android:maxLines="1"
                             android:text="Home Cleaning"
                             android:textColor="@color/hint"
-                            android:visibility="gone" />
+                            android:visibility="visible" />
 
                         <TextView
                             android:id="@+id/sp_tv_pkg_2_price_AP"
@@ -244,7 +247,7 @@
                             android:includeFontPadding="false"
                             android:text="65$"
                             android:textColor="@color/colorPrimary"
-                            android:visibility="gone" />
+                            android:visibility="visible" />
 
                         <TextView
                             android:id="@+id/sp_tv_more_pkg_AP"

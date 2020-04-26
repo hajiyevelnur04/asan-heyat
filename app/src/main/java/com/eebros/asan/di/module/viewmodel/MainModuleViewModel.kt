@@ -12,6 +12,7 @@ import com.eebros.asan.ui.activity.driver.MapsViewModel
 import com.eebros.asan.ui.activity.main.MainViewModel
 import com.eebros.asan.ui.activity.registration.DoneRegistrationViewModel
 import com.eebros.asan.ui.activity.registration.NumberViewModel
+import com.eebros.asan.ui.activity.service.ServiceViewModel
 import com.eebros.asan.ui.fragment.order.OrderViewModel
 import com.eebros.asan.ui.fragment.home.HomeViewModel
 import com.eebros.asan.ui.fragment.notifications.NotificationsViewModel
@@ -33,6 +34,12 @@ abstract class MainModuleViewModel {
     @IntoMap
     @ViewModelKey(FoodDeliveryViewModel::class)
     abstract fun bindFoodDeliveryViewModel(viewModel: FoodDeliveryViewModel): ViewModel
+
+    @Binds
+    @MainScope
+    @IntoMap
+    @ViewModelKey(ServiceViewModel::class)
+    abstract fun bindServiceViewModel(viewModel: ServiceViewModel): ViewModel
 
     @Binds
     @MainScope

@@ -1,6 +1,5 @@
 package com.eebros.asan.ui.activity.service
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.LinearLayout
@@ -11,7 +10,6 @@ import com.eebros.asan.R
 import com.eebros.asan.base.BaseActivity
 import com.eebros.asan.di.ViewModelProviderFactory
 import com.eebros.asan.model.ServicePersonModel
-import com.eebros.asan.ui.activity.common.SortDialog
 import com.facebook.shimmer.ShimmerFrameLayout
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import kotlinx.android.synthetic.main.asan_toolbar_layout.*

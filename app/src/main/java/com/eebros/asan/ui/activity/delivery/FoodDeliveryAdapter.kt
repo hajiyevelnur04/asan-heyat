@@ -29,7 +29,7 @@ class FoodDeliveryAdapter(
                     itemView.storeStatus.text = "Open now"
                     itemView.storeStatus.setTextColor(Color.GREEN)
                 } else {
-                    itemView.storeStatus.text = "close now"
+                    itemView.storeStatus.text = "closed"
                     itemView.storeStatus.setTextColor(Color.RED)
                 }
 

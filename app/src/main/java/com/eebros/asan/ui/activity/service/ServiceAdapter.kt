@@ -1,14 +1,11 @@
 package com.eebros.asan.ui.activity.service
 
-import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.eebros.asan.R
-import com.eebros.asan.data.remote.response.RestaurantResponseModel
 import com.eebros.asan.model.ServicePersonModel
-import kotlinx.android.synthetic.main.store_item.view.*
 
 class ServiceAdapter(
     private val serviceList: ArrayList<ServicePersonModel>,

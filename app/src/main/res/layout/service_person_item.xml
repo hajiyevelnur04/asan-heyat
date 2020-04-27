@@ -136,7 +136,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="@dimen/_10sdp"
                                 android:drawablePadding="@dimen/_5sdp"
-                                android:text="pencere silmek"
+                                android:text="home cleaning"
                                 android:fontFamily="@font/roboto_regular"
                                 android:includeFontPadding="false" />
                         </LinearLayout>
@@ -144,9 +144,10 @@
 
                     <View
                         android:layout_width="fill_parent"
-                        android:layout_height="1.0dip"
+                        android:layout_height="1dp"
                         android:layout_marginTop="@dimen/_10sdp"
-                        android:background="@color/indigator" />
+                        android:visibility="visible"
+                        android:background="@color/unSelectedRegisterTabColor" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -155,6 +156,7 @@
                         android:fontFamily="@font/roboto_bold"
                         android:includeFontPadding="false"
                         android:text="@string/packages"
+                        android:visibility="gone"
                         android:textColor="@color/black" />
 
                     <RelativeLayout
@@ -174,7 +176,7 @@
                             android:maxLines="1"
                             android:text="Home Cleaning"
                             android:textColor="@color/hint"
-                            android:visibility="visible" />
+                            android:visibility="gone" />
 
                         <TextView
                             android:id="@id/sp_tv_pkg_1_price_AP"
@@ -186,7 +188,7 @@
                             android:includeFontPadding="false"
                             android:text="65$"
                             android:textColor="@color/colorPrimary"
-                            android:visibility="visible" />
+                            android:visibility="gone" />
 
                         <TextView
                             android:id="@+id/sp_tv_pkg_3_name_AP"
@@ -201,7 +203,7 @@
                             android:maxLines="1"
                             android:text="Home Cleaning"
                             android:textColor="@color/hint"
-                            android:visibility="visible" />
+                            android:visibility="gone" />
 
                         <TextView
                             android:id="@id/sp_tv_pkg_3_price_AP"
@@ -214,7 +216,7 @@
                             android:includeFontPadding="false"
                             android:text="65$"
                             android:textColor="@color/colorPrimary"
-                            android:visibility="visible" />
+                            android:visibility="gone" />
 
                         <View
                             android:id="@id/view_vertical"
@@ -235,7 +237,7 @@
                             android:maxLines="1"
                             android:text="Home Cleaning"
                             android:textColor="@color/hint"
-                            android:visibility="visible" />
+                            android:visibility="gone" />
 
                         <TextView
                             android:id="@+id/sp_tv_pkg_2_price_AP"
@@ -247,7 +249,7 @@
                             android:includeFontPadding="false"
                             android:text="65$"
                             android:textColor="@color/colorPrimary"
-                            android:visibility="visible" />
+                            android:visibility="gone" />
 
                         <TextView
                             android:id="@+id/sp_tv_more_pkg_AP"
@@ -286,7 +288,7 @@
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/sp_img_home_cleaning" />
+                    android:src="@drawable/tmp7" />
             </androidx.cardview.widget.CardView>
         </androidx.cardview.widget.CardView>
     </RelativeLayout>

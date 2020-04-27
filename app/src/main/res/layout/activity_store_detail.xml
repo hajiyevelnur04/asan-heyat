@@ -45,9 +45,9 @@
                             <RelativeLayout
                                 android:id="@+id/storeDetailContainer"
                                 android:layout_width="0.0dip"
-                                android:layout_height="wrap_content"
+                                android:layout_height="160dp"
                                 android:layout_marginBottom="@dimen/_16sdp"
-                                android:background="@color/colorPrimary"
+                                android:background="@drawable/food_background"
                                 android:paddingBottom="@dimen/_35sdp"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
@@ -55,7 +55,7 @@
 
                                 <LinearLayout
                                     android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
+                                    android:layout_height="match_parent"
                                     android:layout_marginLeft="12dp"
                                     android:layout_marginRight="12dp"
                                     android:orientation="horizontal">
@@ -63,9 +63,9 @@
                                     <ImageView
                                         android:id="@+id/storeLogo"
                                         android:layout_width="50dp"
+                                        android:layout_gravity="center_vertical"
                                         android:layout_height="50dp"
-                                        android:src="@drawable/pizza"
-                                        android:layout_marginTop="@dimen/_12sdp"/>
+                                        android:src="@drawable/pizza" />
 
 
                                     <LinearLayout
@@ -86,56 +86,115 @@
                                             android:textSize="@dimen/_20sdp" />
 
                                         <LinearLayout
-                                            android:layout_width="match_parent"
+                                            android:layout_width="wrap_content"
                                             android:layout_height="match_parent"
                                             android:layout_marginTop="@dimen/_5sdp"
                                             android:layout_marginLeft="12dp"
-                                            android:orientation="horizontal">
+                                            android:orientation="vertical">
 
-                                            <TextView
-                                                android:id="@+id/storeProductType1"
-                                                android:layout_width="wrap_content"
+                                            <LinearLayout
+                                                android:layout_width="match_parent"
                                                 android:layout_height="wrap_content"
-                                                android:background="@drawable/text_background_3"
-                                                android:ellipsize="end"
-                                                android:fontFamily="@font/roboto_regular"
-                                                android:includeFontPadding="false"
-                                                android:maxLines="1"
-                                                android:padding="@dimen/_2sdp"
-                                                android:text="Fast food"
-                                                android:textColor="@color/white"
-                                                android:visibility="visible" />
+                                                android:orientation="horizontal">
 
-                                            <TextView
-                                                android:id="@+id/storeProductType2"
-                                                android:layout_width="wrap_content"
-                                                android:layout_height="wrap_content"
-                                                android:background="@drawable/text_background_3"
-                                                android:ellipsize="end"
-                                                android:layout_marginLeft="12dp"
-                                                android:fontFamily="@font/roboto_regular"
-                                                android:includeFontPadding="false"
-                                                android:maxWidth="@dimen/_70sdp"
-                                                android:maxLines="1"
-                                                android:padding="@dimen/_2sdp"
-                                                android:text="Local food"
-                                                android:textColor="@color/white"
-                                                android:visibility="visible" />
+                                                <TextView
+                                                    android:id="@+id/storeProductType1"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:background="@drawable/main_top_left_border_12"
+                                                    android:ellipsize="end"
+                                                    android:fontFamily="@font/roboto_regular"
+                                                    android:maxLines="1"
+                                                    android:padding="@dimen/_4sdp"
+                                                    android:text="Fast food"
+                                                    android:textColor="@color/white"
+                                                    android:visibility="visible" />
 
-                                            <TextView
-                                                android:id="@+id/storeProductType3"
-                                                android:layout_width="wrap_content"
+                                                <TextView
+                                                    android:id="@+id/storeProductType2"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:background="@drawable/main_top_left_border_12"
+                                                    android:ellipsize="end"
+                                                    android:layout_marginLeft="12dp"
+                                                    android:fontFamily="@font/roboto_regular"
+                                                    android:includeFontPadding="false"
+                                                    android:maxWidth="@dimen/_70sdp"
+                                                    android:maxLines="1"
+                                                    android:padding="@dimen/_4sdp"
+                                                    android:text="Local food"
+                                                    android:textColor="@color/white"
+                                                    android:visibility="visible" />
+
+                                                <TextView
+                                                    android:id="@+id/storeProductType3"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginLeft="12dp"
+                                                    android:background="@drawable/main_top_left_border_12"
+                                                    android:ellipsize="end"
+                                                    android:fontFamily="@font/roboto_regular"
+                                                    android:includeFontPadding="false"
+                                                    android:maxLines="1"
+                                                    android:padding="@dimen/_4sdp"
+                                                    android:text="Tez bazar"
+                                                    android:textColor="@color/white"
+                                                    android:visibility="visible" />
+
+                                            </LinearLayout>
+
+                                            <LinearLayout
+                                                android:layout_width="match_parent"
                                                 android:layout_height="wrap_content"
-                                                android:layout_marginLeft="12dp"
-                                                android:background="@drawable/text_background_3"
-                                                android:ellipsize="end"
-                                                android:fontFamily="@font/roboto_regular"
-                                                android:includeFontPadding="false"
-                                                android:maxLines="1"
-                                                android:padding="@dimen/_2sdp"
-                                                android:text="Tez bazar"
-                                                android:textColor="@color/white"
-                                                android:visibility="visible" />
+                                                android:layout_marginTop="12dp"
+                                                android:orientation="horizontal">
+
+                                                <TextView
+                                                    android:id="@+id/storeProductType4"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:background="@drawable/main_top_left_border_12"
+                                                    android:ellipsize="end"
+                                                    android:fontFamily="@font/roboto_regular"
+                                                    android:maxLines="1"
+                                                    android:padding="@dimen/_4sdp"
+                                                    android:text="Fast food"
+                                                    android:textColor="@color/white"
+                                                    android:visibility="visible" />
+
+                                                <TextView
+                                                    android:id="@+id/storeProductType5"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:background="@drawable/main_top_left_border_12"
+                                                    android:ellipsize="end"
+                                                    android:layout_marginLeft="12dp"
+                                                    android:fontFamily="@font/roboto_regular"
+                                                    android:includeFontPadding="false"
+                                                    android:maxWidth="@dimen/_70sdp"
+                                                    android:maxLines="1"
+                                                    android:padding="@dimen/_4sdp"
+                                                    android:text="Local food"
+                                                    android:textColor="@color/white"
+                                                    android:visibility="visible" />
+
+                                                <TextView
+                                                    android:id="@+id/storeProductType6"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginLeft="12dp"
+                                                    android:background="@drawable/main_top_left_border_12"
+                                                    android:ellipsize="end"
+                                                    android:fontFamily="@font/roboto_regular"
+                                                    android:includeFontPadding="false"
+                                                    android:maxLines="1"
+                                                    android:padding="@dimen/_4sdp"
+                                                    android:text="Tez bazar"
+                                                    android:textColor="@color/white"
+                                                    android:visibility="visible" />
+                                            </LinearLayout>
+
+
                                         </LinearLayout>
                                     </LinearLayout>
                                 </LinearLayout>
@@ -186,7 +245,7 @@
                                             android:fontFamily="@font/roboto_regular"
                                             android:includeFontPadding="false"
                                             android:maxLines="2"
-                                            android:text="No offer available"
+                                            android:text=" Get 10% off an all order"
                                             android:padding="@dimen/_4sdp"
                                             android:textColor="@color/black" />
                                     </LinearLayout>
@@ -203,8 +262,7 @@
                                         app:layout_constraintBottom_toBottomOf="@id/storeOfferContainer"
                                         app:layout_constraintEnd_toEndOf="parent"
                                         app:layout_constraintStart_toEndOf="@id/storeOfferContainer"
-                                        app:layout_constraintTop_toTopOf="@id/storeOfferContainer"
-                                        app:layout_constraintWidth_percent="0.25">
+                                        app:layout_constraintTop_toTopOf="@id/storeOfferContainer">
                                         <ImageView
                                             android:layout_width="@dimen/_15sdp"
                                             android:layout_height="@dimen/_15sdp"
@@ -220,7 +278,7 @@
                                             android:fontFamily="@font/roboto_regular"
                                             android:includeFontPadding="false"
                                             android:maxLines="1"
-                                            android:text="0.0"
+                                            android:text="4.4"
                                             android:textColor="@color/black" />
                                     </LinearLayout>
                                 </LinearLayout>
@@ -231,14 +289,15 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_5sdp"
-                        android:orientation="horizontal"
-                        android:weightSum="3.0">
+                        android:layout_marginTop="@dimen/_6sdp"
+                        android:layout_marginRight="@dimen/_12sdp"
+                        android:layout_marginLeft="@dimen/_12sdp"
+                        android:orientation="horizontal">
 
                         <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
+                            android:layout_weight="2.5"
                             android:background="@drawable/round_corner_3"
                             android:gravity="center"
                             android:orientation="vertical"
@@ -270,9 +329,10 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="@dimen/_5sdp"
-                            android:layout_weight="1"
+                            android:layout_weight="2.5"
                             android:background="@drawable/round_corner_3"
                             android:gravity="center"
+                            android:id="@+id/openningTime"
                             android:orientation="vertical"
                             android:padding="@dimen/_6sdp">
 
@@ -301,7 +361,7 @@
                         <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:layout_marginLeft="@dimen/_12sdp"
                             android:layout_weight="1"
                             android:background="@drawable/round_corner_3"
                             android:gravity="center"
@@ -341,7 +401,7 @@
                         android:padding="8dp"
                         android:includeFontPadding="false"
                         android:maxLines="2"
-                        android:text="McDonalds is really famous restuarant in azerbaijan, it has more than 500 employees"
+                        android:text="Our value meal is one tasty bargain check out the best combos available"
                         android:textColor="@color/hint"
                         android:textSize="@dimen/text_size_smallest" />
 
@@ -398,8 +458,8 @@
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/storeProductContainer"
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:paddingBottom="@dimen/_55sdp"
                     app:layout_behavior="@string/appbar_scrolling_view_behavior" />
             </LinearLayout>
@@ -412,8 +472,9 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="@dimen/_15sdp"
-            android:background="@drawable/top_left"
+            android:background="@drawable/main_top_left_border_12"
             android:gravity="center"
+            android:padding="9dp"
             android:orientation="horizontal"
             android:paddingTop="@dimen/_6sdp"
             android:paddingBottom="@dimen/_6sdp">
@@ -457,7 +518,7 @@
         android:layout_height="wrap_content"
         android:background="@color/black"
         android:padding="@dimen/_10sdp"
-        android:visibility="visible"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">

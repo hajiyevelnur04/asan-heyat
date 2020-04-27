@@ -46,13 +46,13 @@
             android:orientation="horizontal"
             map:layout_constraintEnd_toEndOf="parent"
             map:layout_constraintStart_toStartOf="parent"
-            android:padding="4dp"
+            android:padding="8dp"
             android:background="@drawable/textview_backgroung"
             map:layout_constraintTop_toBottomOf="@+id/include6">
 
             <ImageView
                 android:layout_width="0dp"
-                android:layout_height="24dp"
+                android:layout_height="32dp"
                 android:layout_weight="1"
                 android:scaleType="fitCenter"
                 android:src="@drawable/ic_car" />
@@ -78,13 +78,13 @@
             map:layout_constraintEnd_toEndOf="parent"
             map:layout_constraintStart_toStartOf="parent"
             android:layout_marginTop="8dp"
-            android:padding="4dp"
+            android:padding="8dp"
             android:background="@drawable/textview_backgroung"
             map:layout_constraintTop_toBottomOf="@+id/include6">
 
             <ImageView
                 android:layout_width="0dp"
-                android:layout_height="24dp"
+                android:layout_height="32dp"
                 android:layout_weight="1"
                 android:scaleType="fitCenter"
                 android:src="@drawable/ic_star" />

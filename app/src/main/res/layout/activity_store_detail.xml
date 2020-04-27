@@ -63,8 +63,8 @@
                                     <ImageView
                                         android:id="@+id/storeLogo"
                                         android:layout_width="50dp"
-                                        android:layout_gravity="center_vertical"
                                         android:layout_height="50dp"
+                                        android:layout_gravity="center_vertical"
                                         android:src="@drawable/pizza" />
 
 
@@ -245,17 +245,17 @@
                                             android:fontFamily="@font/roboto_regular"
                                             android:includeFontPadding="false"
                                             android:maxLines="2"
-                                            android:text=" Get 10% off an all order"
                                             android:padding="@dimen/_4sdp"
+                                            android:text=" Get 10% off an all order"
                                             android:textColor="@color/black" />
                                     </LinearLayout>
 
                                     <LinearLayout
                                         android:id="@+id/ratingContainer"
                                         android:layout_width="0dp"
-                                        android:layout_weight="1"
-                                        android:layout_marginLeft="12dp"
                                         android:layout_height="match_parent"
+                                        android:layout_marginLeft="12dp"
+                                        android:layout_weight="1"
                                         android:background="@drawable/round_corner_3"
                                         android:gravity="center"
                                         android:orientation="horizontal"
@@ -263,6 +263,7 @@
                                         app:layout_constraintEnd_toEndOf="parent"
                                         app:layout_constraintStart_toEndOf="@id/storeOfferContainer"
                                         app:layout_constraintTop_toTopOf="@id/storeOfferContainer">
+
                                         <ImageView
                                             android:layout_width="@dimen/_15sdp"
                                             android:layout_height="@dimen/_15sdp"
@@ -282,16 +283,16 @@
                                             android:textColor="@color/black" />
                                     </LinearLayout>
                                 </LinearLayout>
-                                </androidx.constraintlayout.widget.ConstraintLayout>
+                            </androidx.constraintlayout.widget.ConstraintLayout>
                         </androidx.constraintlayout.widget.ConstraintLayout>
                     </RelativeLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_12sdp"
                         android:layout_marginTop="@dimen/_6sdp"
                         android:layout_marginRight="@dimen/_12sdp"
-                        android:layout_marginLeft="@dimen/_12sdp"
                         android:orientation="horizontal">
 
                         <LinearLayout
@@ -309,8 +310,8 @@
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/roboto_regular"
                                 android:includeFontPadding="false"
-                                android:textColor="@color/black"
-                                android:text="5 ₼" />
+                                android:text="5 ₼"
+                                android:textColor="@color/black" />
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -326,13 +327,13 @@
                         </LinearLayout>
 
                         <LinearLayout
+                            android:id="@+id/openningTime"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="@dimen/_5sdp"
                             android:layout_weight="2.5"
                             android:background="@drawable/round_corner_3"
                             android:gravity="center"
-                            android:id="@+id/openningTime"
                             android:orientation="vertical"
                             android:padding="@dimen/_6sdp">
 
@@ -374,8 +375,8 @@
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/roboto_regular"
                                 android:includeFontPadding="false"
-                                android:textColor="@color/black"
-                                android:text="5 min" />
+                                android:text="5 min"
+                                android:textColor="@color/black" />
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -398,9 +399,9 @@
                         android:layout_gravity="center_vertical"
                         android:layout_marginTop="@dimen/_10sdp"
                         android:fontFamily="@font/roboto_regular"
-                        android:padding="8dp"
                         android:includeFontPadding="false"
                         android:maxLines="2"
+                        android:padding="8dp"
                         android:text="Our value meal is one tasty bargain check out the best combos available"
                         android:textColor="@color/hint"
                         android:textSize="@dimen/text_size_smallest" />
@@ -415,21 +416,21 @@
                         android:id="@+id/productOfCuisineContainer"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
                         android:layout_marginTop="@dimen/_10sdp"
-                        android:layout_marginRight="@dimen/_12sdp">
+                        android:layout_marginRight="@dimen/_12sdp"
+                        android:orientation="horizontal">
 
                         <TextView
                             android:id="@+id/productOfCuisine"
                             android:layout_width="0dp"
-                            android:layout_weight="2"
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
-                            android:layout_marginLeft="@dimen/_3sdp"
-                            android:fontFamily="@font/roboto_bold"
-                            android:text="@string/products"
-                            android:gravity="center"
                             android:layout_gravity="center"
+                            android:layout_marginLeft="@dimen/_3sdp"
+                            android:layout_weight="2"
+                            android:fontFamily="@font/roboto_bold"
+                            android:gravity="center"
+                            android:text="@string/products"
                             android:textAllCaps="true"
                             android:textColor="@color/black" />
 
@@ -439,9 +440,9 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:layout_marginRight="@dimen/_5sdp"
+                            android:gravity="center"
                             android:text="@string/only_veg"
                             android:textAllCaps="true"
-                            android:gravity="center"
                             android:textColor="@color/black" />
 
                         <!--android:theme="@style/checkBoxStylePrimary"-->

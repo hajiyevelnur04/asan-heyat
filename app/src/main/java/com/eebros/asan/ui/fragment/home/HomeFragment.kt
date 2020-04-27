@@ -112,7 +112,7 @@ class HomeFragment : BaseFragment() {
 
         val storyAdapter = StoriesRecyclerViewAdapter(storyList) {
                 val intent = Intent(requireActivity(), CampaignActivity::class.java)
-                intent.putExtra("campaignId", storyList[it])
+                intent.putExtra("campaignId", it)
                 startActivity(intent)
             }
         storyRecyclerView.adapter = storyAdapter

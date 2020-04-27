@@ -11,7 +11,7 @@ class CampaignActivity : AppCompatActivity() {
 
     private val storyList: ArrayList<Int> = arrayListOf()
 
-    private val campaignId: Long by lazy { intent.getLongExtra("campaignId", 0L) }
+    private val campaignId: Int by lazy { intent.getIntExtra("campaignId", 0) }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,7 +28,7 @@ class CampaignActivity : AppCompatActivity() {
 
         var campaignPosition = 0
         for (i in 0 until storyList.size) {
-            if (campaignId == storyList[i].toLong()) {
+            if (campaignId == i) {
                 Glide
                     .with(this)
                     .load(storyList[i])

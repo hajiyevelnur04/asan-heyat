@@ -39,4 +39,21 @@ open class SortDialog(private val context: Context) {
 
         alertDialogObject.show()
     }
+
+    fun sortFunction(title: String, list: Array<String>) {
+        val blockDialogBuilder = androidx.appcompat.app.AlertDialog.Builder(context)
+        blockDialogBuilder.setTitle(title)
+
+        blockDialogBuilder.setSingleChoiceItems(list, -1) { _, item ->
+            //blockReasonPos = item
+        }
+        blockDialogBuilder.setNegativeButton("no") { dialog, _ ->
+            dialog.dismiss()
+        }
+        blockDialogBuilder.setPositiveButton("yes") { _, _ ->
+
+        }
+        val alert = blockDialogBuilder.create()
+        alert.show()
+    }
 }

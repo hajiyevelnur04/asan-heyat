@@ -55,7 +55,7 @@ class FoodDeliveryActivity : BaseActivity() {
 
         productSort.setOnClickListener{
             var list: Array<String> = arrayOf("Rating","Delivery time","Price Low to High", "Price High to Low")
-            SortDialog(this).dialogCreate("Sort By", list)
+            SortDialog(this).sortFunction("Sort By", list)
         }
 
         bottomSheetBehavior.setBottomSheetCallback(object : BottomSheetBehavior.BottomSheetCallback() {

@@ -88,27 +88,35 @@ class HomeFragment : BaseFragment() {
 
 
 
-        bottomServiceList.add("water delivery")
-        bottomServiceList.add("food delivery")
-        bottomServiceList.add("courier service")
-        bottomServiceList.add("home cleaning")
-
-
-        bottomServiceList.add("beauty services")
-        bottomServiceList.add("workout trainer")
-        bottomServiceList.add("flowers delivery")
-        bottomServiceList.add("taxi ride")
-
-
         bottomServiceList.add("baby care")
+        bottomServiceList.add("beauty services")
+        bottomServiceList.add("dog walking")
+        bottomServiceList.add("pet care")
+        bottomServiceList.add("security")
+        bottomServiceList.add("tutor")
+        bottomServiceList.add("workout trainer")
+
+
         bottomServiceList.add("car wash")
+        bottomServiceList.add("car repair")
         bottomServiceList.add("electronics")
         bottomServiceList.add("pest control")
+        bottomServiceList.add("truck")
+        bottomServiceList.add("snow blowers")
+        bottomServiceList.add("plumbers")
+        bottomServiceList.add("gardening")
+        bottomServiceList.add("laundry service")
 
-        bottomServiceList.add("baby care")
-        bottomServiceList.add("pest control")
-        bottomServiceList.add("car repair")
-        bottomServiceList.add("dog walking")
+
+        bottomServiceList.add("courier service")
+        bottomServiceList.add("taxi ride")
+
+        bottomServiceList.add("flowers delivery")
+        bottomServiceList.add("food delivery")
+        bottomServiceList.add("water delivery")
+        bottomServiceList.add("medicine delivery")
+        bottomServiceList.add("grocery delivery")
+        bottomServiceList.add("Liquor delivery")
 
         val storyAdapter = StoriesRecyclerViewAdapter(storyList) {
                 val intent = Intent(requireActivity(), CampaignActivity::class.java)

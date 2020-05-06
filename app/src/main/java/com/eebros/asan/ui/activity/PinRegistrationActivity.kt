@@ -101,7 +101,7 @@ class PinRegistrationActivity : BaseActivity() {
                             ).show()
                         } else {
                             if (s.toString() == pinCode) {
-                                viewModel.inputs.savePin(pinCode)
+                                //viewModel.inputs.savePin(pinCode)
                                 navigateTo(VerifyPhoneNumberActivity())
                             } else {
                                 showDialog(getString(R.string.repeat_pin_is_wrong))

@@ -17,6 +17,7 @@ import com.eebros.asan.ui.fragment.order.OrderFragment
 import com.eebros.asan.ui.fragment.home.HomeFragment
 import com.eebros.asan.ui.fragment.notifications.NotificationsFragment
 import com.eebros.asan.ui.fragment.order.RidesFragment
+import com.eebros.asan.ui.fragment.setting.SettingFragment
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
@@ -80,6 +81,10 @@ abstract class ActivityBuildersModule {
     @MainScope
     @ContributesAndroidInjector(modules = [MainModule::class, MainModuleViewModel::class])
     abstract fun notificationsFragment(): NotificationsFragment
+
+    @MainScope
+    @ContributesAndroidInjector(modules = [MainModule::class, MainModuleViewModel::class])
+    abstract fun settingFragment(): SettingFragment
 
 
 }

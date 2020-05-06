@@ -11,10 +11,10 @@
         layout="@layout/asan_into_header" />
 
     <LinearLayout
-        android:layout_marginTop="24dp"
         android:id="@+id/headerContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,188 +23,217 @@
         <TextView
             android:id="@+id/emptyLeft"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="match_parent"
+            android:layout_weight="1"
             android:gravity="center"
             android:textSize="24dp" />
 
         <TextView
             android:id="@+id/header1"
-            android:layout_weight="6"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:textColor="@color/black"
-            android:text="@string/personalAddress"
+            android:layout_weight="6"
             android:fontFamily="@font/roboto_medium"
+            android:gravity="center"
+            android:text="@string/personalAddress"
+            android:textColor="@color/black"
             android:textSize="20dp" />
 
         <TextView
             android:id="@+id/emptyRight"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:gravity="center"
             android:textSize="24dp" />
 
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/countryContainer"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginRight="12dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginLeft="12dp"
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:layout_constraintBottom_toTopOf="@+id/continueContainer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/headerContainer">
 
-        <TextView
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/country"
-            android:textColor="@color/colorPrimary"
-            android:fontFamily="@font/roboto_medium"/>
+            android:layout_height="wrap_content">
 
-        <LinearLayout
-            android:clickable="true"
-            android:focusable="true"
-            android:layout_marginTop="4dp"
-            android:id="@+id/cContainer"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/input_item_background"
-            android:orientation="horizontal">
-
-            <EditText
-                android:id="@+id/country"
-                android:focusable="false"
-                android:padding="8dp"
-                android:layout_width="0dp"
-                android:layout_weight="6"
-                android:layout_height="wrap_content"
-                android:lines="1"
-                android:layout_gravity="center"
-                android:background="@android:color/transparent"
-                android:hint="Azerbaijan"
-                android:inputType="text"
-                android:fontFamily="@font/roboto_medium"
-                android:textColorHint="#8e8e8e" />
-            <androidx.appcompat.widget.AppCompatImageView
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:scaleType="center"
-                android:src="@drawable/chevron_down_copy_2"
-                android:layout_width="0dp"
-                android:layout_height="25dp"/>
-
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/lasttNameContainer"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginRight="12dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginLeft="12dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/countryContainer">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/postalCode"
-            android:textColor="@color/colorPrimary"
-            android:fontFamily="@font/roboto_medium"/>
-
-        <LinearLayout
-            android:clickable="true"
-            android:focusable="true"
-            android:layout_marginTop="4dp"
-            android:id="@+id/postCodeContainer"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/input_item_background"
-            android:orientation="horizontal">
-            <EditText
-                android:id="@+id/postCode"
-                android:focusable="true"
-                android:padding="8dp"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:lines="1"
-                android:layout_gravity="center"
-                android:background="@android:color/transparent"
-                android:hint="01069"
-                android:inputType="number"
-                android:fontFamily="@font/roboto_medium"
-                android:textColorHint="#8e8e8e" />
-        </LinearLayout>
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-    </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/countryContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginRight="12dp"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/headerContainer">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_medium"
+                        android:text="@string/country"
+                        android:textColor="@color/colorPrimary" />
+
+                    <LinearLayout
+                        android:id="@+id/cContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="4dp"
+                        android:background="@drawable/input_item_background"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/country"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="6"
+                            android:background="@android:color/transparent"
+                            android:focusable="false"
+                            android:fontFamily="@font/roboto_medium"
+                            android:hint="Azerbaijan"
+                            android:inputType="text"
+                            android:lines="1"
+                            android:padding="8dp"
+                            android:textColorHint="#8e8e8e" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="0dp"
+                            android:layout_height="25dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:scaleType="center"
+                            android:src="@drawable/chevron_down_copy_2" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lasttNameContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="12dp"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/countryContainer">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_medium"
+                        android:text="@string/postalCode"
+                        android:textColor="@color/colorPrimary" />
+
+                    <LinearLayout
+                        android:id="@+id/postCodeContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="4dp"
+                        android:background="@drawable/input_item_background"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/postCode"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:background="@android:color/transparent"
+                            android:focusable="true"
+                            android:fontFamily="@font/roboto_medium"
+                            android:hint="01069"
+                            android:inputType="number"
+                            android:lines="1"
+                            android:padding="8dp"
+                            android:textColorHint="#8e8e8e" />
+                    </LinearLayout>
+
+                </LinearLayout>
 
 
-    <LinearLayout
-        android:id="@+id/dateOfBirthContainer"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginRight="12dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginLeft="12dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lasttNameContainer">
+                <LinearLayout
+                    android:id="@+id/dateOfBirthContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_marginBottom="@dimen/_24sdp"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lasttNameContainer">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/address"
-            android:textColor="@color/colorPrimary"
-            android:fontFamily="@font/roboto_medium"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_medium"
+                        android:text="@string/address"
+                        android:textColor="@color/colorPrimary" />
 
-        <LinearLayout
-            android:clickable="true"
-            android:focusable="true"
-            android:layout_marginTop="4dp"
-            android:id="@+id/addressContainer"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/input_item_background"
-            android:orientation="horizontal">
+                    <LinearLayout
+                        android:id="@+id/addressContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="4dp"
+                        android:background="@drawable/input_item_background"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:orientation="horizontal">
 
-            <EditText
-                android:id="@+id/address"
-                android:focusable="true"
-                android:padding="8dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:lines="1"
-                android:layout_gravity="center"
-                android:background="@android:color/transparent"
-                android:hint="Baki seheri, Nermanov rayonu"
-                android:inputType="number"
-                android:fontFamily="@font/roboto_medium"
-                android:textColorHint="#8e8e8e" />
-        </LinearLayout>
+                        <EditText
+                            android:id="@+id/address"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:background="@android:color/transparent"
+                            android:focusable="true"
+                            android:fontFamily="@font/roboto_medium"
+                            android:hint="Baki seheri, Nermanov rayonu"
+                            android:inputType="number"
+                            android:lines="1"
+                            android:padding="8dp"
+                            android:textColorHint="#8e8e8e" />
+                    </LinearLayout>
 
-    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
     <LinearLayout
         android:id="@+id/continueContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:paddingBottom="8dp"
-        android:paddingTop="8dp"
         android:layout_marginBottom="8dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent">
@@ -215,12 +244,12 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center|bottom"
             android:background="@drawable/rounded_corners_primary"
+            android:fontFamily="@font/roboto_medium"
             android:gravity="center"
             android:paddingStart="64dp"
             android:paddingTop="15dp"
             android:paddingEnd="64dp"
             android:paddingBottom="15dp"
-            android:fontFamily="@font/roboto_medium"
             android:text="Continue"
             android:textColor="@color/white"
             android:textSize="16sp" />

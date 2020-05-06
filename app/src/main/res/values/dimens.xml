@@ -53,5 +53,7 @@
     <dimen name="_32sdp">32dp</dimen>
     <dimen name="_13sdp">13dp</dimen>
     <dimen name="_62sdp">62dp</dimen>
+    <dimen name="_24sdp">24dp</dimen>
+    <dimen name="profile_image_size_profile_screen">96dp</dimen>
 
 </resources>

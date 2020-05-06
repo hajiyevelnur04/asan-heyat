@@ -17,6 +17,8 @@ class AddHomeAdressActivity : AppCompatActivity() {
 
     lateinit var sliderDotspanel: LinearLayout
 
+    private val pin: String by lazy{intent.getStringExtra("pin")}
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_home_adress)
@@ -25,7 +27,9 @@ class AddHomeAdressActivity : AppCompatActivity() {
         leftContainer.setOnClickListener{onBackPressed()}
 
         continueButton.setOnClickListener{
-            startActivity(Intent(this@AddHomeAdressActivity, AddEmailActivity::class.java))
+            val intent = Intent(this@AddHomeAdressActivity, AddEmailActivity::class.java)
+            intent.putExtra("pin", pin)
+            startActivity(intent)
             overridePendingTransition(R.anim.enter, R.anim.exit)
         }
     }

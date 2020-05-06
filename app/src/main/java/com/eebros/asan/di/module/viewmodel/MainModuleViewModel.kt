@@ -17,6 +17,7 @@ import com.eebros.asan.ui.fragment.order.OrderViewModel
 import com.eebros.asan.ui.fragment.home.HomeViewModel
 import com.eebros.asan.ui.fragment.notifications.NotificationsViewModel
 import com.eebros.asan.ui.fragment.order.RidesViewModel
+import com.eebros.asan.ui.fragment.setting.SettingViewModel
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
@@ -107,5 +108,11 @@ abstract class MainModuleViewModel {
     @IntoMap
     @ViewModelKey(NotificationsViewModel::class)
     abstract fun bindNotificationsViewModel(viewModel: NotificationsViewModel): ViewModel
+
+    @Binds
+    @MainScope
+    @IntoMap
+    @ViewModelKey(SettingViewModel::class)
+    abstract fun bindSettingViewModel(viewModel: SettingViewModel): ViewModel
 
 }

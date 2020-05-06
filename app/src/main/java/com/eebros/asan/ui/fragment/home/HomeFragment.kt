@@ -72,7 +72,18 @@ class HomeFragment : BaseFragment() {
         storyList.add(R.drawable.pizza)
         storyList.add(R.drawable.cleaning)
         storyList.add(R.drawable.barbar)
+        storyList.add(R.drawable.santexnik)
+        storyList.add(R.drawable.beverage)
 
+        storyList.add(R.drawable.pizza)
+        storyList.add(R.drawable.cleaning)
+        storyList.add(R.drawable.barbar)
+        storyList.add(R.drawable.santexnik)
+        storyList.add(R.drawable.beverage)
+
+        storyList.add(R.drawable.pizza)
+        storyList.add(R.drawable.cleaning)
+        storyList.add(R.drawable.barbar)
         storyList.add(R.drawable.santexnik)
         storyList.add(R.drawable.beverage)
 

@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.activity.registration.AddPersonalInfoActivity">
+
+   <androidx.constraintlayout.widget.ConstraintLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+
 
     <include
         android:id="@+id/include3"
@@ -12,10 +18,10 @@
 
 
     <LinearLayout
-        android:layout_marginTop="24dp"
         android:id="@+id/headerContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -24,178 +30,207 @@
         <TextView
             android:id="@+id/emptyLeft"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="match_parent"
+            android:layout_weight="1"
             android:gravity="center"
             android:textSize="24dp" />
 
         <TextView
             android:id="@+id/header1"
-            android:layout_weight="6"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:textColor="@color/black"
-            android:text="@string/personalDetails"
+            android:layout_weight="6"
             android:fontFamily="@font/roboto_medium"
+            android:gravity="center"
+            android:text="@string/personalDetails"
+            android:textColor="@color/black"
             android:textSize="20dp" />
 
         <TextView
             android:id="@+id/emptyRight"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:gravity="center"
             android:textSize="24dp" />
 
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/firstNameContainer"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginRight="12dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginLeft="12dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/headerContainer">
+       <ScrollView
+           android:layout_width="0dp"
+           android:layout_height="0dp"
+           app:layout_behavior="@string/appbar_scrolling_view_behavior"
+           app:layout_constraintBottom_toTopOf="@+id/continueContainer"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toBottomOf="@+id/headerContainer">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/firstName"
-            android:textColor="@color/colorPrimary"
-            android:fontFamily="@font/roboto_medium"/>
+           <androidx.constraintlayout.widget.ConstraintLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content">
 
-        <LinearLayout
-            android:clickable="true"
-            android:focusable="true"
-            android:layout_marginTop="4dp"
-            android:id="@+id/NameContainer"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/input_item_background"
-            android:orientation="horizontal">
-            <EditText
-                android:id="@+id/firstName"
-                android:focusable="true"
-                android:padding="8dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:lines="1"
-                android:layout_gravity="center"
-                android:background="@android:color/transparent"
-                android:hint="@string/firstName"
-                android:inputType="textPersonName"
-                android:fontFamily="@font/roboto_medium"
-                android:textColorHint="#8e8e8e" />
-        </LinearLayout>
+               <LinearLayout
+                   app:layout_constraintTop_toTopOf="parent"
+                   app:layout_constraintBottom_toBottomOf="parent"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintEnd_toEndOf="parent"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="vertical">
 
+               <LinearLayout
+                   android:id="@+id/firstNameContainer"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_marginLeft="12dp"
+                   android:layout_marginTop="24dp"
+                   android:layout_marginRight="12dp"
+                   android:orientation="vertical"
+                   app:layout_constraintEnd_toEndOf="parent"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toBottomOf="parent">
 
-    </LinearLayout>
+                   <TextView
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:fontFamily="@font/roboto_medium"
+                       android:text="@string/firstName"
+                       android:textColor="@color/colorPrimary" />
 
-    <LinearLayout
-        android:id="@+id/lastNameContainer"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginRight="12dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginLeft="12dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/firstNameContainer">
+                   <LinearLayout
+                       android:id="@+id/NameContainer"
+                       android:layout_width="match_parent"
+                       android:layout_height="match_parent"
+                       android:layout_marginTop="4dp"
+                       android:background="@drawable/input_item_background"
+                       android:clickable="true"
+                       android:focusable="true"
+                       android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/lastName"
-            android:textColor="@color/colorPrimary"
-            android:fontFamily="@font/roboto_medium"/>
-
-        <LinearLayout
-            android:clickable="true"
-            android:focusable="true"
-            android:layout_marginTop="4dp"
-            android:id="@+id/lNameContainer"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/input_item_background"
-            android:orientation="horizontal">
-            <EditText
-                android:id="@+id/lastName"
-                android:focusable="true"
-                android:padding="8dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:lines="1"
-                android:layout_gravity="center"
-                android:background="@android:color/transparent"
-                android:hint="@string/lastName"
-                android:inputType="textPersonName"
-                android:fontFamily="@font/roboto_medium"
-                android:textColorHint="#8e8e8e" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/dateOfBirthContainer"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="4dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/lasttNameContainer">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/dateOfBirth"
-                android:textColor="@color/colorPrimary"
-                android:fontFamily="@font/roboto_medium"/>
-
-            <LinearLayout
-                android:clickable="true"
-                android:focusable="true"
-                android:layout_marginTop="4dp"
-                android:id="@+id/dOfBContainer"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/input_item_background"
-                android:orientation="horizontal">
-                <EditText
-                    android:id="@+id/dateOfBirth"
-                    android:focusable="true"
-                    android:padding="8dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:lines="1"
-                    android:layout_gravity="center"
-                    android:background="@android:color/transparent"
-                    android:hint="15/10/1992"
-                    android:inputType="date"
-                    android:fontFamily="@font/roboto_medium"
-                    android:textColorHint="#8e8e8e" />
-            </LinearLayout>
-
-        </LinearLayout>
-
-    </LinearLayout>
+                       <EditText
+                           android:id="@+id/firstName"
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:background="@android:color/transparent"
+                           android:focusable="true"
+                           android:fontFamily="@font/roboto_medium"
+                           android:hint="@string/firstName"
+                           android:inputType="textPersonName"
+                           android:lines="1"
+                           android:padding="8dp"
+                           android:textColorHint="#8e8e8e" />
+                   </LinearLayout>
 
 
+               </LinearLayout>
+
+               <LinearLayout
+                   android:id="@+id/lastNameContainer"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_marginLeft="12dp"
+                   android:layout_marginTop="8dp"
+                   android:layout_marginRight="12dp"
+                   android:orientation="vertical"
+                   app:layout_constraintEnd_toEndOf="parent"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toBottomOf="@+id/firstNameContainer">
+
+                   <TextView
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:fontFamily="@font/roboto_medium"
+                       android:text="@string/lastName"
+                       android:textColor="@color/colorPrimary" />
+
+                   <LinearLayout
+                       android:id="@+id/lNameContainer"
+                       android:layout_width="match_parent"
+                       android:layout_height="match_parent"
+                       android:layout_marginTop="4dp"
+                       android:background="@drawable/input_item_background"
+                       android:clickable="true"
+                       android:focusable="true"
+                       android:orientation="horizontal">
+
+                       <EditText
+                           android:id="@+id/lastName"
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:background="@android:color/transparent"
+                           android:focusable="true"
+                           android:fontFamily="@font/roboto_medium"
+                           android:hint="@string/lastName"
+                           android:inputType="textPersonName"
+                           android:lines="1"
+                           android:padding="8dp"
+                           android:textColorHint="#8e8e8e" />
+                   </LinearLayout>
+
+                   <LinearLayout
+                       android:id="@+id/dateOfBirthContainer"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:layout_marginTop="4dp"
+                       android:layout_marginBottom="@dimen/_24sdp"
+                       android:orientation="vertical"
+                       app:layout_constraintEnd_toEndOf="parent"
+                       app:layout_constraintStart_toStartOf="parent"
+                       app:layout_constraintTop_toBottomOf="@+id/lasttNameContainer">
+
+                       <TextView
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:fontFamily="@font/roboto_medium"
+                           android:text="@string/dateOfBirth"
+                           android:textColor="@color/colorPrimary" />
+
+                       <LinearLayout
+                           android:id="@+id/dOfBContainer"
+                           android:layout_width="match_parent"
+                           android:layout_height="match_parent"
+                           android:layout_marginTop="4dp"
+                           android:background="@drawable/input_item_background"
+                           android:clickable="true"
+                           android:focusable="true"
+                           android:orientation="horizontal">
+
+                           <EditText
+                               android:id="@+id/dateOfBirth"
+                               android:layout_width="match_parent"
+                               android:layout_height="wrap_content"
+                               android:layout_gravity="center"
+                               android:background="@android:color/transparent"
+                               android:focusable="true"
+                               android:fontFamily="@font/roboto_medium"
+                               android:hint="15/10/1992"
+                               android:inputType="date"
+                               android:lines="1"
+                               android:padding="8dp"
+                               android:textColorHint="#8e8e8e" />
+                       </LinearLayout>
+
+                   </LinearLayout>
+
+               </LinearLayout>
+               </LinearLayout>
+
+           </androidx.constraintlayout.widget.ConstraintLayout>
+
+       </ScrollView>
 
 
     <LinearLayout
         android:id="@+id/continueContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:paddingBottom="8dp"
-        android:paddingTop="8dp"
         android:layout_marginBottom="8dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent">
@@ -206,16 +241,18 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center|bottom"
             android:background="@drawable/rounded_corners_primary"
+            android:fontFamily="@font/roboto_medium"
             android:gravity="center"
             android:paddingStart="64dp"
             android:paddingTop="15dp"
             android:paddingEnd="64dp"
             android:paddingBottom="15dp"
-            android:fontFamily="@font/roboto_medium"
             android:text="Continue"
             android:textColor="@color/white"
             android:textSize="16sp" />
 
     </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+   </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>

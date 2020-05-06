@@ -22,6 +22,8 @@ class AddPersonalInfoActivity : AppCompatActivity() {
     lateinit var lastNameText: EditText
     lateinit var dateOfBirthText: EditText
 
+    private val pin: String by lazy{intent.getStringExtra("pin")}
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_personal_info)
@@ -32,7 +34,9 @@ class AddPersonalInfoActivity : AppCompatActivity() {
 
         continueButton.setOnClickListener{
             if(checkValidation()){
-                startActivity(Intent(this@AddPersonalInfoActivity, AddHomeAdressActivity::class.java))
+                val intent = Intent(this@AddPersonalInfoActivity, AddHomeAdressActivity::class.java)
+                intent.putExtra("pin", pin)
+                startActivity(intent)
                 overridePendingTransition(R.anim.enter, R.anim.exit)
             } else{
                 //do something

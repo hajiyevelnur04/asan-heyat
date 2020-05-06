@@ -70,7 +70,7 @@
         <activity
             android:name=".ui.activity.registration.AddPersonalInfoActivity"
             android:theme="@style/AppThemeNoActionBar"
-            android:windowSoftInputMode="stateHidden|adjustResize" />
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize"/>
         <activity
             android:name=".ui.activity.registration.NumberActivity"
             android:theme="@style/AppThemeNoActionBar"

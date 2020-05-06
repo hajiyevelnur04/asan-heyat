@@ -14,6 +14,8 @@ import kotlinx.android.synthetic.main.asan_into_header.*
 class AddEmailActivity : AppCompatActivity() {
 
     lateinit var sliderDotspanel: LinearLayout
+    private val pin: String by lazy{intent.getStringExtra("pin")}
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,7 +25,9 @@ class AddEmailActivity : AppCompatActivity() {
         leftContainer.setOnClickListener{onBackPressed()}
 
         continueButton.setOnClickListener{
-            startActivity(Intent(this, DoneRegistrationActivity::class.java))
+            val intent = Intent(this, DoneRegistrationActivity::class.java)
+            intent.putExtra("pin", pin)
+            startActivity(intent)
             overridePendingTransition(R.anim.enter, R.anim.exit)
         }
     }

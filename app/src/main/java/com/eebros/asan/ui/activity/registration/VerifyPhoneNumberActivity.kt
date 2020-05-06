@@ -45,6 +45,7 @@ class VerifyPhoneNumberActivity : AppCompatActivity() {
 
     private val phoneNum: String by lazy{intent.getStringExtra("phoneNum")}
 
+    private val pinCode: String by lazy{intent.getStringExtra("pin")}
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -69,7 +70,9 @@ class VerifyPhoneNumberActivity : AppCompatActivity() {
             override fun afterTextChanged(s: Editable?) {
                 if (s.toString().length == 6){
                     countDown.onFinish()
-                    startActivity(Intent(this@VerifyPhoneNumberActivity, AddPersonalInfoActivity::class.java))
+                    val intent = Intent(this@VerifyPhoneNumberActivity, AddPersonalInfoActivity::class.java)
+                    intent.putExtra("pin", pinCode)
+                    startActivity(intent)
                     overridePendingTransition(R.anim.enter, R.anim.exit)
                 }
             }

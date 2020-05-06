@@ -10,6 +10,7 @@ import com.eebros.asan.di.ViewModelProviderFactory
 import com.eebros.asan.ui.fragment.home.HomeFragment
 import com.eebros.asan.ui.fragment.order.OrderFragment
 import com.eebros.asan.ui.fragment.notifications.NotificationsFragment
+import com.eebros.asan.ui.fragment.setting.SettingFragment
 import javax.inject.Inject
 
 
@@ -48,7 +49,7 @@ class MainActivity : BaseActivity() {
                     transaction.replace(R.id.host_fragment, NotificationsFragment()).commit()
                 }
                 R.id.navigation_setting -> {
-                    //transaction.replace(R.id.host_fragment, NotificationsFragment()).commit()
+                    transaction.replace(R.id.host_fragment, SettingFragment()).commit()
                 }
             }
             true

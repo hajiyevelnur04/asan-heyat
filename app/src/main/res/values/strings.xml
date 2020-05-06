@@ -72,4 +72,8 @@
     <string name="view_cart">View Card</string>
     <string name="service_people">Service Persons</string>
     <string name="packages">Servisler</string>
+    <string name="changing_password">Change password</string>
+    <string name="changing_login_pin">change login</string>
+    <string name="change_language">Change language</string>
+    <string name="change_theme">change theme</string>
 </resources>

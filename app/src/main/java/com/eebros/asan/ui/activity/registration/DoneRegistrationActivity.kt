@@ -18,6 +18,8 @@ class DoneRegistrationActivity : BaseActivity() {
 
     lateinit var viewModel: DoneRegistrationViewModel
 
+    private val pin: String by lazy{intent.getStringExtra("pin")}
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_done_registration)
@@ -25,6 +27,7 @@ class DoneRegistrationActivity : BaseActivity() {
         viewModel = ViewModelProvider(this, factory)[DoneRegistrationViewModel::class.java]
 
         doneButton.setOnClickListener{
+            viewModel.inputs.savePin(pin)
             startActivity(Intent(this@DoneRegistrationActivity, MainActivity::class.java))
             overridePendingTransition(R.anim.enter, R.anim.exit)
         }

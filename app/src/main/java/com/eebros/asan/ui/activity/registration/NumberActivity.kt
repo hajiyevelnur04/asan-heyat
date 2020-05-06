@@ -42,7 +42,7 @@ class NumberActivity : BaseActivity() {
         //setUpSpinner()
         setUpEditText()
 
-        phoneNumberHolder.filters = arrayOf(InputFilter.LengthFilter(7))
+        phoneNumberHolder.filters = arrayOf(InputFilter.LengthFilter(9))
 
         continueB.setOnClickListener{
             var code:String = itemCodeHolder.text.toString()
@@ -80,7 +80,7 @@ class NumberActivity : BaseActivity() {
             }
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                if(s.toString().trim().isNotEmpty()){
+                if(s.toString().trim().length ==9){
                     continueB.isEnabled = true
                     continueB.isFocusable = true
                     continueB.setBackgroundResource(R.drawable.rounded_corners_primary)

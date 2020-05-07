@@ -27,6 +27,8 @@ class NotificationsFragment : BaseFragment() {
     ): View? {
         notificationsViewModel = ViewModelProvider(this, factory)[NotificationsViewModel::class.java]
         val root = inflater.inflate(R.layout.fragment_notifications, container, false)
+
+
         return root
     }
 }

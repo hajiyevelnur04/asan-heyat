@@ -5,10 +5,10 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:layout_gravity="bottom"
-    android:layout_marginBottom="@dimen/_90sdp"
     android:background="@color/white"
     android:orientation="vertical"
     app:behavior_hideable="true"
+    android:layout_marginTop="128dp"
     app:behavior_peekHeight="0.0dip"
     app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
 

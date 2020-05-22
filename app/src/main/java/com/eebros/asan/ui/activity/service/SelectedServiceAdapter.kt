@@ -7,10 +7,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.eebros.asan.R
 import com.eebros.asan.model.ServicePersonModel
 
-class ServiceAdapter(
+class SelectedServiceAdapter(
     private val serviceList: ArrayList<ServicePersonModel>,
     private val clickListener: (position: Int) -> Unit
-) : RecyclerView.Adapter<ServiceAdapter.FoodViewHolder>(){
+) : RecyclerView.Adapter<SelectedServiceAdapter.FoodViewHolder>(){
 
     class FoodViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(servicePersonModel: ServicePersonModel, clickListener: (position: Int) -> Unit){

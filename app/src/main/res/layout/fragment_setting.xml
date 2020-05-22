@@ -15,7 +15,7 @@
             android:id="@+id/ll1"
             android:layout_width="match_parent"
             android:layout_height="90dp"
-            android:background="@color/colorPrimary"
+            android:background="@drawable/top_background"
             android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -51,7 +51,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.2">
+            app:layout_constraintVertical_bias="0.23">
 
             <ImageView
                 android:layout_width="18dp"
@@ -71,14 +71,14 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editProfilePhoto"
-            tools:text="Elnur Hajiyev" />
+            tools:text="Test Testov" />
 
         <View
             android:id="@+id/separatorLine"
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
             android:layout_marginTop="12dp"
-            android:background="@color/colorPrimary"
+            android:background="@color/transparent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/username" />
@@ -106,15 +106,17 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center"
                     android:layout_marginEnd="18dp"
-                    android:src="@drawable/aze" />
+                    android:src="@drawable/user_grey" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="6"
                     android:fontFamily="sans-serif"
-                    android:text="@string/changing_password"
+                    android:textAllCaps="true"
+                    android:text="@string/changeUserName"
                     android:layout_gravity="center"
                     android:textColor="#4e4e4e"
                     android:textSize="16sp"
@@ -156,13 +158,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="18dp"
-                    android:src="@drawable/rus" />
+                    android:layout_gravity="center"
+                    android:src="@drawable/lock_alt" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif"
-                    android:text="@string/changing_login_pin"
+                    android:text="@string/changePassword"
+                    android:textAllCaps="true"
                     android:layout_gravity="center"
                     android:textColor="#4e4e4e"
                     android:textSize="16sp"
@@ -208,13 +212,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="18dp"
-                    android:src="@drawable/usa" />
+                    android:layout_gravity="center"
+                    android:src="@drawable/address" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif"
-                    android:text="@string/change_language"
+                    android:text="@string/changeAddress"
+                    android:textAllCaps="true"
                     android:textColor="#4e4e4e"
                     android:textSize="16sp"
                     android:layout_gravity="center"
@@ -261,7 +267,7 @@
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/themeColor"
                     android:layout_width="18dp"
-                    android:layout_height="18dp"
+                    android:layout_height="24dp"
                     android:layout_marginEnd="18dp"
                     android:src="@color/colorPrimary"
                     app:civ_border_color="@color/colorPrimary"
@@ -272,6 +278,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif"
                     android:text="@string/change_theme"
+                    android:textAllCaps="true"
                     android:textColor="#4e4e4e"
                     android:textSize="16sp"
                     android:layout_gravity="center"

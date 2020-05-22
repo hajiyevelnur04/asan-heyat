@@ -12,7 +12,7 @@ import com.eebros.asan.ui.activity.driver.MapsActivity
 import com.eebros.asan.ui.activity.main.MainActivity
 import com.eebros.asan.ui.activity.registration.DoneRegistrationActivity
 import com.eebros.asan.ui.activity.registration.NumberActivity
-import com.eebros.asan.ui.activity.service.ServiceActivity
+import com.eebros.asan.ui.activity.service.SelectedServiceActivity
 import com.eebros.asan.ui.fragment.order.OrderFragment
 import com.eebros.asan.ui.fragment.home.HomeFragment
 import com.eebros.asan.ui.fragment.notifications.NotificationsFragment
@@ -33,7 +33,7 @@ abstract class ActivityBuildersModule {
 
     @MainScope
     @ContributesAndroidInjector(modules = [MainModule::class, MainModuleViewModel::class])
-    abstract fun serviceActivity(): ServiceActivity
+    abstract fun serviceActivity(): SelectedServiceActivity
 
 
 

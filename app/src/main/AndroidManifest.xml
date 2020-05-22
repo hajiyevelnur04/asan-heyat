@@ -19,8 +19,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.activity.service.ServiceActivity"
-            android:theme="@style/AppThemeNoActionBar"></activity>
+        <activity android:name=".ui.activity.service.ServiceActivity"></activity>
+        <activity
+            android:name=".ui.activity.service.SelectedServiceActivity"
+            android:theme="@style/AppThemeNoActionBar" />
         <activity
             android:name=".ui.activity.driver.SelectDriver"
             android:theme="@style/AppThemeNoActionBar" />
@@ -70,7 +72,7 @@
         <activity
             android:name=".ui.activity.registration.AddPersonalInfoActivity"
             android:theme="@style/AppThemeNoActionBar"
-            android:windowSoftInputMode="stateAlwaysHidden|adjustResize"/>
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
         <activity
             android:name=".ui.activity.registration.NumberActivity"
             android:theme="@style/AppThemeNoActionBar"

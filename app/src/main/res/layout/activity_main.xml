@@ -7,6 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".ui.activity.main.MainActivity">
 
+<<<<<<< HEAD
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:id="@+id/toolbar"
@@ -74,15 +75,17 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
+=======
+>>>>>>> 883f50bf097eee6acdfcc9041ec4983342e9aa05
     <include
         android:id="@+id/includeContent"
         layout="@layout/content_home"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavigationView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar"
-        app:layout_constraintBottom_toTopOf="@id/bottomNavigationView"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"

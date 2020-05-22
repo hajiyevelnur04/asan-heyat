@@ -4,10 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toolbar
 import androidx.lifecycle.ViewModelProvider
 import com.eebros.asan.R
 import com.eebros.asan.base.BaseFragment
 import com.eebros.asan.di.ViewModelProviderFactory
+import com.eebros.asan.ui.activity.main.MainActivity
+import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_select_driver.*
 import javax.inject.Inject
 
 class SettingFragment : BaseFragment() {
@@ -24,6 +28,7 @@ class SettingFragment : BaseFragment() {
     ): View? {
         settingViewModel = ViewModelProvider(this, factory)[SettingViewModel::class.java]
         val root = inflater.inflate(R.layout.fragment_setting, container, false)
+
         return root
     }
 }

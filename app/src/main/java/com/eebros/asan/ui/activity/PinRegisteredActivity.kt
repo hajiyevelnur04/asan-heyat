@@ -20,6 +20,8 @@ import androidx.lifecycle.ViewModelProvider
 import com.eebros.asan.R
 import com.eebros.asan.base.BaseActivity
 import com.eebros.asan.di.ViewModelProviderFactory
+import com.eebros.asan.ui.activity.common.NumberKeyboard
+import com.eebros.asan.ui.activity.common.NumberKeyboardListener
 import com.eebros.asan.ui.activity.main.MainActivity
 import com.eebros.asan.view.AsanNumberBoard
 import com.eebros.asan.view.AsanPinView
@@ -28,15 +30,18 @@ import kotlinx.android.synthetic.main.number_board.*
 import javax.inject.Inject
 
 
-class PinRegisteredActivity : BaseActivity() {
+class PinRegisteredActivity : BaseActivity(), NumberKeyboardListener {
 
     @Inject
     lateinit var factory: ViewModelProviderFactory
 
     lateinit var viewModel: PinRegisteredViewModel
 
-    lateinit var pinKeyBoard: AsanNumberBoard
+    //lateinit var pinKeyBoard: AsanNumberBoard
+    lateinit var pinKeyBoard: NumberKeyboard
     lateinit var pin: AsanPinView
+
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {

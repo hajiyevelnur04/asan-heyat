@@ -18,6 +18,7 @@ import com.eebros.asan.di.ViewModelProviderFactory
 import com.eebros.asan.ui.activity.ComingSoonActivity
 import com.eebros.asan.ui.activity.delivery.FoodDeliveryActivity
 import com.eebros.asan.ui.activity.driver.MapsActivity
+import com.eebros.asan.ui.activity.pin.Main2Activity
 import com.eebros.asan.ui.activity.service.SelectedServiceActivity
 import com.eebros.asan.ui.activity.service.ServiceActivity
 import com.google.android.material.bottomsheet.BottomSheetBehavior
@@ -153,6 +154,10 @@ class HomeFragment : BaseFragment() {
                 //home cleaning
                 3 -> {
                     startActivity(Intent(requireActivity(), ServiceActivity::class.java))
+                    requireActivity().overridePendingTransition(R.anim.enter, R.anim.exit)
+                }
+                4 -> {
+                    startActivity(Intent(requireActivity(), Main2Activity::class.java))
                     requireActivity().overridePendingTransition(R.anim.enter, R.anim.exit)
                 }
                 7 -> {

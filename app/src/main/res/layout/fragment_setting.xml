@@ -51,11 +51,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-<<<<<<< HEAD
-            app:layout_constraintVertical_bias="0.23">
-=======
             app:layout_constraintVertical_bias="0.25">
->>>>>>> 883f50bf097eee6acdfcc9041ec4983342e9aa05
 
             <ImageView
                 android:layout_width="18dp"
@@ -80,13 +76,8 @@
             android:id="@+id/separatorLine"
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
-<<<<<<< HEAD
             android:layout_marginTop="12dp"
             android:background="@color/transparent"
-=======
-            android:layout_marginTop="6dp"
-            android:background="@color/hint"
->>>>>>> 883f50bf097eee6acdfcc9041ec4983342e9aa05
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/username" />

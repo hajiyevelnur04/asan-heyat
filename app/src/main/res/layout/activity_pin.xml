@@ -61,6 +61,7 @@
         <TextView
             android:id="@+id/emptyRight"
             android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:textSize="24dp" />
@@ -93,7 +94,7 @@
         app:hideLineWhenFilled="true"
         app:itemHeight="16dp"
         app:itemRadius="5dp"
-        app:itemSpacing="10dp"
+        app:itemSpacing="20dp"
         app:itemWidth="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

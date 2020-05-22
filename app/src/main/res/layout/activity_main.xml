@@ -48,6 +48,7 @@
                         android:layout_height="16.5dp"
                         android:layout_gravity="center"
                         android:layout_weight="1"
+                        android:src="@drawable/ic_bars"
                         android:scaleType="fitCenter"
                         android:background="@null"
                         tools:ignore="ContentDescription" />
@@ -66,7 +67,6 @@
                     android:gravity="center|left"
                     android:text="@string/app_name"
                     android:textColor="@color/white"
-                    android:textSize="26sp"
                     tools:ignore="RtlHardcoded" />
 
             </LinearLayout>

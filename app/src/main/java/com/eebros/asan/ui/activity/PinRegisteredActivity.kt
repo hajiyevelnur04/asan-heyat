@@ -196,4 +196,16 @@ class PinRegisteredActivity : BaseActivity(), NumberKeyboardListener {
             }
         }
     }
+
+    override fun onNumberClicked(number: Int) {
+        TODO("Not yet implemented")
+    }
+
+    override fun onLeftAuxButtonClicked() {
+        TODO("Not yet implemented")
+    }
+
+    override fun onRightAuxButtonClicked() {
+        TODO("Not yet implemented")
+    }
 }

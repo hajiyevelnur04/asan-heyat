@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<merge xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -150,11 +151,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/key7Container">
 
-        <ImageView
+        <TextView
             android:id="@+id/leftAuxBtn"
             style="@style/numberkeyboard_key"
-            android:scaleType="center"
-            app:srcCompat="@drawable/numberkeyboard_ic_fingerprint" />
+            android:autoSizeTextType="uniform"
+            android:autoSizeMinTextSize="1dp"
+            android:autoSizeMaxTextSize="100dp"
+
+           android:text="Cancel" />
 
     </com.eebros.asan.ui.activity.common.SquareFrameLayout>
 
@@ -189,4 +193,4 @@
             app:srcCompat="@drawable/numberkeyboard_ic_backspace" />
 
     </com.eebros.asan.ui.activity.common.SquareFrameLayout>
-</merge>
+</androidx.constraintlayout.widget.ConstraintLayout>

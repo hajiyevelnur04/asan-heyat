@@ -217,7 +217,7 @@ class NumberKeyboard : ConstraintLayout {
             // Get auxiliary icons
             when (type) {
                 0 -> { // integer
-                    leftAuxBtnIcon = R.drawable.numberkeyboard_key_bg_transparent
+                    leftAuxBtnIcon = R.drawable.numberkeyboard_ic_fingerprint
                     rightAuxBtnIcon = R.drawable.numberkeyboard_ic_backspace
                     leftAuxBtnBackground = R.drawable.numberkeyboard_key_bg_transparent
                     rightAuxBtnBackground = R.drawable.numberkeyboard_key_bg_transparent
